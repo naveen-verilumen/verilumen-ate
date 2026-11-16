@@ -1,0 +1,144 @@
+{
+  "num_lots": 9,
+  "dies_per_lot": 6,
+  "good_dies_per_lot": 3,
+  "fail_dies_per_lot": 3,
+  "patterns_per_die": 200,
+  "channel_count": 23,
+  "bits_per_channel": 234,
+  "site": 1,
+  "random_seed": 42,
+  "output_dir": "generated_logs_test",
+  "source_logs_dir": "generated_logs_1k",
+  "good_failure_rate": 0.001,
+  "signals": [
+    "IO_0",
+    "IO_1",
+    "IO_2"
+  ],
+  "pattern_prefix": "patterns.pat_scan_",
+  "test_suite_message": "[message:10:ScanTestLong] Executing test suite done: Main.Scan.ScanTestLong",
+  "cycle_stride": 2000016,
+  "dataset_name": "scan_log_dataset_v2",
+  "generator_version": "2.0",
+  "lot_names": [
+    "LOT_1_Center",
+    "LOT_2_Donut",
+    "LOT_3_Edge-Loc",
+    "LOT_4_Edge-Ring",
+    "LOT_5_Local",
+    "LOT_6_Near-Full",
+    "LOT_7_Normal",
+    "LOT_8_Random",
+    "LOT_9_Scratch"
+  ],
+  "source_fail_channels": {
+    "LOT_1_Center": [
+      3,
+      9,
+      5
+    ],
+    "LOT_2_Donut": [
+      10,
+      19,
+      3
+    ],
+    "LOT_3_Edge-Loc": [
+      9,
+      7,
+      21
+    ],
+    "LOT_4_Edge-Ring": [
+      3,
+      14,
+      16
+    ],
+    "LOT_5_Local": [
+      20,
+      6,
+      7
+    ],
+    "LOT_6_Near-Full": [
+      23,
+      20,
+      6
+    ],
+    "LOT_7_Normal": [
+      12,
+      16,
+      10
+    ],
+    "LOT_8_Random": [
+      1,
+      14,
+      7
+    ],
+    "LOT_9_Scratch": [
+      19,
+      6,
+      5
+    ]
+  },
+  "lot_fail_modes": {
+    "LOT_1_Center": [
+      "CHANNEL_SPECIFIC_FAILURE",
+      "PATTERN_SPECIFIC_FAILURE",
+      "REPEATED_FAILURE"
+    ],
+    "LOT_2_Donut": [
+      "CHANNEL_SPECIFIC_FAILURE",
+      "BURST_FAILURE",
+      "MULTI_CHANNEL_FAILURE"
+    ],
+    "LOT_3_Edge-Loc": [
+      "CHANNEL_SPECIFIC_FAILURE",
+      "PATTERN_SPECIFIC_FAILURE",
+      "RANDOM_FAILURE"
+    ],
+    "LOT_4_Edge-Ring": [
+      "REPEATED_FAILURE",
+      "PATTERN_SPECIFIC_FAILURE",
+      "MULTI_CHANNEL_FAILURE"
+    ],
+    "LOT_5_Local": [
+      "CHANNEL_SPECIFIC_FAILURE",
+      "BURST_FAILURE",
+      "REPEATED_FAILURE"
+    ],
+    "LOT_6_Near-Full": [
+      "MULTI_CHANNEL_FAILURE",
+      "PATTERN_SPECIFIC_FAILURE",
+      "RANDOM_FAILURE"
+    ],
+    "LOT_7_Normal": [
+      "CHANNEL_SPECIFIC_FAILURE",
+      "PATTERN_SPECIFIC_FAILURE",
+      "BURST_FAILURE"
+    ],
+    "LOT_8_Random": [
+      "RANDOM_FAILURE",
+      "CHANNEL_SPECIFIC_FAILURE",
+      "REPEATED_FAILURE"
+    ],
+    "LOT_9_Scratch": [
+      "BURST_FAILURE",
+      "CHANNEL_SPECIFIC_FAILURE",
+      "MULTI_CHANNEL_FAILURE"
+    ]
+  },
+  "channel_failure_bit_rate": 0.08,
+  "pattern_window_start": 18,
+  "pattern_window_end": 25,
+  "pattern_failure_bit_rate": 0.15,
+  "pattern_window_channels": 2,
+  "burst_pattern_length": 6,
+  "burst_bit_length": 40,
+  "burst_channel_count": 2,
+  "repeated_bit_stride": 8,
+  "repeated_channel_count": 2,
+  "multi_channel_count": 4,
+  "multi_channel_bit_rate": 0.05,
+  "random_failure_rate": 0.02,
+  "selected_lot": null,
+  "selected_die": null
+}

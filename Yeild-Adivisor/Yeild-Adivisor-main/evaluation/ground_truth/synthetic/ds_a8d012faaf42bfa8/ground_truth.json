@@ -1,0 +1,28 @@
+{
+  "affected_population": {
+    "n_targeted": 784,
+    "n_total": 784,
+    "rule": "fail_p += extra_p_per_lot * lot_index"
+  },
+  "confounders": [
+    "lot_to_lot_baseline_noise"
+  ],
+  "dataset_id": "ds_a8d012faaf42bfa8",
+  "difficulty": "medium",
+  "expected_signal": "Temporal degradation / later lots have higher failure rate.",
+  "generator_version": "yi_synth_v1",
+  "injected_parameters": {
+    "extra_p_per_lot": 0.045,
+    "n_lots": 8
+  },
+  "notes": null,
+  "profile": "small",
+  "scenario_id": "S06",
+  "seed": 20260322,
+  "true_causes": [
+    {
+      "detail": "DRIFT",
+      "family": "PROCESS"
+    }
+  ]
+}

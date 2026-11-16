@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "verilumen-ate": {
+      "command": "C:\\Users\\navee\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+      "args": [
+        "C:\\Users\\navee\\ate-app-main\\mcp_server.py"
+      ],
+      "env": {
+        "SHMOO_API_KEY": "J46uh7W8EdG-SFmb-5lyxevFbpll3xGOXALnZ-hmCWc"
+      }
+    }
+  }
+}

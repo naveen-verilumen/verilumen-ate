@@ -1,0 +1,29 @@
+{
+  "case_id": "CASE_14",
+  "n_eligible": 4,
+  "n_first_pass_pass": 2,
+  "n_first_pass_fail": 2,
+  "fpy": 0.5,
+  "fpy_loss": 0.5,
+  "notes": "D01 fails IDDQ and FUNC. Primary is T_IDDQ (is_first_fail). Any-fail FUNC overlaps. Primary Pareto must not count D01 twice.",
+  "primary_fail_pareto": [
+    {
+      "failure_key": "T_IDDQ",
+      "n_dies": 2,
+      "contribution": 0.5,
+      "share_of_fails": 1.0,
+      "overlap_allowed": false
+    }
+  ],
+  "cofail": [
+    { "die_id": "D01", "failure_key": "T_FUNC", "attribution_role": "COFAIL" }
+  ],
+  "any_fail_pareto": [
+    { "failure_key": "T_IDDQ", "n_dies": 2, "contribution": 0.5, "overlap_allowed": true },
+    { "failure_key": "T_FUNC", "n_dies": 1, "contribution": 0.25, "overlap_allowed": true }
+  ],
+  "sum_any_fail_n_dies": 3,
+  "sum_any_fail_n_dies_exceeds_n_fail": true,
+  "sum_primary_n_dies": 2,
+  "sum_primary_equals_n_fail": true
+}

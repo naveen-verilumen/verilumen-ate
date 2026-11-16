@@ -1,0 +1,25 @@
+{
+  "dataset_id": "ds_mon_10",
+  "expected": {
+    "alarm": false,
+    "calibration": [
+      "UNAVAILABLE"
+    ],
+    "dimension": "unlabeled",
+    "overall": [
+      "HEALTHY",
+      "MONITOR",
+      "REVIEW",
+      "INSUFFICIENT_DATA"
+    ],
+    "performance": [
+      "UNAVAILABLE"
+    ],
+    "target_drift": [
+      "UNAVAILABLE"
+    ]
+  },
+  "hidden": true,
+  "notes": "Outcome columns removed. Feature and prediction monitoring only.",
+  "scenario_id": "M10_NO_LABELS"
+}

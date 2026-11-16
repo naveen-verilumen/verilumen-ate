@@ -1,0 +1,49 @@
+{
+  "categorical": {
+    "columns": [
+      "spatial_region",
+      "tester_id",
+      "probe_card_id",
+      "prober_id"
+    ],
+    "encoder": "OneHotEncoder(handle_unknown=ignore)",
+    "imputer": "SimpleImputer(strategy=most_frequent)"
+  },
+  "missing_in_v2_matrix": {
+    "die_x": 0,
+    "die_y": 0,
+    "edge_distance": 0,
+    "normalized_x": 0,
+    "normalized_y": 0,
+    "probe_card_id": 0,
+    "probe_fail_rate": 0,
+    "prober_id": 0,
+    "radial_distance": 0,
+    "site": 0,
+    "spatial_region": 0,
+    "temperature_c": 0,
+    "tester_fail_rate": 0,
+    "tester_id": 0,
+    "timestamp_epoch": 0,
+    "voltage_v": 0
+  },
+  "numeric": {
+    "columns": [
+      "die_x",
+      "die_y",
+      "normalized_x",
+      "normalized_y",
+      "radial_distance",
+      "edge_distance",
+      "timestamp_epoch",
+      "temperature_c",
+      "voltage_v",
+      "site",
+      "tester_fail_rate",
+      "probe_fail_rate"
+    ],
+    "fit_on": "all V2 rows for the deployed artifact; each LOLO fold refit on its training lots only",
+    "imputer": "SimpleImputer(strategy=median)",
+    "scaler": "StandardScaler"
+  }
+}

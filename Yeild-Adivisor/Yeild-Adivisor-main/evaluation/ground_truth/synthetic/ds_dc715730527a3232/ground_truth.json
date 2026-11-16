@@ -1,0 +1,29 @@
+{
+  "affected_population": {
+    "n_normal_order": 397,
+    "n_total": 784,
+    "rule": "P(T_FUNC fail | T_IDDQ fail and IDDQ precedes FUNC) elevated"
+  },
+  "confounders": [
+    "half_of_dies_use_swapped_order"
+  ],
+  "dataset_id": "ds_dc715730527a3232",
+  "difficulty": "hard",
+  "expected_signal": "Conditional failure relationship with test sequence/order.",
+  "generator_version": "yi_synth_v1",
+  "injected_parameters": {
+    "dependent_test": "T_FUNC",
+    "extra_p": 0.4,
+    "preceding_test": "T_IDDQ"
+  },
+  "notes": null,
+  "profile": "small",
+  "scenario_id": "S11",
+  "seed": 20260322,
+  "true_causes": [
+    {
+      "detail": "SEQUENCE",
+      "family": "TEST"
+    }
+  ]
+}

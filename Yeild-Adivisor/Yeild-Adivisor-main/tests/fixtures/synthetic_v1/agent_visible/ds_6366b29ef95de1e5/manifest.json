@@ -1,0 +1,32 @@
+{
+  "attempt_count": 911,
+  "canonical_validation": "passed",
+  "dataset_id": "ds_6366b29ef95de1e5",
+  "die_count": 784,
+  "first_pass_fpy": 0.7589285714285714,
+  "generator_version": "yi_synth_v1",
+  "lot_count": 8,
+  "optional_data_available": [
+    "x",
+    "y",
+    "tester_id",
+    "probe_card_id",
+    "temperature_c",
+    "test_results",
+    "parametric_measurements"
+  ],
+  "product_id": "DEV_A",
+  "profile": "small",
+  "row_counts": {
+    "die_attempts": 911,
+    "equipment": 6,
+    "lots": 8,
+    "parametric_measurements": 1822,
+    "parts": 784,
+    "test_results": 3644,
+    "wafers": 16
+  },
+  "seed_hash": "43bebc799391f1a9",
+  "step_id": "WS_SORT",
+  "wafer_count": 16
+}

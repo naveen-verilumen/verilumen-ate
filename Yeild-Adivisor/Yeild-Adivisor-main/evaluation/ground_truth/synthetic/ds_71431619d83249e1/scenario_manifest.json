@@ -1,0 +1,13 @@
+{
+  "dataset_id": "ds_71431619d83249e1",
+  "generator_version": "yi_synth_v1",
+  "profile": "small",
+  "scenario_id": "S03",
+  "seed": 20260322,
+  "true_causes": [
+    {
+      "detail": "CENTER",
+      "family": "SPATIAL"
+    }
+  ]
+}

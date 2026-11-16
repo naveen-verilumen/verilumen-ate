@@ -1,0 +1,155 @@
+{
+  "baseline_model": "yi_ml_v2",
+  "dataset_id": "yi_synthetic_v2",
+  "dataset_path": "data/synthetic/agent_visible/yi_synthetic_v2/",
+  "feature_list": [
+    "die_x",
+    "die_y",
+    "normalized_x",
+    "normalized_y",
+    "radial_distance",
+    "edge_distance",
+    "spatial_region",
+    "timestamp_epoch",
+    "temperature_c",
+    "voltage_v",
+    "site",
+    "tester_id",
+    "probe_card_id",
+    "prober_id",
+    "tester_fail_rate",
+    "probe_fail_rate"
+  ],
+  "files_read_but_not_joined": [
+    "parametric_measurements.csv",
+    "test_results.csv"
+  ],
+  "files_used": [
+    "die_attempts.csv"
+  ],
+  "folds": [
+    {
+      "fold": 1,
+      "test_lot": "L001",
+      "test_negatives": 467,
+      "test_positives": 33,
+      "test_samples": 500,
+      "train_negatives": 1782,
+      "train_positives": 218,
+      "train_samples": 2000,
+      "training_lots": [
+        "L002",
+        "L003",
+        "L004",
+        "L005"
+      ]
+    },
+    {
+      "fold": 2,
+      "test_lot": "L002",
+      "test_negatives": 451,
+      "test_positives": 49,
+      "test_samples": 500,
+      "train_negatives": 1798,
+      "train_positives": 202,
+      "train_samples": 2000,
+      "training_lots": [
+        "L001",
+        "L003",
+        "L004",
+        "L005"
+      ]
+    },
+    {
+      "fold": 3,
+      "test_lot": "L003",
+      "test_negatives": 462,
+      "test_positives": 38,
+      "test_samples": 500,
+      "train_negatives": 1787,
+      "train_positives": 213,
+      "train_samples": 2000,
+      "training_lots": [
+        "L001",
+        "L002",
+        "L004",
+        "L005"
+      ]
+    },
+    {
+      "fold": 4,
+      "test_lot": "L004",
+      "test_negatives": 403,
+      "test_positives": 97,
+      "test_samples": 500,
+      "train_negatives": 1846,
+      "train_positives": 154,
+      "train_samples": 2000,
+      "training_lots": [
+        "L001",
+        "L002",
+        "L003",
+        "L005"
+      ]
+    },
+    {
+      "fold": 5,
+      "test_lot": "L005",
+      "test_negatives": 466,
+      "test_positives": 34,
+      "test_samples": 500,
+      "train_negatives": 1783,
+      "train_positives": 217,
+      "train_samples": 2000,
+      "training_lots": [
+        "L001",
+        "L002",
+        "L003",
+        "L004"
+      ]
+    }
+  ],
+  "fpy": 0.8996,
+  "fpy_loss": 0.1004,
+  "hidden_ground_truth_stored": false,
+  "leakage_fields_excluded": [
+    "pass_fail",
+    "failure_code",
+    "disposition",
+    "abort_flag",
+    "is_retest",
+    "attempt_number",
+    "is_first_attempt",
+    "sequence_index",
+    "primary_failure_key",
+    "primary_failure_code",
+    "sbin",
+    "hbin",
+    "test_pass_fail",
+    "is_first_fail",
+    "scenario_id",
+    "true_cause",
+    "injected_effect",
+    "generator_seed",
+    "ground_truth",
+    "recoverable_fraction"
+  ],
+  "lot_ids": [
+    "L001",
+    "L002",
+    "L003",
+    "L004",
+    "L005"
+  ],
+  "parametric_join": false,
+  "row_counts": {
+    "ml_rows": 2500,
+    "negative": 2249,
+    "positive": 251
+  },
+  "spatial_region_values": [
+    "BORDER",
+    "INNER"
+  ],
+  "target": "first_pass_fail = 1 if DieOutcome.first_pass_disposition == FAIL else 0"
+}

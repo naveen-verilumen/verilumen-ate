@@ -1,0 +1,11 @@
+{
+  "case_id": "CASE_10",
+  "n_eligible": 2,
+  "n_first_pass_pass": 2,
+  "n_first_pass_fail": 0,
+  "n_excluded": 0,
+  "fpy": 1.0,
+  "part_class_assumed_production": true,
+  "assumed_production_dies": ["D01"],
+  "notes": "Missing part_class treated as PRODUCTION with explicit flag. D01 is FPY-eligible."
+}

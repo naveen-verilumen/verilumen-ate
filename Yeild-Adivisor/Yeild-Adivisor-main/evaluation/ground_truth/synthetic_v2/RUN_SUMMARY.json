@@ -1,0 +1,7 @@
+{
+  "dataset_id": "yi_synthetic_v2",
+  "n_dies": 2500,
+  "n_lots": 5,
+  "overall_fpy": 0.8996,
+  "seed": 20261101
+}

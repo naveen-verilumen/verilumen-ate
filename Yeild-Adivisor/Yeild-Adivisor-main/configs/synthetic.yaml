@@ -1,0 +1,168 @@
+# Synthetic yield dataset generator — this product only.
+# Dataset size lives here, not in Python.
+
+generator_version: yi_synth_v1
+active_profile: small
+seed: 20260322
+
+product_id: DEV_A
+step_id: WS_SORT
+
+profiles:
+  small:
+    n_lots: 8
+    n_wafers_per_lot: 2
+    grid_side: 7
+    n_dies_per_wafer: 49
+    wafer_radius: 4.3
+  medium:
+    n_lots: 16
+    n_wafers_per_lot: 3
+    grid_side: 11
+    n_dies_per_wafer: 121
+    wafer_radius: 7.2
+  large:
+    n_lots: 24
+    n_wafers_per_lot: 4
+    grid_side: 15
+    n_dies_per_wafer: 225
+    wafer_radius: 10.0
+
+testers:
+  - T01
+  - T02
+  - T03
+tester_weights:
+  - 0.40
+  - 0.35
+  - 0.25
+probe_cards:
+  - PC-1
+  - PC-2
+temperatures_c:
+  - 25.0
+  - 85.0
+sites:
+  - 0
+  - 1
+
+baseline:
+  p_fail: 0.07
+  lot_effect_sd: 0.012
+  wafer_effect_sd: 0.008
+  die_noise_sd: 0.018
+  tester_effect_sd: 0.004
+  measurement_noise_sd: 0.04
+  expected_fpy_min: 0.85
+  expected_fpy_max: 0.97
+  abort_rate: 0.0
+  assumptions:
+    - Baseline includes lot/wafer/die noise and small tester offsets that are NOT planted causes.
+    - Expected FPY is approximate; Bernoulli draws will vary with seed.
+
+tests:
+  - test_id: T_CONTINUITY
+    sequence_index: 1
+    failure_code: CONTINUITY
+    sbin: 9
+  - test_id: T_IDDQ
+    sequence_index: 5
+    failure_code: IDDQ
+    sbin: 8
+  - test_id: T_VMIN
+    sequence_index: 6
+    failure_code: VMIN
+    sbin: 13
+  - test_id: T_FUNC
+    sequence_index: 8
+    failure_code: FUNCTIONAL
+    sbin: 11
+
+parametric:
+  IDDQ:
+    unit: uA
+    lower_limit: null
+    upper_limit: 50.0
+    pass_mean: 32.0
+    pass_sd: 6.0
+  VMIN:
+    unit: V
+    lower_limit: null
+    upper_limit: 0.85
+    pass_mean: 0.62
+    pass_sd: 0.08
+
+hbin_pass: 1
+hbin_fail: 5
+sbin_pass: 1
+
+time:
+  start: "2026-03-01T08:00:00Z"
+  seconds_per_die: 2
+  hours_per_wafer: 1
+  days_per_lot: 1
+
+scenarios:
+  S01:
+    extra_p: 0.05
+  S02:
+    extra_p: 0.40
+    edge_radius_quantile: 0.72
+  S03:
+    extra_p: 0.40
+    center_radius_quantile: 0.30
+  S04:
+    extra_p: 0.45
+    ring_inner_quantile: 0.45
+    ring_outer_quantile: 0.75
+  S05:
+    extra_p: 0.28
+    affected_tester: T03
+  S06:
+    extra_p_per_lot: 0.045
+  S07:
+    extra_p: 0.30
+    hot_threshold_c: 70.0
+  S08:
+    extra_mean: 18.0
+    affected_lot_fraction: 0.5
+    parameter: IDDQ
+  S09:
+    parameter: IDDQ
+    near_limit_lo: 0.90
+    near_limit_hi: 1.12
+  S10:
+    extra_p: 0.35
+    retest_pass_rate: 0.70
+    failure_code: CONTINUITY
+  S11:
+    extra_p: 0.40
+  S12:
+    extra_p: 0.35
+    n_bad_lots: 2
+  S13:
+    extra_p: 0.40
+    n_bad_wafers: 2
+  S14:
+    joint_p: 0.22
+    single_p: 0.04
+  S15:
+    extra_p_edge: 0.32
+    extra_p_per_lot: 0.03
+    edge_radius_quantile: 0.72
+  S16: {}
+
+sanity:
+  min_rate_delta: 0.05
+
+# Harder experiments. Not applied unless enabled: true.
+hard_options:
+  enabled: false
+  weak_signal: false
+  strong_noise: false
+  small_affected_population: false
+  unequal_lot_sizes: false
+  unequal_equipment_utilization: false
+  missing_optional_fields: false
+  confounded_variables: false
+  multiple_simultaneous_effects: false

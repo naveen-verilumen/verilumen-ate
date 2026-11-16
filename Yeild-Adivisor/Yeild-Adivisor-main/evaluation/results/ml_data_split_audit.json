@@ -1,0 +1,905 @@
+{
+  "calibration_method": {
+    "classifier_for_oof": "retrained each outer fold on training lots only (ml/train.py _cv_oof)",
+    "deployed_calibrator": "ProbabilityCalibrator().fit(oof_raw, y) on all OOF rows; used by predict_dir, not by reported OOF metrics",
+    "held_out_lot_labels_fit_fold_calibrator": false,
+    "implementation": "yield_improvement.ml.calibration.ProbabilityCalibrator (sklearn IsotonicRegression, out_of_bounds=clip)",
+    "method": "isotonic",
+    "oof_fold_local": "For each outer test lot, isotonic is fit on oof_raw and labels of the other lots, then applied to the test lot oof_raw"
+  },
+  "champion": {
+    "model_name": "logistic",
+    "model_version": "yi_ml_v1",
+    "n_features": 16,
+    "n_samples": 784,
+    "trained_at": "2026-09-23T10:25:04Z"
+  },
+  "commands": {
+    "evaluate": "python -m yield_improvement ml evaluate <dir> -> evaluation.ml.evaluate_dataset_ml persist=False, joins hidden GT after scoring",
+    "explain-data": "python -m yield_improvement ml explain-data <dir> -> this audit, no training",
+    "predict": "python -m yield_improvement ml predict <dir> -> load_artifact + predict_frame (no refit of features)",
+    "run": "python -m yield_improvement ml run <dir> -> run_ml_and_compose persist=True",
+    "train": "python -m yield_improvement ml train <dir> -> run_ml persist=True (refuses to overwrite yi_ml_v1)"
+  },
+  "dataset": {
+    "champion_analysis_id": "ds_0b5542c71e1a13e0",
+    "dataset_id": "ds_0b5542c71e1a13e0",
+    "dataset_path": "data\\synthetic\\agent_visible\\ds_0b5542c71e1a13e0",
+    "is_champion_training_set": true,
+    "source_files": {
+      "die_attempts": "data\\synthetic\\agent_visible\\ds_0b5542c71e1a13e0\\die_attempts.csv",
+      "parametric_measurements": "data\\synthetic\\agent_visible\\ds_0b5542c71e1a13e0\\parametric_measurements.csv",
+      "test_results": "data\\synthetic\\agent_visible\\ds_0b5542c71e1a13e0\\test_results.csv"
+    }
+  },
+  "eligibility": [
+    {
+      "condition": "Production",
+      "included": "YES",
+      "reason": "Default eligible part_class"
+    },
+    {
+      "condition": "Engineering",
+      "included": "NO",
+      "reason": "excluded_part_classes in fpy_policy.yaml"
+    },
+    {
+      "condition": "Retest (later attempt of an eligible die)",
+      "included": "LABEL FROM FIRST PASS ONLY",
+      "reason": "Die stays in ML; label is first-pass disposition, not retest recovery"
+    },
+    {
+      "condition": "Retest-only die (no first-pass row)",
+      "included": "NO",
+      "reason": "Exclusion reason RETEST_ONLY"
+    },
+    {
+      "condition": "Calibration",
+      "included": "NO",
+      "reason": "excluded_part_classes"
+    },
+    {
+      "condition": "Rework",
+      "included": "NO",
+      "reason": "part_class REWORK or is_rework=true"
+    },
+    {
+      "condition": "Missing disposition",
+      "included": "NO",
+      "reason": "Exclusion reason MISSING_DISPOSITION"
+    },
+    {
+      "condition": "Aborted first pass",
+      "included": "YES as FAIL",
+      "reason": "abort_is_first_pass_fail: true"
+    },
+    {
+      "condition": "QA_SAMPLE / UNKNOWN_NON_PRODUCTION",
+      "included": "NO",
+      "reason": "excluded_part_classes"
+    },
+    {
+      "condition": "Missing part_class",
+      "included": "YES as PRODUCTION",
+      "reason": "part_class_missing.treat_as PRODUCTION"
+    },
+    {
+      "condition": "record_status REJECT",
+      "included": "NO",
+      "reason": "Row skipped before die grouping"
+    },
+    {
+      "condition": "Missing identity or timestamp",
+      "included": "NO",
+      "reason": "MISSING_IDENTITY / MISSING_TIMESTAMP"
+    },
+    {
+      "condition": "Ambiguous duplicate attempt_id",
+      "included": "NO",
+      "reason": "AMBIGUOUS_DUPLICATE"
+    }
+  ],
+  "excluded_columns": {
+    "denied_columns": [
+      "true_root_cause",
+      "true_cause",
+      "true_causes",
+      "planted_cause",
+      "planted_causes",
+      "latent_quality",
+      "scenario_id",
+      "expected_hypothesis",
+      "expected_signal",
+      "generator_seed",
+      "injected_effect",
+      "injected_parameters",
+      "difficulty",
+      "ground_truth",
+      "recoverable_fraction",
+      "pass_fail",
+      "disposition",
+      "sbin",
+      "hbin",
+      "failure_code",
+      "abort_flag",
+      "is_retest",
+      "is_rework",
+      "final_disposition",
+      "first_pass_disposition",
+      "first_pass_fail",
+      "primary_failure_code",
+      "primary_failure_key",
+      "primary_failure_family",
+      "primary_failure_detail",
+      "parametric_pass_fail",
+      "over_limit",
+      "test_pass_fail",
+      "is_first_fail",
+      "sequence_index"
+    ],
+    "hidden_source_forbidden": [
+      "difficulty",
+      "expected_hypothesis",
+      "expected_signal",
+      "generator_seed",
+      "ground_truth",
+      "injected_effect",
+      "injected_parameters",
+      "latent_quality",
+      "planted_cause",
+      "planted_causes",
+      "recoverable_fraction",
+      "scenario_id",
+      "true_cause",
+      "true_causes",
+      "true_root_cause"
+    ],
+    "ml_frame_columns": [
+      "lot_id",
+      "wafer_id",
+      "die_id",
+      "attempt_id",
+      "x",
+      "y",
+      "timestamp",
+      "tester_id",
+      "probe_card_id",
+      "prober_id",
+      "site",
+      "temperature_c",
+      "voltage_v"
+    ],
+    "not_passed_to_model": [
+      "lot_id",
+      "wafer_id",
+      "die_id",
+      "attempt_id",
+      "x",
+      "y",
+      "timestamp"
+    ],
+    "parametric_csv_columns": [
+      "attempt_id",
+      "parameter_name",
+      "condition_id",
+      "measurement",
+      "lower_limit",
+      "upper_limit",
+      "unit",
+      "pass_fail",
+      "temperature_c",
+      "voltage_v"
+    ],
+    "source_columns_not_copied_into_ml_frame": [
+      "product_id",
+      "step_id",
+      "part_class",
+      "attempt_number",
+      "is_first_attempt",
+      "is_retest",
+      "is_rework",
+      "abort_flag",
+      "pass_fail",
+      "sbin",
+      "hbin",
+      "failure_code",
+      "disposition",
+      "record_status"
+    ],
+    "source_csv_columns": [
+      "lot_id",
+      "wafer_id",
+      "die_id",
+      "product_id",
+      "step_id",
+      "part_class",
+      "x",
+      "y",
+      "attempt_id",
+      "timestamp",
+      "attempt_number",
+      "is_first_attempt",
+      "is_retest",
+      "is_rework",
+      "abort_flag",
+      "pass_fail",
+      "sbin",
+      "hbin",
+      "failure_code",
+      "tester_id",
+      "probe_card_id",
+      "prober_id",
+      "site",
+      "temperature_c",
+      "voltage_v",
+      "disposition",
+      "record_status"
+    ]
+  },
+  "feature_list": {
+    "categorical_base": [
+      "spatial_region",
+      "tester_id",
+      "probe_card_id",
+      "prober_id"
+    ],
+    "champion_artifact": [
+      "die_x",
+      "die_y",
+      "normalized_x",
+      "normalized_y",
+      "radial_distance",
+      "edge_distance",
+      "spatial_region",
+      "timestamp_epoch",
+      "temperature_c",
+      "voltage_v",
+      "site",
+      "tester_id",
+      "probe_card_id",
+      "prober_id",
+      "tester_fail_rate",
+      "probe_fail_rate"
+    ],
+    "current_builder_on_this_dataset": [
+      "die_x",
+      "die_y",
+      "normalized_x",
+      "normalized_y",
+      "radial_distance",
+      "edge_distance",
+      "spatial_region",
+      "timestamp_epoch",
+      "temperature_c",
+      "voltage_v",
+      "site",
+      "tester_id",
+      "probe_card_id",
+      "prober_id",
+      "tester_fail_rate",
+      "probe_fail_rate"
+    ],
+    "matches_artifact": true,
+    "n_champion_features": 16,
+    "numeric_base": [
+      "die_x",
+      "die_y",
+      "normalized_x",
+      "normalized_y",
+      "radial_distance",
+      "edge_distance",
+      "timestamp_epoch",
+      "temperature_c",
+      "voltage_v",
+      "site",
+      "tester_fail_rate",
+      "probe_fail_rate"
+    ],
+    "parametric_non_null_in_frame": [],
+    "preprocess": {
+      "categorical": "SimpleImputer(most_frequent) then OneHotEncoder(handle_unknown='ignore'), fit on the training fold only",
+      "numeric": "SimpleImputer(median) then StandardScaler, fit on the training fold only"
+    },
+    "rows": [
+      {
+        "emitted_by_current_builder": true,
+        "feature": "die_x",
+        "source_column": "x",
+        "transformation": "cast to float",
+        "type": "numeric",
+        "used_by_champion": true
+      },
+      {
+        "emitted_by_current_builder": true,
+        "feature": "die_y",
+        "source_column": "y",
+        "transformation": "cast to float",
+        "type": "numeric",
+        "used_by_champion": true
+      },
+      {
+        "emitted_by_current_builder": true,
+        "feature": "normalized_x",
+        "source_column": "x",
+        "transformation": "(x - train_x_min) / train_x_span; constants fit on training lots only",
+        "type": "numeric",
+        "used_by_champion": true
+      },
+      {
+        "emitted_by_current_builder": true,
+        "feature": "normalized_y",
+        "source_column": "y",
+        "transformation": "(y - train_y_min) / train_y_span; constants fit on training lots only",
+        "type": "numeric",
+        "used_by_champion": true
+      },
+      {
+        "emitted_by_current_builder": true,
+        "feature": "radial_distance",
+        "source_column": "x,y",
+        "transformation": "hypot(x, y)",
+        "type": "numeric",
+        "used_by_champion": true
+      },
+      {
+        "emitted_by_current_builder": true,
+        "feature": "edge_distance",
+        "source_column": "x,y",
+        "transformation": "train_radius_max - hypot(x, y)",
+        "type": "numeric",
+        "used_by_champion": true
+      },
+      {
+        "emitted_by_current_builder": true,
+        "feature": "spatial_region",
+        "source_column": "x,y",
+        "transformation": "EDGE if radius>=train_q80 else CENTER if radius<=train_q20 else OTHER; missing -> __missing__",
+        "type": "categorical",
+        "used_by_champion": true
+      },
+      {
+        "emitted_by_current_builder": true,
+        "feature": "timestamp_epoch",
+        "source_column": "timestamp",
+        "transformation": "unix_timestamp - train_min_unix",
+        "type": "numeric",
+        "used_by_champion": true
+      },
+      {
+        "emitted_by_current_builder": true,
+        "feature": "temperature_c",
+        "source_column": "temperature_c",
+        "transformation": "cast to float",
+        "type": "numeric",
+        "used_by_champion": true
+      },
+      {
+        "emitted_by_current_builder": true,
+        "feature": "voltage_v",
+        "source_column": "voltage_v",
+        "transformation": "cast to float",
+        "type": "numeric",
+        "used_by_champion": true
+      },
+      {
+        "emitted_by_current_builder": true,
+        "feature": "site",
+        "source_column": "site",
+        "transformation": "cast to float",
+        "type": "numeric",
+        "used_by_champion": true
+      },
+      {
+        "emitted_by_current_builder": true,
+        "feature": "tester_id",
+        "source_column": "tester_id",
+        "transformation": "string; missing -> __missing__",
+        "type": "categorical",
+        "used_by_champion": true
+      },
+      {
+        "emitted_by_current_builder": true,
+        "feature": "probe_card_id",
+        "source_column": "probe_card_id",
+        "transformation": "string; missing -> __missing__",
+        "type": "categorical",
+        "used_by_champion": true
+      },
+      {
+        "emitted_by_current_builder": true,
+        "feature": "prober_id",
+        "source_column": "prober_id",
+        "transformation": "string; missing -> __missing__",
+        "type": "categorical",
+        "used_by_champion": true
+      },
+      {
+        "emitted_by_current_builder": true,
+        "feature": "tester_fail_rate",
+        "source_column": "tester_id + training labels",
+        "transformation": "training-lot mean first_pass_fail by tester; unseen tester -> training global mean",
+        "type": "numeric",
+        "used_by_champion": true
+      },
+      {
+        "emitted_by_current_builder": true,
+        "feature": "probe_fail_rate",
+        "source_column": "probe_card_id + training labels",
+        "transformation": "training-lot mean first_pass_fail by probe card; unseen card -> training global mean",
+        "type": "numeric",
+        "used_by_champion": true
+      }
+    ]
+  },
+  "fold_matrix": [
+    {
+      "assignment": {
+        "L001": "TEST",
+        "L002": "TRAIN",
+        "L003": "TRAIN",
+        "L004": "TRAIN",
+        "L005": "TRAIN",
+        "L006": "TRAIN",
+        "L007": "TRAIN",
+        "L008": "TRAIN"
+      },
+      "fold": 1
+    },
+    {
+      "assignment": {
+        "L001": "TRAIN",
+        "L002": "TEST",
+        "L003": "TRAIN",
+        "L004": "TRAIN",
+        "L005": "TRAIN",
+        "L006": "TRAIN",
+        "L007": "TRAIN",
+        "L008": "TRAIN"
+      },
+      "fold": 2
+    },
+    {
+      "assignment": {
+        "L001": "TRAIN",
+        "L002": "TRAIN",
+        "L003": "TEST",
+        "L004": "TRAIN",
+        "L005": "TRAIN",
+        "L006": "TRAIN",
+        "L007": "TRAIN",
+        "L008": "TRAIN"
+      },
+      "fold": 3
+    },
+    {
+      "assignment": {
+        "L001": "TRAIN",
+        "L002": "TRAIN",
+        "L003": "TRAIN",
+        "L004": "TEST",
+        "L005": "TRAIN",
+        "L006": "TRAIN",
+        "L007": "TRAIN",
+        "L008": "TRAIN"
+      },
+      "fold": 4
+    },
+    {
+      "assignment": {
+        "L001": "TRAIN",
+        "L002": "TRAIN",
+        "L003": "TRAIN",
+        "L004": "TRAIN",
+        "L005": "TEST",
+        "L006": "TRAIN",
+        "L007": "TRAIN",
+        "L008": "TRAIN"
+      },
+      "fold": 5
+    },
+    {
+      "assignment": {
+        "L001": "TRAIN",
+        "L002": "TRAIN",
+        "L003": "TRAIN",
+        "L004": "TRAIN",
+        "L005": "TRAIN",
+        "L006": "TEST",
+        "L007": "TRAIN",
+        "L008": "TRAIN"
+      },
+      "fold": 6
+    },
+    {
+      "assignment": {
+        "L001": "TRAIN",
+        "L002": "TRAIN",
+        "L003": "TRAIN",
+        "L004": "TRAIN",
+        "L005": "TRAIN",
+        "L006": "TRAIN",
+        "L007": "TEST",
+        "L008": "TRAIN"
+      },
+      "fold": 7
+    },
+    {
+      "assignment": {
+        "L001": "TRAIN",
+        "L002": "TRAIN",
+        "L003": "TRAIN",
+        "L004": "TRAIN",
+        "L005": "TRAIN",
+        "L006": "TRAIN",
+        "L007": "TRAIN",
+        "L008": "TEST"
+      },
+      "fold": 8
+    }
+  ],
+  "folds": [
+    {
+      "fold": 1,
+      "lot_overlap": [],
+      "test_dies": 98,
+      "test_lots": [
+        "L001"
+      ],
+      "test_positives": 30,
+      "train_dies": 686,
+      "train_positives": 177,
+      "training_lots": [
+        "L002",
+        "L003",
+        "L004",
+        "L005",
+        "L006",
+        "L007",
+        "L008"
+      ]
+    },
+    {
+      "fold": 2,
+      "lot_overlap": [],
+      "test_dies": 98,
+      "test_lots": [
+        "L002"
+      ],
+      "test_positives": 23,
+      "train_dies": 686,
+      "train_positives": 184,
+      "training_lots": [
+        "L001",
+        "L003",
+        "L004",
+        "L005",
+        "L006",
+        "L007",
+        "L008"
+      ]
+    },
+    {
+      "fold": 3,
+      "lot_overlap": [],
+      "test_dies": 98,
+      "test_lots": [
+        "L003"
+      ],
+      "test_positives": 24,
+      "train_dies": 686,
+      "train_positives": 183,
+      "training_lots": [
+        "L001",
+        "L002",
+        "L004",
+        "L005",
+        "L006",
+        "L007",
+        "L008"
+      ]
+    },
+    {
+      "fold": 4,
+      "lot_overlap": [],
+      "test_dies": 98,
+      "test_lots": [
+        "L004"
+      ],
+      "test_positives": 28,
+      "train_dies": 686,
+      "train_positives": 179,
+      "training_lots": [
+        "L001",
+        "L002",
+        "L003",
+        "L005",
+        "L006",
+        "L007",
+        "L008"
+      ]
+    },
+    {
+      "fold": 5,
+      "lot_overlap": [],
+      "test_dies": 98,
+      "test_lots": [
+        "L005"
+      ],
+      "test_positives": 27,
+      "train_dies": 686,
+      "train_positives": 180,
+      "training_lots": [
+        "L001",
+        "L002",
+        "L003",
+        "L004",
+        "L006",
+        "L007",
+        "L008"
+      ]
+    },
+    {
+      "fold": 6,
+      "lot_overlap": [],
+      "test_dies": 98,
+      "test_lots": [
+        "L006"
+      ],
+      "test_positives": 22,
+      "train_dies": 686,
+      "train_positives": 185,
+      "training_lots": [
+        "L001",
+        "L002",
+        "L003",
+        "L004",
+        "L005",
+        "L007",
+        "L008"
+      ]
+    },
+    {
+      "fold": 7,
+      "lot_overlap": [],
+      "test_dies": 98,
+      "test_lots": [
+        "L007"
+      ],
+      "test_positives": 20,
+      "train_dies": 686,
+      "train_positives": 187,
+      "training_lots": [
+        "L001",
+        "L002",
+        "L003",
+        "L004",
+        "L005",
+        "L006",
+        "L008"
+      ]
+    },
+    {
+      "fold": 8,
+      "lot_overlap": [],
+      "test_dies": 98,
+      "test_lots": [
+        "L008"
+      ],
+      "test_positives": 33,
+      "train_dies": 686,
+      "train_positives": 174,
+      "training_lots": [
+        "L001",
+        "L002",
+        "L003",
+        "L004",
+        "L005",
+        "L006",
+        "L007"
+      ]
+    }
+  ],
+  "grouping_columns": [
+    {
+      "column": "lot_id",
+      "model_input": false,
+      "used_for_splitting": true,
+      "why": "Leave-One-Lot-Out group key (configs/ml.yaml split.group_column)"
+    },
+    {
+      "column": "wafer_id",
+      "model_input": false,
+      "used_for_splitting": false,
+      "why": "Identity on the ML row; not a feature and not a fold key"
+    },
+    {
+      "column": "die_id",
+      "model_input": false,
+      "used_for_splitting": false,
+      "why": "Identity on the ML row; one sample per eligible die"
+    },
+    {
+      "column": "attempt_id",
+      "model_input": false,
+      "used_for_splitting": false,
+      "why": "Joins first-pass attempt attributes; not a model feature"
+    },
+    {
+      "column": "scenario_id",
+      "model_input": false,
+      "used_for_splitting": false,
+      "why": "Hidden ground truth; denied and absent from agent-visible tables"
+    },
+    {
+      "column": "true_cause",
+      "model_input": false,
+      "used_for_splitting": false,
+      "why": "Hidden ground truth; denied"
+    },
+    {
+      "column": "injected_effect",
+      "model_input": false,
+      "used_for_splitting": false,
+      "why": "Hidden ground truth; denied"
+    },
+    {
+      "column": "generator_seed",
+      "model_input": false,
+      "used_for_splitting": false,
+      "why": "Hidden ground truth; denied"
+    }
+  ],
+  "grouping_only_on_frame": [
+    "lot_id",
+    "wafer_id",
+    "die_id",
+    "attempt_id"
+  ],
+  "leakage_audit": "PASS",
+  "leakage_checks": [
+    {
+      "check": "lot_leakage",
+      "evidence": "ml/split.py make_splits asserts train_lots & test_lots is empty; each fold audited below",
+      "result": "PASS"
+    },
+    {
+      "check": "wafer_leakage",
+      "evidence": "wafer_id is not a split key; wafers nested in lots so LOLO also separates wafers of the held-out lot",
+      "result": "NOT_APPLICABLE"
+    },
+    {
+      "check": "die_leakage",
+      "evidence": "one ML row per eligible die; a die belongs to one lot so it cannot appear in both sides of a LOLO fold",
+      "result": "PASS"
+    },
+    {
+      "check": "target_leakage",
+      "evidence": "first_pass_fail is not in FeatureBuilder output; pass_fail/disposition/sbin are denied_columns",
+      "result": "PASS"
+    },
+    {
+      "check": "retest_leakage",
+      "evidence": "is_retest/attempt_number/final_disposition denied; label uses first-pass attempt only",
+      "result": "PASS"
+    },
+    {
+      "check": "future_information_leakage",
+      "evidence": "test_results sequence_index/is_first_fail not joined into the ML frame; later tests unused",
+      "result": "PASS"
+    },
+    {
+      "check": "scenario_leakage",
+      "evidence": "scenario_id in SOURCE_FORBIDDEN and denied_columns; agent-visible CSV has no scenario_id",
+      "result": "PASS"
+    },
+    {
+      "check": "hidden_ground_truth_leakage",
+      "evidence": "ml package does not read hidden labels; SOURCE_FORBIDDEN fail-closed on agent-visible tables",
+      "result": "PASS"
+    },
+    {
+      "check": "calibration_leakage",
+      "evidence": "fold-local isotonic is fit on oof_raw[train_idx], y[train_idx]; held-out lot labels are not used. Deployed calibrator is fit on all OOF for later predict() only",
+      "result": "PASS"
+    },
+    {
+      "check": "preprocessing_leakage",
+      "evidence": "ml/train.py _cv_oof fits FeatureBuilder and sklearn preprocessor on train_idx only",
+      "result": "PASS"
+    }
+  ],
+  "lots": [
+    "L001",
+    "L002",
+    "L003",
+    "L004",
+    "L005",
+    "L006",
+    "L007",
+    "L008"
+  ],
+  "metrics_source": {
+    "champion_metrics_file": "C:\\Users\\Keerthan\\OneDrive\\Desktop\\yeild agent\\artifacts\\ml\\yi_ml_v1\\metrics.json",
+    "model_name": "logistic",
+    "n_positives": 207,
+    "n_samples": 784,
+    "split_strategy": "leave_one_lot_out"
+  },
+  "oof_summary": {
+    "definition": "For each lot L, the classifier is fit without L and predicts L. Concatenate all lots.",
+    "final_metrics_use": "calibrated OOF (trained.oof_cal) when the calibrator fitted, else raw OOF",
+    "full_data_refit": "After OOF, pipeline.fit is called on all eligible dies to persist the champion; those in-sample scores are not the reported metrics",
+    "metrics_function": "yield_improvement.ml.evaluation.compute_metrics",
+    "n_oof_slots": 784
+  },
+  "population_counts": {
+    "exclusion_counts": {},
+    "first_pass_fail_count": 207,
+    "first_pass_pass_count": 577,
+    "fpy_eligible_dies": 784,
+    "ml_equals_eligible": true,
+    "ml_samples": 784,
+    "n_lot_wafer_pairs": 16,
+    "n_lots": 8,
+    "n_parametric_rows": 1568,
+    "n_unique_dies": 784,
+    "n_wafers": 2,
+    "negative_labels": 577,
+    "positive_labels": 207,
+    "positive_rate": 0.26403061224489793,
+    "raw_die_attempt_rows": 784,
+    "record_status_reject_rows": 0,
+    "unique_dies_in_source": 784
+  },
+  "sample_grain": {
+    "example": {
+      "ml": "build_dataset iterates fpy.per_die and emits one record using the first-pass attempt_id",
+      "raw": "die_attempts row is unique die x attempt"
+    },
+    "ml_sample": "one Phase-1 FPY-eligible unique die (lot_id, wafer_id, die_id)",
+    "not": "raw measurement row, die x attempt, or test_result row"
+  },
+  "scenario_handling": {
+    "hidden_labels_on_agent_visible_tables": false,
+    "holdout_evaluation": "python -m yield_improvement ml evaluate scores that folder with persist=False, then a separate evaluation module compares predictions to hidden labels after scoring.",
+    "scenario_id_is_model_feature": false,
+    "synthetic_scenarios": "S01\u2013S16 are separate dataset directories produced by the generator. They are not a column in the feature matrix. The model never sees scenario_id, true_cause, or injected_effect.",
+    "training": "python -m yield_improvement ml train|run uses one agent-visible folder. Champion yi_ml_v1 was trained on the analysis_id stored in artifacts/ml/yi_ml_v1/metadata.json."
+  },
+  "split": {
+    "config_strategy": "leave_one_lot_out",
+    "every_lot_exactly_once_as_test": true,
+    "group_column": "lot_id",
+    "max_lolo_lots": 12,
+    "n_folds": 8,
+    "strategy": "leave_one_lot_out",
+    "why_not_random_80_20": "Random splits can put two dies from the same lot on both sides. Lot-level equipment, time, and process effects would leak. LOLO asks: would this model score a new lot it has never trained on?"
+  },
+  "target_definition": {
+    "abort": "FAIL when abort_is_first_pass_fail is true (configs/fpy_policy.yaml)",
+    "engineering": "excluded (excluded_part_classes)",
+    "grain": "one label per Phase-1 eligible unique die",
+    "implementation": "yield_improvement.yield_analysis.fpy.resolve_disposition + calculate_fpy; copied in ml.dataset.build_dataset",
+    "missing_disposition": "excluded from FPY and therefore from ML",
+    "name": "first_pass_fail",
+    "negative": "0 if DieOutcome.first_pass_disposition == 'PASS'",
+    "positive": "1 if DieOutcome.first_pass_disposition == 'FAIL'",
+    "retest": "later attempts are ignored for the label; a retested die remains eligible on its first-pass row",
+    "rework": "excluded if is_rework is true on any attempt for the die, or part_class is REWORK",
+    "rules": {
+      "excluded": "not a Phase-1 FPY-eligible die (see eligibility table)",
+      "first_pass_fail = 0": "eligible die whose first-pass attempt disposition is PASS",
+      "first_pass_fail = 1": "eligible die whose first-pass attempt disposition is FAIL (pass_fail=FAIL, or abort_flag with abort_is_first_pass_fail, or sbin mapped to FAIL)"
+    },
+    "source_columns": [
+      "pass_fail",
+      "sbin",
+      "abort_flag"
+    ],
+    "test_results": "not used to construct the ML target (build_dataset calls calculate_fpy(..., test_results=None))"
+  },
+  "wafers": [
+    "W01",
+    "W02"
+  ]
+}

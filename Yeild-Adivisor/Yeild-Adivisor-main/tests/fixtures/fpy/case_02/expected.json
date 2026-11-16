@@ -1,0 +1,29 @@
+{
+  "case_id": "CASE_02",
+  "n_eligible": 2,
+  "n_first_pass_pass": 1,
+  "n_first_pass_fail": 1,
+  "n_excluded": 0,
+  "fpy": 0.5,
+  "fpy_loss": 0.5,
+  "final_yield": 1.0,
+  "retest_rate_of_eligible": 0.5,
+  "n_retested": 1,
+  "retest_recovery": 1.0,
+  "escape_status": "unavailable",
+  "per_die": [
+    {
+      "die_id": "D01",
+      "first_pass_disposition": "FAIL",
+      "final_disposition": "PASS",
+      "fpy_counts_as": "FAIL",
+      "notes": "Retest pass must not change FPY."
+    },
+    {
+      "die_id": "D02",
+      "first_pass_disposition": "PASS",
+      "final_disposition": "PASS",
+      "fpy_counts_as": "PASS"
+    }
+  ]
+}

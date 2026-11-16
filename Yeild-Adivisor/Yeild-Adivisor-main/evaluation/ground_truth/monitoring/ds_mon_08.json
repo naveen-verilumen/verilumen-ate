@@ -1,0 +1,16 @@
+{
+  "dataset_id": "ds_mon_08",
+  "expected": {
+    "alarm": true,
+    "data_quality": [
+      "REVIEW"
+    ],
+    "dimension": "data_quality",
+    "overall": [
+      "REVIEW"
+    ]
+  },
+  "hidden": true,
+  "notes": "Dropped temperature_c, added unexpected column, blank testers, duplicate row.",
+  "scenario_id": "M08_SCHEMA_DEGRADATION"
+}

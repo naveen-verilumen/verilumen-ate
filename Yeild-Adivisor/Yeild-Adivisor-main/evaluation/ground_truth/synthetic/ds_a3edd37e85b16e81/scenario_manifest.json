@@ -1,0 +1,13 @@
+{
+  "dataset_id": "ds_a3edd37e85b16e81",
+  "generator_version": "yi_synth_v1",
+  "profile": "small",
+  "scenario_id": "S13",
+  "seed": 20260322,
+  "true_causes": [
+    {
+      "detail": "WAFER_VARIATION",
+      "family": "PROCESS"
+    }
+  ]
+}

@@ -1,0 +1,968 @@
+{
+  "all_not_a_root_cause": true,
+  "all_production_zero": true,
+  "n_scenarios": 16,
+  "no_invocations": true,
+  "recommendation_distribution": {
+    "INVESTIGATE": 8,
+    "MONITOR": 11,
+    "NEEDS_MORE_DATA": 7,
+    "REVIEW": 7
+  },
+  "rows": [
+    {
+      "all_not_a_root_cause": true,
+      "censoring_recorded": true,
+      "dataset_id": "ds_223a4dcbba4d4202",
+      "has_center": false,
+      "has_combined_root_cause": false,
+      "has_drift": false,
+      "has_edge": false,
+      "has_ring": false,
+      "n_results": 0,
+      "no_actionable_recommendation": true,
+      "no_invocations": true,
+      "no_limit_change": true,
+      "observed_loss": 0.13648,
+      "overlap_summary": {
+        "intersection_fail_count": 0,
+        "note": "Combined opportunity is the union of failed dies, not the sum of rates, and is not a root cause.",
+        "sum_exceeds_observed": false,
+        "sum_of_individual_upper_bounds_rate": 0.0,
+        "union_upper_bound_count": 0,
+        "union_upper_bound_rate": 0.0
+      },
+      "production_always_zero": true,
+      "recommendations": {},
+      "rows": [],
+      "scenario": "S01",
+      "sequence_investigate": false,
+      "union_review": false
+    },
+    {
+      "all_not_a_root_cause": true,
+      "censoring_recorded": true,
+      "dataset_id": "ds_0b5542c71e1a13e0",
+      "has_center": false,
+      "has_combined_root_cause": false,
+      "has_drift": false,
+      "has_edge": true,
+      "has_ring": false,
+      "n_results": 1,
+      "no_actionable_recommendation": false,
+      "no_invocations": true,
+      "no_limit_change": true,
+      "observed_loss": 0.264031,
+      "overlap_summary": {
+        "intersection_fail_count": 0,
+        "note": "Combined opportunity is the union of failed dies, not the sum of rates, and is not a root cause.",
+        "sum_exceeds_observed": false,
+        "sum_of_individual_upper_bounds_rate": 0.130102,
+        "union_upper_bound_count": 102,
+        "union_upper_bound_rate": 0.130102
+      },
+      "production_always_zero": true,
+      "recommendations": {
+        "INVESTIGATE": 1
+      },
+      "rows": [
+        {
+          "hypothesis": "SPATIAL.EDGE",
+          "invoked_agents": [],
+          "not_a_root_cause": true,
+          "opportunity_id": "OPP-H-SPATIAL.EDGE",
+          "overlap": 0,
+          "production_action": "FORBIDDEN",
+          "production_authorized": false,
+          "production_eligible": 0.0,
+          "recommendation": "INVESTIGATE",
+          "scenario": "S02",
+          "union_count": 102
+        }
+      ],
+      "scenario": "S02",
+      "sequence_investigate": false,
+      "union_review": false
+    },
+    {
+      "all_not_a_root_cause": true,
+      "censoring_recorded": true,
+      "dataset_id": "ds_71431619d83249e1",
+      "has_center": true,
+      "has_combined_root_cause": false,
+      "has_drift": false,
+      "has_edge": false,
+      "has_ring": false,
+      "n_results": 1,
+      "no_actionable_recommendation": false,
+      "no_invocations": true,
+      "no_limit_change": true,
+      "observed_loss": 0.266582,
+      "overlap_summary": {
+        "intersection_fail_count": 0,
+        "note": "Combined opportunity is the union of failed dies, not the sum of rates, and is not a root cause.",
+        "sum_exceeds_observed": false,
+        "sum_of_individual_upper_bounds_rate": 0.22449,
+        "union_upper_bound_count": 176,
+        "union_upper_bound_rate": 0.22449
+      },
+      "production_always_zero": true,
+      "recommendations": {
+        "INVESTIGATE": 1
+      },
+      "rows": [
+        {
+          "hypothesis": "SPATIAL.CENTER",
+          "invoked_agents": [],
+          "not_a_root_cause": true,
+          "opportunity_id": "OPP-H-SPATIAL.CENTER",
+          "overlap": 0,
+          "production_action": "FORBIDDEN",
+          "production_authorized": false,
+          "production_eligible": 0.0,
+          "recommendation": "INVESTIGATE",
+          "scenario": "S03",
+          "union_count": 176
+        }
+      ],
+      "scenario": "S03",
+      "sequence_investigate": false,
+      "union_review": false
+    },
+    {
+      "all_not_a_root_cause": true,
+      "censoring_recorded": true,
+      "dataset_id": "ds_8c313fe0d71ed0a5",
+      "has_center": false,
+      "has_combined_root_cause": false,
+      "has_drift": false,
+      "has_edge": false,
+      "has_ring": true,
+      "n_results": 1,
+      "no_actionable_recommendation": false,
+      "no_invocations": true,
+      "no_limit_change": true,
+      "observed_loss": 0.219388,
+      "overlap_summary": {
+        "intersection_fail_count": 0,
+        "note": "Combined opportunity is the union of failed dies, not the sum of rates, and is not a root cause.",
+        "sum_exceeds_observed": false,
+        "sum_of_individual_upper_bounds_rate": 0.160714,
+        "union_upper_bound_count": 126,
+        "union_upper_bound_rate": 0.160714
+      },
+      "production_always_zero": true,
+      "recommendations": {
+        "INVESTIGATE": 1
+      },
+      "rows": [
+        {
+          "hypothesis": "SPATIAL.RING",
+          "invoked_agents": [],
+          "not_a_root_cause": true,
+          "opportunity_id": "OPP-H-SPATIAL.RING",
+          "overlap": 0,
+          "production_action": "FORBIDDEN",
+          "production_authorized": false,
+          "production_eligible": 0.0,
+          "recommendation": "INVESTIGATE",
+          "scenario": "S04",
+          "union_count": 126
+        }
+      ],
+      "scenario": "S04",
+      "sequence_investigate": false,
+      "union_review": false
+    },
+    {
+      "all_not_a_root_cause": true,
+      "censoring_recorded": true,
+      "dataset_id": "ds_5f72a462b78fa7df",
+      "has_center": false,
+      "has_combined_root_cause": false,
+      "has_drift": false,
+      "has_edge": false,
+      "has_ring": false,
+      "n_results": 1,
+      "no_actionable_recommendation": false,
+      "no_invocations": true,
+      "no_limit_change": true,
+      "observed_loss": 0.165816,
+      "overlap_summary": {
+        "intersection_fail_count": 0,
+        "note": "Combined opportunity is the union of failed dies, not the sum of rates, and is not a root cause.",
+        "sum_exceeds_observed": false,
+        "sum_of_individual_upper_bounds_rate": 0.095663,
+        "union_upper_bound_count": 75,
+        "union_upper_bound_rate": 0.095663
+      },
+      "production_always_zero": true,
+      "recommendations": {
+        "INVESTIGATE": 1
+      },
+      "rows": [
+        {
+          "hypothesis": "EQUIPMENT.DEGRADATION",
+          "invoked_agents": [],
+          "not_a_root_cause": true,
+          "opportunity_id": "OPP-H-EQUIPMENT.DEGRADATION",
+          "overlap": 0,
+          "production_action": "FORBIDDEN",
+          "production_authorized": false,
+          "production_eligible": 0.0,
+          "recommendation": "INVESTIGATE",
+          "scenario": "S05",
+          "union_count": 75
+        }
+      ],
+      "scenario": "S05",
+      "sequence_investigate": false,
+      "union_review": false
+    },
+    {
+      "all_not_a_root_cause": true,
+      "censoring_recorded": true,
+      "dataset_id": "ds_a8d012faaf42bfa8",
+      "has_center": false,
+      "has_combined_root_cause": false,
+      "has_drift": true,
+      "has_edge": false,
+      "has_ring": false,
+      "n_results": 3,
+      "no_actionable_recommendation": false,
+      "no_invocations": true,
+      "no_limit_change": true,
+      "observed_loss": 0.244898,
+      "overlap_summary": {
+        "intersection_fail_count": 0,
+        "note": "Combined opportunity is the union of failed dies, not the sum of rates, and is not a root cause.",
+        "sum_exceeds_observed": false,
+        "sum_of_individual_upper_bounds_rate": 0.089286,
+        "union_upper_bound_count": 70,
+        "union_upper_bound_rate": 0.089286
+      },
+      "production_always_zero": true,
+      "recommendations": {
+        "MONITOR": 2,
+        "NEEDS_MORE_DATA": 1
+      },
+      "rows": [
+        {
+          "hypothesis": "PROCESS.DRIFT",
+          "invoked_agents": [],
+          "not_a_root_cause": true,
+          "opportunity_id": "OPP-H-PROCESS.DRIFT",
+          "overlap": 0,
+          "production_action": "FORBIDDEN",
+          "production_authorized": false,
+          "production_eligible": 0.0,
+          "recommendation": "NEEDS_MORE_DATA",
+          "scenario": "S06",
+          "union_count": 70
+        },
+        {
+          "hypothesis": "PROCESS.LOT_VARIATION",
+          "invoked_agents": [],
+          "not_a_root_cause": true,
+          "opportunity_id": "OPP-H-PROCESS.LOT_VARIATION",
+          "overlap": 37,
+          "production_action": "FORBIDDEN",
+          "production_authorized": false,
+          "production_eligible": 0.0,
+          "recommendation": "MONITOR",
+          "scenario": "S06",
+          "union_count": null
+        },
+        {
+          "hypothesis": "PROCESS.WAFER_VARIATION",
+          "invoked_agents": [],
+          "not_a_root_cause": true,
+          "opportunity_id": "OPP-H-PROCESS.WAFER_VARIATION",
+          "overlap": 0,
+          "production_action": "FORBIDDEN",
+          "production_authorized": false,
+          "production_eligible": 0.0,
+          "recommendation": "MONITOR",
+          "scenario": "S06",
+          "union_count": null
+        }
+      ],
+      "scenario": "S06",
+      "sequence_investigate": false,
+      "union_review": false
+    },
+    {
+      "all_not_a_root_cause": true,
+      "censoring_recorded": true,
+      "dataset_id": "ds_893c6caf3bdf5f6b",
+      "has_center": false,
+      "has_combined_root_cause": false,
+      "has_drift": false,
+      "has_edge": false,
+      "has_ring": false,
+      "n_results": 1,
+      "no_actionable_recommendation": false,
+      "no_invocations": true,
+      "no_limit_change": true,
+      "observed_loss": 0.229592,
+      "overlap_summary": {
+        "intersection_fail_count": 0,
+        "note": "Combined opportunity is the union of failed dies, not the sum of rates, and is not a root cause.",
+        "sum_exceeds_observed": false,
+        "sum_of_individual_upper_bounds_rate": 0.035714,
+        "union_upper_bound_count": 28,
+        "union_upper_bound_rate": 0.035714
+      },
+      "production_always_zero": true,
+      "recommendations": {
+        "INVESTIGATE": 1
+      },
+      "rows": [
+        {
+          "hypothesis": "ENVIRONMENT.TEMPERATURE",
+          "invoked_agents": [],
+          "not_a_root_cause": true,
+          "opportunity_id": "OPP-H-ENVIRONMENT.TEMPERATURE",
+          "overlap": 0,
+          "production_action": "FORBIDDEN",
+          "production_authorized": false,
+          "production_eligible": 0.0,
+          "recommendation": "INVESTIGATE",
+          "scenario": "S07",
+          "union_count": 28
+        }
+      ],
+      "scenario": "S07",
+      "sequence_investigate": false,
+      "union_review": false
+    },
+    {
+      "all_not_a_root_cause": true,
+      "censoring_recorded": true,
+      "dataset_id": "ds_3297c96dff4c230f",
+      "has_center": false,
+      "has_combined_root_cause": false,
+      "has_drift": false,
+      "has_edge": false,
+      "has_ring": false,
+      "n_results": 5,
+      "no_actionable_recommendation": false,
+      "no_invocations": true,
+      "no_limit_change": true,
+      "observed_loss": 0.251276,
+      "overlap_summary": {
+        "intersection_fail_count": 0,
+        "note": "Combined opportunity is the union of failed dies, not the sum of rates, and is not a root cause.",
+        "sum_exceeds_observed": false,
+        "sum_of_individual_upper_bounds_rate": 0.068878,
+        "union_upper_bound_count": 54,
+        "union_upper_bound_rate": 0.068878
+      },
+      "production_always_zero": true,
+      "recommendations": {
+        "INVESTIGATE": 1,
+        "MONITOR": 2,
+        "NEEDS_MORE_DATA": 1,
+        "REVIEW": 1
+      },
+      "rows": [
+        {
+          "hypothesis": "PROCESS.LOT_VARIATION",
+          "invoked_agents": [],
+          "not_a_root_cause": true,
+          "opportunity_id": "OPP-H-PROCESS.LOT_VARIATION",
+          "overlap": 0,
+          "production_action": "FORBIDDEN",
+          "production_authorized": false,
+          "production_eligible": 0.0,
+          "recommendation": "INVESTIGATE",
+          "scenario": "S08",
+          "union_count": 54
+        },
+        {
+          "hypothesis": "PARAMETRIC.SHIFT",
+          "invoked_agents": [],
+          "not_a_root_cause": true,
+          "opportunity_id": "OPP-H-PARAMETRIC.SHIFT",
+          "overlap": 0,
+          "production_action": "FORBIDDEN",
+          "production_authorized": false,
+          "production_eligible": 0.0,
+          "recommendation": "NEEDS_MORE_DATA",
+          "scenario": "S08",
+          "union_count": 54
+        },
+        {
+          "hypothesis": "PROCESS.WAFER_VARIATION",
+          "invoked_agents": [],
+          "not_a_root_cause": true,
+          "opportunity_id": "OPP-H-PROCESS.WAFER_VARIATION",
+          "overlap": 28,
+          "production_action": "FORBIDDEN",
+          "production_authorized": false,
+          "production_eligible": 0.0,
+          "recommendation": "MONITOR",
+          "scenario": "S08",
+          "union_count": null
+        },
+        {
+          "hypothesis": "TEST.LIMIT_SENSITIVITY",
+          "invoked_agents": [],
+          "not_a_root_cause": true,
+          "opportunity_id": "OPP-H-TEST.LIMIT_SENSITIVITY",
+          "overlap": 13,
+          "production_action": "FORBIDDEN",
+          "production_authorized": false,
+          "production_eligible": 0.0,
+          "recommendation": "MONITOR",
+          "scenario": "S08",
+          "union_count": null
+        },
+        {
+          "hypothesis": "UNION.PRIMARY_EVIDENCE",
+          "invoked_agents": [],
+          "not_a_root_cause": true,
+          "opportunity_id": "OPP-UNION-PRIMARY",
+          "overlap": 0,
+          "production_action": "FORBIDDEN",
+          "production_authorized": false,
+          "production_eligible": 0.0,
+          "recommendation": "REVIEW",
+          "scenario": "S08",
+          "union_count": 54
+        }
+      ],
+      "scenario": "S08",
+      "sequence_investigate": false,
+      "union_review": true
+    },
+    {
+      "all_not_a_root_cause": true,
+      "censoring_recorded": true,
+      "dataset_id": "ds_171e171c7cbd70cc",
+      "has_center": false,
+      "has_combined_root_cause": false,
+      "has_drift": false,
+      "has_edge": false,
+      "has_ring": false,
+      "n_results": 1,
+      "no_actionable_recommendation": false,
+      "no_invocations": true,
+      "no_limit_change": true,
+      "observed_loss": 0.529337,
+      "overlap_summary": {
+        "intersection_fail_count": 0,
+        "note": "Combined opportunity is the union of failed dies, not the sum of rates, and is not a root cause.",
+        "sum_exceeds_observed": false,
+        "sum_of_individual_upper_bounds_rate": 0.211735,
+        "union_upper_bound_count": 166,
+        "union_upper_bound_rate": 0.211735
+      },
+      "production_always_zero": true,
+      "recommendations": {
+        "NEEDS_MORE_DATA": 1
+      },
+      "rows": [
+        {
+          "hypothesis": "TEST.LIMIT_SENSITIVITY",
+          "invoked_agents": [],
+          "not_a_root_cause": true,
+          "opportunity_id": "OPP-H-TEST.LIMIT_SENSITIVITY",
+          "overlap": 0,
+          "production_action": "FORBIDDEN",
+          "production_authorized": false,
+          "production_eligible": 0.0,
+          "recommendation": "NEEDS_MORE_DATA",
+          "scenario": "S09",
+          "union_count": 166
+        }
+      ],
+      "scenario": "S09",
+      "sequence_investigate": false,
+      "union_review": false
+    },
+    {
+      "all_not_a_root_cause": true,
+      "censoring_recorded": true,
+      "dataset_id": "ds_6366b29ef95de1e5",
+      "has_center": false,
+      "has_combined_root_cause": false,
+      "has_drift": false,
+      "has_edge": false,
+      "has_ring": false,
+      "n_results": 1,
+      "no_actionable_recommendation": false,
+      "no_invocations": true,
+      "no_limit_change": true,
+      "observed_loss": 0.241071,
+      "overlap_summary": {
+        "intersection_fail_count": 0,
+        "note": "Combined opportunity is the union of failed dies, not the sum of rates, and is not a root cause.",
+        "sum_exceeds_observed": false,
+        "sum_of_individual_upper_bounds_rate": 0.197704,
+        "union_upper_bound_count": 155,
+        "union_upper_bound_rate": 0.197704
+      },
+      "production_always_zero": true,
+      "recommendations": {
+        "INVESTIGATE": 1
+      },
+      "rows": [
+        {
+          "hypothesis": "CONTACT.PROBE",
+          "invoked_agents": [],
+          "not_a_root_cause": true,
+          "opportunity_id": "OPP-H-CONTACT.PROBE",
+          "overlap": 0,
+          "production_action": "FORBIDDEN",
+          "production_authorized": false,
+          "production_eligible": 0.0,
+          "recommendation": "INVESTIGATE",
+          "scenario": "S10",
+          "union_count": 155
+        }
+      ],
+      "scenario": "S10",
+      "sequence_investigate": false,
+      "union_review": false
+    },
+    {
+      "all_not_a_root_cause": true,
+      "censoring_recorded": true,
+      "dataset_id": "ds_dc715730527a3232",
+      "has_center": false,
+      "has_combined_root_cause": false,
+      "has_drift": false,
+      "has_edge": false,
+      "has_ring": false,
+      "n_results": 1,
+      "no_actionable_recommendation": false,
+      "no_invocations": true,
+      "no_limit_change": true,
+      "observed_loss": 0.085459,
+      "overlap_summary": {
+        "intersection_fail_count": 0,
+        "note": "Combined opportunity is the union of failed dies, not the sum of rates, and is not a root cause.",
+        "sum_exceeds_observed": false,
+        "sum_of_individual_upper_bounds_rate": 0.045918,
+        "union_upper_bound_count": 36,
+        "union_upper_bound_rate": 0.045918
+      },
+      "production_always_zero": true,
+      "recommendations": {
+        "INVESTIGATE": 1
+      },
+      "rows": [
+        {
+          "hypothesis": "EQUIPMENT.DEGRADATION",
+          "invoked_agents": [],
+          "not_a_root_cause": true,
+          "opportunity_id": "OPP-H-EQUIPMENT.DEGRADATION",
+          "overlap": 0,
+          "production_action": "FORBIDDEN",
+          "production_authorized": false,
+          "production_eligible": 0.0,
+          "recommendation": "INVESTIGATE",
+          "scenario": "S11",
+          "union_count": 36
+        }
+      ],
+      "scenario": "S11",
+      "sequence_investigate": false,
+      "union_review": false
+    },
+    {
+      "all_not_a_root_cause": true,
+      "censoring_recorded": true,
+      "dataset_id": "ds_ec49a06398d57828",
+      "has_center": false,
+      "has_combined_root_cause": false,
+      "has_drift": true,
+      "has_edge": false,
+      "has_ring": false,
+      "n_results": 3,
+      "no_actionable_recommendation": false,
+      "no_invocations": true,
+      "no_limit_change": true,
+      "observed_loss": 0.155612,
+      "overlap_summary": {
+        "intersection_fail_count": 0,
+        "note": "Combined opportunity is the union of failed dies, not the sum of rates, and is not a root cause.",
+        "sum_exceeds_observed": false,
+        "sum_of_individual_upper_bounds_rate": 0.016582,
+        "union_upper_bound_count": 13,
+        "union_upper_bound_rate": 0.016582
+      },
+      "production_always_zero": true,
+      "recommendations": {
+        "MONITOR": 2,
+        "NEEDS_MORE_DATA": 1
+      },
+      "rows": [
+        {
+          "hypothesis": "PROCESS.DRIFT",
+          "invoked_agents": [],
+          "not_a_root_cause": true,
+          "opportunity_id": "OPP-H-PROCESS.DRIFT",
+          "overlap": 0,
+          "production_action": "FORBIDDEN",
+          "production_authorized": false,
+          "production_eligible": 0.0,
+          "recommendation": "NEEDS_MORE_DATA",
+          "scenario": "S12",
+          "union_count": 13
+        },
+        {
+          "hypothesis": "PROCESS.LOT_VARIATION",
+          "invoked_agents": [],
+          "not_a_root_cause": true,
+          "opportunity_id": "OPP-H-PROCESS.LOT_VARIATION",
+          "overlap": 0,
+          "production_action": "FORBIDDEN",
+          "production_authorized": false,
+          "production_eligible": 0.0,
+          "recommendation": "MONITOR",
+          "scenario": "S12",
+          "union_count": null
+        },
+        {
+          "hypothesis": "PROCESS.WAFER_VARIATION",
+          "invoked_agents": [],
+          "not_a_root_cause": true,
+          "opportunity_id": "OPP-H-PROCESS.WAFER_VARIATION",
+          "overlap": 0,
+          "production_action": "FORBIDDEN",
+          "production_authorized": false,
+          "production_eligible": 0.0,
+          "recommendation": "MONITOR",
+          "scenario": "S12",
+          "union_count": null
+        }
+      ],
+      "scenario": "S12",
+      "sequence_investigate": false,
+      "union_review": false
+    },
+    {
+      "all_not_a_root_cause": true,
+      "censoring_recorded": true,
+      "dataset_id": "ds_a3edd37e85b16e81",
+      "has_center": false,
+      "has_combined_root_cause": false,
+      "has_drift": true,
+      "has_edge": false,
+      "has_ring": false,
+      "n_results": 3,
+      "no_actionable_recommendation": false,
+      "no_invocations": true,
+      "no_limit_change": true,
+      "observed_loss": 0.130102,
+      "overlap_summary": {
+        "intersection_fail_count": 0,
+        "note": "Combined opportunity is the union of failed dies, not the sum of rates, and is not a root cause.",
+        "sum_exceeds_observed": false,
+        "sum_of_individual_upper_bounds_rate": 0.016582,
+        "union_upper_bound_count": 13,
+        "union_upper_bound_rate": 0.016582
+      },
+      "production_always_zero": true,
+      "recommendations": {
+        "MONITOR": 2,
+        "NEEDS_MORE_DATA": 1
+      },
+      "rows": [
+        {
+          "hypothesis": "PROCESS.DRIFT",
+          "invoked_agents": [],
+          "not_a_root_cause": true,
+          "opportunity_id": "OPP-H-PROCESS.DRIFT",
+          "overlap": 0,
+          "production_action": "FORBIDDEN",
+          "production_authorized": false,
+          "production_eligible": 0.0,
+          "recommendation": "NEEDS_MORE_DATA",
+          "scenario": "S13",
+          "union_count": 13
+        },
+        {
+          "hypothesis": "PROCESS.LOT_VARIATION",
+          "invoked_agents": [],
+          "not_a_root_cause": true,
+          "opportunity_id": "OPP-H-PROCESS.LOT_VARIATION",
+          "overlap": 0,
+          "production_action": "FORBIDDEN",
+          "production_authorized": false,
+          "production_eligible": 0.0,
+          "recommendation": "MONITOR",
+          "scenario": "S13",
+          "union_count": null
+        },
+        {
+          "hypothesis": "PROCESS.WAFER_VARIATION",
+          "invoked_agents": [],
+          "not_a_root_cause": true,
+          "opportunity_id": "OPP-H-PROCESS.WAFER_VARIATION",
+          "overlap": 0,
+          "production_action": "FORBIDDEN",
+          "production_authorized": false,
+          "production_eligible": 0.0,
+          "recommendation": "MONITOR",
+          "scenario": "S13",
+          "union_count": null
+        }
+      ],
+      "scenario": "S13",
+      "sequence_investigate": false,
+      "union_review": false
+    },
+    {
+      "all_not_a_root_cause": true,
+      "censoring_recorded": false,
+      "dataset_id": "ds_2cb7d367015faf90",
+      "has_center": false,
+      "has_combined_root_cause": false,
+      "has_drift": false,
+      "has_edge": false,
+      "has_ring": false,
+      "n_results": 5,
+      "no_actionable_recommendation": false,
+      "no_invocations": true,
+      "no_limit_change": true,
+      "observed_loss": 0.322704,
+      "overlap_summary": {
+        "intersection_fail_count": 10,
+        "note": "Combined opportunity is the union of failed dies, not the sum of rates, and is not a root cause.",
+        "sum_exceeds_observed": false,
+        "sum_of_individual_upper_bounds_rate": 0.239796,
+        "union_upper_bound_count": 178,
+        "union_upper_bound_rate": 0.227041
+      },
+      "production_always_zero": true,
+      "recommendations": {
+        "MONITOR": 1,
+        "NEEDS_MORE_DATA": 1,
+        "REVIEW": 3
+      },
+      "rows": [
+        {
+          "hypothesis": "PROCESS.LOT_VARIATION",
+          "invoked_agents": [],
+          "not_a_root_cause": true,
+          "opportunity_id": "OPP-H-PROCESS.LOT_VARIATION",
+          "overlap": 10,
+          "production_action": "FORBIDDEN",
+          "production_authorized": false,
+          "production_eligible": 0.0,
+          "recommendation": "REVIEW",
+          "scenario": "S14",
+          "union_count": 178
+        },
+        {
+          "hypothesis": "CORRELATED.FAILURES",
+          "invoked_agents": [],
+          "not_a_root_cause": true,
+          "opportunity_id": "OPP-H-CORRELATED.FAILURES",
+          "overlap": 10,
+          "production_action": "FORBIDDEN",
+          "production_authorized": false,
+          "production_eligible": 0.0,
+          "recommendation": "REVIEW",
+          "scenario": "S14",
+          "union_count": 178
+        },
+        {
+          "hypothesis": "TEST.SEQUENCE",
+          "invoked_agents": [],
+          "not_a_root_cause": true,
+          "opportunity_id": "OPP-H-TEST.SEQUENCE",
+          "overlap": 0,
+          "production_action": "FORBIDDEN",
+          "production_authorized": false,
+          "production_eligible": 0.0,
+          "recommendation": "NEEDS_MORE_DATA",
+          "scenario": "S14",
+          "union_count": null
+        },
+        {
+          "hypothesis": "PROCESS.WAFER_VARIATION",
+          "invoked_agents": [],
+          "not_a_root_cause": true,
+          "opportunity_id": "OPP-H-PROCESS.WAFER_VARIATION",
+          "overlap": 6,
+          "production_action": "FORBIDDEN",
+          "production_authorized": false,
+          "production_eligible": 0.0,
+          "recommendation": "MONITOR",
+          "scenario": "S14",
+          "union_count": null
+        },
+        {
+          "hypothesis": "UNION.PRIMARY_EVIDENCE",
+          "invoked_agents": [],
+          "not_a_root_cause": true,
+          "opportunity_id": "OPP-UNION-PRIMARY",
+          "overlap": 0,
+          "production_action": "FORBIDDEN",
+          "production_authorized": false,
+          "production_eligible": 0.0,
+          "recommendation": "REVIEW",
+          "scenario": "S14",
+          "union_count": 178
+        }
+      ],
+      "scenario": "S14",
+      "sequence_investigate": false,
+      "union_review": true
+    },
+    {
+      "all_not_a_root_cause": true,
+      "censoring_recorded": true,
+      "dataset_id": "ds_c65b1e8d8155514c",
+      "has_center": false,
+      "has_combined_root_cause": false,
+      "has_drift": true,
+      "has_edge": true,
+      "has_ring": false,
+      "n_results": 6,
+      "no_actionable_recommendation": false,
+      "no_invocations": true,
+      "no_limit_change": true,
+      "observed_loss": 0.325255,
+      "overlap_summary": {
+        "intersection_fail_count": 14,
+        "note": "Combined opportunity is the union of failed dies, not the sum of rates, and is not a root cause.",
+        "sum_exceeds_observed": true,
+        "sum_of_individual_upper_bounds_rate": 0.380102,
+        "union_upper_bound_count": 199,
+        "union_upper_bound_rate": 0.253827
+      },
+      "production_always_zero": true,
+      "recommendations": {
+        "MONITOR": 2,
+        "NEEDS_MORE_DATA": 1,
+        "REVIEW": 3
+      },
+      "rows": [
+        {
+          "hypothesis": "SPATIAL.EDGE",
+          "invoked_agents": [],
+          "not_a_root_cause": true,
+          "opportunity_id": "OPP-H-SPATIAL.EDGE",
+          "overlap": 64,
+          "production_action": "FORBIDDEN",
+          "production_authorized": false,
+          "production_eligible": 0.0,
+          "recommendation": "REVIEW",
+          "scenario": "S15",
+          "union_count": 199
+        },
+        {
+          "hypothesis": "PROCESS.DRIFT",
+          "invoked_agents": [],
+          "not_a_root_cause": true,
+          "opportunity_id": "OPP-H-PROCESS.DRIFT",
+          "overlap": 52,
+          "production_action": "FORBIDDEN",
+          "production_authorized": false,
+          "production_eligible": 0.0,
+          "recommendation": "NEEDS_MORE_DATA",
+          "scenario": "S15",
+          "union_count": 199
+        },
+        {
+          "hypothesis": "CONTACT.PROBE",
+          "invoked_agents": [],
+          "not_a_root_cause": true,
+          "opportunity_id": "OPP-H-CONTACT.PROBE",
+          "overlap": 68,
+          "production_action": "FORBIDDEN",
+          "production_authorized": false,
+          "production_eligible": 0.0,
+          "recommendation": "REVIEW",
+          "scenario": "S15",
+          "union_count": 199
+        },
+        {
+          "hypothesis": "PROCESS.LOT_VARIATION",
+          "invoked_agents": [],
+          "not_a_root_cause": true,
+          "opportunity_id": "OPP-H-PROCESS.LOT_VARIATION",
+          "overlap": 45,
+          "production_action": "FORBIDDEN",
+          "production_authorized": false,
+          "production_eligible": 0.0,
+          "recommendation": "MONITOR",
+          "scenario": "S15",
+          "union_count": null
+        },
+        {
+          "hypothesis": "PROCESS.WAFER_VARIATION",
+          "invoked_agents": [],
+          "not_a_root_cause": true,
+          "opportunity_id": "OPP-H-PROCESS.WAFER_VARIATION",
+          "overlap": 24,
+          "production_action": "FORBIDDEN",
+          "production_authorized": false,
+          "production_eligible": 0.0,
+          "recommendation": "MONITOR",
+          "scenario": "S15",
+          "union_count": null
+        },
+        {
+          "hypothesis": "UNION.PRIMARY_EVIDENCE",
+          "invoked_agents": [],
+          "not_a_root_cause": true,
+          "opportunity_id": "OPP-UNION-PRIMARY",
+          "overlap": 14,
+          "production_action": "FORBIDDEN",
+          "production_authorized": false,
+          "production_eligible": 0.0,
+          "recommendation": "REVIEW",
+          "scenario": "S15",
+          "union_count": 199
+        }
+      ],
+      "scenario": "S15",
+      "sequence_investigate": false,
+      "union_review": true
+    },
+    {
+      "all_not_a_root_cause": true,
+      "censoring_recorded": true,
+      "dataset_id": "ds_e8b6b664a6810381",
+      "has_center": false,
+      "has_combined_root_cause": false,
+      "has_drift": false,
+      "has_edge": false,
+      "has_ring": false,
+      "n_results": 0,
+      "no_actionable_recommendation": true,
+      "no_invocations": true,
+      "no_limit_change": true,
+      "observed_loss": 0.090561,
+      "overlap_summary": {
+        "intersection_fail_count": 0,
+        "note": "Combined opportunity is the union of failed dies, not the sum of rates, and is not a root cause.",
+        "sum_exceeds_observed": false,
+        "sum_of_individual_upper_bounds_rate": 0.0,
+        "union_upper_bound_count": 0,
+        "union_upper_bound_rate": 0.0
+      },
+      "production_always_zero": true,
+      "recommendations": {},
+      "rows": [],
+      "scenario": "S16",
+      "sequence_investigate": false,
+      "union_review": false
+    }
+  ],
+  "s01_no_actionable": true,
+  "s09_no_limit_change": true,
+  "s11_censoring_recorded": true,
+  "s11_no_sequence_investigate": true,
+  "s15_edge_and_drift": true,
+  "s15_no_combined_root_cause": true,
+  "s15_union_not_sum": true,
+  "s16_no_actionable": true,
+  "safety_violations": 0
+}

@@ -1,0 +1,5 @@
+lot_id,wafer_id,die_id,product_id,step_id,part_class,x,y,attempt_id,timestamp,attempt_number,is_first_attempt,is_retest,is_rework,abort_flag,pass_fail,sbin,failure_code,tester_id
+L013,W01,D01,DEV_A,WS_SORT,PRODUCTION,0,0,E-L013-W01-D01-1,2026-03-13T10:00:01Z,1,true,false,false,false,FAIL,8,IDDQ,T01
+L013,W01,D02,DEV_A,WS_SORT,PRODUCTION,1,0,E-L013-W01-D02-1,2026-03-13T10:00:02Z,1,true,false,false,false,FAIL,8,IDDQ,T01
+L013,W01,D03,DEV_A,WS_SORT,PRODUCTION,2,0,E-L013-W01-D03-1,2026-03-13T10:00:03Z,1,true,false,false,false,PASS,1,,T01
+L013,W01,D04,DEV_A,WS_SORT,PRODUCTION,3,0,E-L013-W01-D04-1,2026-03-13T10:00:04Z,1,true,false,false,false,PASS,1,,T01

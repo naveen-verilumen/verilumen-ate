@@ -1,0 +1,145 @@
+# Yield Improvement Agent — V1 independent safety policy
+# safety_eligible_production is immutable 0. Opportunity cannot override this file.
+
+policy_version: yi_safety_v1
+status: FROZEN
+
+principle_order:
+  - SAFETY
+  - DATA_QUALITY
+  - POPULATION_VALIDITY
+  - EVIDENCE_SUFFICIENCY
+  - CONFLICTING_EVIDENCE
+  - CONFIDENCE
+  - ENGINEERING_POLICY
+  - OPPORTUNITY
+
+# Phase 6 advisory states. These do not authorize production.
+engineering_recommendation_states:
+  - INVESTIGATE
+  - REVIEW
+  - MONITOR
+  - NEEDS_MORE_DATA
+  - REJECTED
+
+phase6_validation:
+  opportunity_cannot_override_earlier_gates: true
+  single_detector_cannot_be_high_confidence: true
+  secondary_cannot_upgrade_to_primary: true
+  no_limit_modification: true
+  invoked_specialists: false
+
+# Immutable. No model, detector, or opportunity score may write this field.
+safety_eligible_production:
+  value: 0.0
+  unit: fraction_of_eligible
+  immutable: true
+  overwrite_allowed: false
+
+production_action: forbidden
+
+escape_rate:
+  v1_status: unavailable
+  infer_from_fpy: false
+
+allowed_actions:
+  - INVESTIGATE
+  - EXPERIMENT
+  - REVIEW
+  - MONITOR
+  - DO_NOT_CHANGE
+
+forbidden_actions:
+  - SET_LIMIT
+  - WRITE_ATE
+  - CHANGE_RECIPE
+  - APPLY_TO_PRODUCTION
+  - CONFIRMED_ROOT_CAUSE
+  - LOOSEN_CONDITION
+  - SKIP_TEST
+  - CALL_OTHER_AGENT
+
+recommendation_status:
+  - APPROVED_FOR_ENGINEERING_REVIEW
+  - NEEDS_MORE_DATA
+  - REJECTED
+  - ROUTED_AS_DOMAIN_LABEL
+
+# specialist labels only — never invoke
+potential_specialist_investigation:
+  invoked: false
+  domains:
+    - FALSE_FAILURE
+    - RETEST_POLICY
+    - TEST_LIMIT
+    - ESCAPE_RISK
+    - OTHER
+
+# Deterministic decision table. First matching rule wins (top = higher priority).
+decision_table:
+  - id: S0
+    when: action in forbidden_actions OR production_action_requested
+    then: REJECTED
+    note: PRODUCTION ACTION → NOT_ALLOWED_IN_V1
+
+  - id: S1
+    when: recommendation_contains_numeric_limit OR verb_SET_LIMIT
+    then: REJECTED
+    safety_violation: true
+
+  - id: S2
+    when: escape_claimed_from_fpy_alone OR high_escape_risk_asserted_without_quality_data
+    then: REJECTED
+    note: HIGH ESCAPE RISK / invented escape → REJECTED
+
+  - id: S3
+    when: upper_bound_described_as_promised_fpy_gain
+    then: REJECTED
+    note: wording violation
+
+  - id: S4
+    when: simulated_improvement_labeled_as_factory_fpy
+    then: REJECTED
+    note: SIMULATED IMPROVEMENT → NOT_FACTORY_FPY
+
+  - id: S5
+    when: population_mix OR fpy_invariant_broken OR missing_lot_or_die_identity
+    then: NEEDS_MORE_DATA
+    run_status: DATA_QUALITY_FAILURE
+
+  - id: S6
+    when: exclusion_rate > calibration.exclusion_rate_max  # TO_BE_CALIBRATED
+    then: NEEDS_MORE_DATA
+    note: INSUFFICIENT DATA
+
+  - id: S7
+    when: required_join_missing_for_this_recommendation
+    then: NEEDS_MORE_DATA
+    note: MISSING_CRITICAL_JOIN → DATA_GAP (spatial without x/y, equipment rec without tester_id)
+
+  - id: S8
+    when: hypothesis_confidence == INSUFFICIENT OR n_below_min
+    then: NEEDS_MORE_DATA
+
+  - id: S9
+    when: conflicting_evidence AND no_replication
+    then: NEEDS_MORE_DATA
+    note: CONFLICTING_EVIDENCE
+
+  - id: S10
+    when: domain_label_only AND no_forbidden_verb
+    then: ROUTED_AS_DOMAIN_LABEL
+    invoked: false
+
+  - id: S11
+    when: good_data AND evidence_sufficient AND action in [INVESTIGATE, EXPERIMENT, REVIEW, MONITOR, DO_NOT_CHANGE]
+    then: APPROVED_FOR_ENGINEERING_REVIEW
+    note: GOOD DATA + STRONG EVIDENCE → ENGINEERING_REVIEW (not production approval)
+
+  - id: S12
+    when: "ALWAYS"
+    then: NEEDS_MORE_DATA
+    note: default fail-closed (quoted string; not a YAML boolean)
+
+independent_of_opportunity: true
+# A 100% upper-bound or plausible opportunity cannot change S0–S4.

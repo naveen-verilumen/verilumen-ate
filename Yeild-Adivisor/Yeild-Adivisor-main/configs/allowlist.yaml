@@ -1,0 +1,49 @@
+# Agent runtime path allowlist. Evaluation ground truth is forbidden.
+# Static tests must assert src/yield_agent never reads forbidden paths or columns.
+
+allowlist_version: yi_allowlist_v1
+status: FROZEN
+
+agent_may_read:
+  - data/raw/**
+  - data/processed/**
+  - data/synthetic/agent_visible/**
+  - configs/*.yaml
+    - tests/fixtures/fpy/**          # golden observable inputs + expected* used by tests only
+  - tests/fixtures/synthetic_v1/**  # archived V1 S01–S16 / monitoring fixtures; not production selector
+  # Note: pytest may read expected.json; production analyze() must not.
+
+agent_must_not_read:
+  - evaluation/ground_truth/**
+  - "**/true_*.csv"
+  - "**/latent_*.csv"
+  - "**/planted_*.csv"
+  - "**/ground_truth*.json"
+
+forbidden_columns_on_agent_visible_tables:
+  - true_root_cause
+  - true_cause
+  - true_causes
+  - planted_cause
+  - planted_causes
+  - latent_quality
+  - scenario_id          # hidden; may exist only under evaluation/ground_truth
+  - expected_hypothesis
+  - expected_signal
+  - generator_seed       # evaluation metadata only
+  - injected_effect
+  - injected_parameters
+  - difficulty
+  - ground_truth
+  - recoverable_fraction # ground-truth opportunity
+
+forbidden_imports:
+  - dtl_agent
+  - dtl
+  - false_failure
+  - retest_reduction
+  - escape_prevention
+  - any other_agent package
+
+potential_specialist_investigation:
+  invoked: false         # hardcoded V1; not an RPC

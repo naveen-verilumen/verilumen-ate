@@ -1,0 +1,12 @@
+{
+  "baseline_fpy_ok": true,
+  "canonical_errors": [],
+  "first_pass_fpy": 0.6747448979591837,
+  "leakage": "none",
+  "n_dies": 784,
+  "pipeline_fpy": 0.6747448979591837,
+  "pipeline_status": "OK",
+  "sanity_issues": [],
+  "sanity_status": "PASSED",
+  "status": "PASSED"
+}

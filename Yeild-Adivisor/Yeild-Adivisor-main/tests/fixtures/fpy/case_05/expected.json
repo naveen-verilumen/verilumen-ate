@@ -1,0 +1,12 @@
+{
+  "case_id": "CASE_05",
+  "n_eligible": 1,
+  "n_first_pass_pass": 1,
+  "n_first_pass_fail": 0,
+  "n_excluded": 1,
+  "fpy": 1.0,
+  "exclusions": [
+    { "die_id": "D01", "reason": "ENGINEERING" }
+  ],
+  "notes": "Engineering part excluded from FPY denominator."
+}

@@ -1,0 +1,13 @@
+{
+  "dataset_id": "ds_ec49a06398d57828",
+  "generator_version": "yi_synth_v1",
+  "profile": "small",
+  "scenario_id": "S12",
+  "seed": 20260322,
+  "true_causes": [
+    {
+      "detail": "LOT_VARIATION",
+      "family": "PROCESS"
+    }
+  ]
+}

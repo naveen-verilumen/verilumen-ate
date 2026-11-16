@@ -1,0 +1,32 @@
+{
+  "affected_population": {
+    "n_joint": 170,
+    "n_total": 784,
+    "rule": "joint IDDQ+FUNCTIONAL association"
+  },
+  "confounders": [
+    "some_single_mode_fails"
+  ],
+  "dataset_id": "ds_2cb7d367015faf90",
+  "difficulty": "medium",
+  "expected_signal": "Two failure modes are statistically associated, not deterministic.",
+  "generator_version": "yi_synth_v1",
+  "injected_parameters": {
+    "joint_p": 0.22,
+    "modes": [
+      "IDDQ",
+      "FUNCTIONAL"
+    ],
+    "single_p": 0.04
+  },
+  "notes": null,
+  "profile": "small",
+  "scenario_id": "S14",
+  "seed": 20260322,
+  "true_causes": [
+    {
+      "detail": "FAILURES",
+      "family": "CORRELATED"
+    }
+  ]
+}

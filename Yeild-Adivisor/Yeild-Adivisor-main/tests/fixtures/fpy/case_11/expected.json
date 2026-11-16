@@ -1,0 +1,17 @@
+{
+  "case_id": "CASE_11",
+  "n_eligible": 1,
+  "n_first_pass_pass": 1,
+  "n_first_pass_fail": 0,
+  "n_excluded": 1,
+  "fpy": 1.0,
+  "exclusions": [
+    {
+      "die_id": "D01",
+      "reason": "AMBIGUOUS_DUPLICATE",
+      "notes": "Same attempt_id and timestamp twice. Do not pick arbitrarily. Exclude die."
+    }
+  ],
+  "validation": "ambiguous_duplicate",
+  "notes": "Identical duplicate rows sharing attempt_id+timestamp → exclude D01. D02 remains eligible."
+}

@@ -1,0 +1,9 @@
+equipment_id,equipment_type,parent_equipment_id,vendor,model
+T01,TESTER,,ADV,T-A
+T02,TESTER,,ADV,T-B
+T03,TESTER,,ADV,T-C
+PC01,PROBE_CARD,,PCV,PC-A
+PC02,PROBE_CARD,,PCV,PC-B
+PC03,PROBE_CARD,,PCV,PC-C
+PR01,PROBER,,PRB,P-A
+PR02,PROBER,,PRB,P-B

@@ -1,0 +1,915 @@
+{
+  "active_model_version": "yi_ml_v1",
+  "analysis_id": "ds_mon_08",
+  "calibration": {
+    "availability": "AVAILABLE",
+    "bins": [
+      {
+        "bin": "0.0-0.1",
+        "insufficient_sample_size": false,
+        "mean_prediction": 0.09050885600545087,
+        "observed_failure_rate": 0.08074534161490683,
+        "sample_count": 322
+      },
+      {
+        "bin": "0.1-0.2",
+        "insufficient_sample_size": false,
+        "mean_prediction": 0.16540138701460783,
+        "observed_failure_rate": 0.13953488372093023,
+        "sample_count": 43
+      },
+      {
+        "bin": "0.2-0.3",
+        "insufficient_sample_size": false,
+        "mean_prediction": 0.2736450886099927,
+        "observed_failure_rate": 0.09433962264150944,
+        "sample_count": 53
+      },
+      {
+        "bin": "0.3-0.4",
+        "insufficient_sample_size": false,
+        "mean_prediction": 0.31168831168831174,
+        "observed_failure_rate": 0.3930635838150289,
+        "sample_count": 173
+      },
+      {
+        "bin": "0.4-0.5",
+        "insufficient_sample_size": true,
+        "mean_prediction": null,
+        "observed_failure_rate": null,
+        "sample_count": 0
+      },
+      {
+        "bin": "0.5-0.6",
+        "insufficient_sample_size": false,
+        "mean_prediction": 0.5314710576259488,
+        "observed_failure_rate": 0.53125,
+        "sample_count": 192
+      },
+      {
+        "bin": "0.6-0.7",
+        "insufficient_sample_size": true,
+        "mean_prediction": null,
+        "observed_failure_rate": null,
+        "sample_count": 0
+      },
+      {
+        "bin": "0.7-0.8",
+        "insufficient_sample_size": true,
+        "mean_prediction": null,
+        "observed_failure_rate": null,
+        "sample_count": 0
+      },
+      {
+        "bin": "0.8-0.9",
+        "insufficient_sample_size": true,
+        "mean_prediction": null,
+        "observed_failure_rate": null,
+        "sample_count": 0
+      },
+      {
+        "bin": "0.9-1.0",
+        "insufficient_sample_size": true,
+        "mean_prediction": null,
+        "observed_failure_rate": null,
+        "sample_count": 0
+      }
+    ],
+    "brier_current": 0.16048198522547327,
+    "brier_delta": 9.160228989918417e-06,
+    "brier_reference": 0.16047282499648335,
+    "ece_current": 0.035606214704747355,
+    "notes": "Poor calibration is not the same as 'no predictive value'. Ranking may still be useful.",
+    "status": "HEALTHY"
+  },
+  "calibration_version": "yi_ml_cal_v1",
+  "current_dataset_id": "ds_mon_08",
+  "data_quality": {
+    "availability": "AVAILABLE",
+    "dimension": "data_quality",
+    "metrics": [
+      {
+        "current_value": 0.0,
+        "delta": null,
+        "dimension": "data_quality",
+        "metric_name": "missing_expected_feature_count",
+        "notes": "All expected model features present.",
+        "reference_value": null,
+        "sample_size": 785,
+        "status": "HEALTHY",
+        "threshold": null
+      },
+      {
+        "current_value": 1.0,
+        "delta": null,
+        "dimension": "data_quality",
+        "metric_name": "unexpected_source_column_count",
+        "notes": "unexpected=['extra_sensor_reading']",
+        "reference_value": null,
+        "sample_size": 785,
+        "status": "WARNING",
+        "threshold": null
+      },
+      {
+        "current_value": 2.0,
+        "delta": null,
+        "dimension": "data_quality",
+        "metric_name": "duplicate_key_count",
+        "notes": "Duplicate lot/wafer/die keys are recorded, not silently dropped.",
+        "reference_value": null,
+        "sample_size": 785,
+        "status": "WARNING",
+        "threshold": null
+      },
+      {
+        "current_value": 1.0,
+        "delta": null,
+        "dimension": "data_quality",
+        "metric_name": "high_missingness_feature_count",
+        "notes": "high_missing=['temperature_c']",
+        "reference_value": null,
+        "sample_size": 785,
+        "status": "REVIEW",
+        "threshold": null
+      },
+      {
+        "current_value": 1.0,
+        "delta": null,
+        "dimension": "data_quality",
+        "metric_name": "unseen_category_features",
+        "notes": "Unseen categories are scored with training global means; they are still reported.",
+        "reference_value": null,
+        "sample_size": 785,
+        "status": "WARNING",
+        "threshold": null
+      }
+    ],
+    "notes": "Broken fields are flagged. Values are not silently imputed beyond the frozen training preprocessor.",
+    "status": "REVIEW"
+  },
+  "disclaimer": "Model health is advisory. It is not a production authorization, not a root cause, not a causal effect, and not an instruction to retrain or replace the model automatically.",
+  "feature_drift": {
+    "availability": "INSUFFICIENT_DATA",
+    "dimension": "feature_drift",
+    "metrics": [
+      {
+        "current_value": 0.0,
+        "delta": null,
+        "dimension": "feature_drift",
+        "metric_name": "n_features_at_review",
+        "notes": "Count of features with REVIEW-level PSI/KS/category shift.",
+        "reference_value": null,
+        "sample_size": 783,
+        "status": "HEALTHY",
+        "threshold": null
+      }
+    ],
+    "notes": "Feature drift is not automatically model failure.",
+    "status": "INSUFFICIENT_DATA"
+  },
+  "feature_drift_details": [
+    {
+      "current_sample_size": 783,
+      "current_value": 9.81792006870306e-06,
+      "data_type": "numeric",
+      "feature_name": "die_x",
+      "metric": "psi",
+      "notes": "PSI thresholds are TO_BE_CALIBRATED and not universally valid.",
+      "reference_sample_size": 784,
+      "reference_value": 0.0,
+      "status": "HEALTHY"
+    },
+    {
+      "current_sample_size": 783,
+      "current_value": 0.0005473453749315818,
+      "data_type": "numeric",
+      "feature_name": "die_x",
+      "metric": "ks",
+      "notes": "KS statistic. Not a causal test.",
+      "reference_sample_size": 784,
+      "reference_value": 0.0,
+      "status": "HEALTHY"
+    },
+    {
+      "current_sample_size": 783,
+      "current_value": 9.81792006870306e-06,
+      "data_type": "numeric",
+      "feature_name": "die_y",
+      "metric": "psi",
+      "notes": "PSI thresholds are TO_BE_CALIBRATED and not universally valid.",
+      "reference_sample_size": 784,
+      "reference_value": 0.0,
+      "status": "HEALTHY"
+    },
+    {
+      "current_sample_size": 783,
+      "current_value": 0.0005473453749315818,
+      "data_type": "numeric",
+      "feature_name": "die_y",
+      "metric": "ks",
+      "notes": "KS statistic. Not a causal test.",
+      "reference_sample_size": 784,
+      "reference_value": 0.0,
+      "status": "HEALTHY"
+    },
+    {
+      "current_sample_size": 783,
+      "current_value": 8.074253954188294e-05,
+      "data_type": "numeric",
+      "feature_name": "edge_distance",
+      "metric": "psi",
+      "notes": "PSI thresholds are TO_BE_CALIBRATED and not universally valid.",
+      "reference_sample_size": 784,
+      "reference_value": 0.0,
+      "status": "HEALTHY"
+    },
+    {
+      "current_sample_size": 783,
+      "current_value": 0.0012510751427007585,
+      "data_type": "numeric",
+      "feature_name": "edge_distance",
+      "metric": "ks",
+      "notes": "KS statistic. Not a causal test.",
+      "reference_sample_size": 784,
+      "reference_value": 0.0,
+      "status": "HEALTHY"
+    },
+    {
+      "current_sample_size": 783,
+      "current_value": 9.81792006870306e-06,
+      "data_type": "numeric",
+      "feature_name": "normalized_x",
+      "metric": "psi",
+      "notes": "PSI thresholds are TO_BE_CALIBRATED and not universally valid.",
+      "reference_sample_size": 784,
+      "reference_value": 0.0,
+      "status": "HEALTHY"
+    },
+    {
+      "current_sample_size": 783,
+      "current_value": 0.0005473453749315818,
+      "data_type": "numeric",
+      "feature_name": "normalized_x",
+      "metric": "ks",
+      "notes": "KS statistic. Not a causal test.",
+      "reference_sample_size": 784,
+      "reference_value": 0.0,
+      "status": "HEALTHY"
+    },
+    {
+      "current_sample_size": 783,
+      "current_value": 9.81792006870306e-06,
+      "data_type": "numeric",
+      "feature_name": "normalized_y",
+      "metric": "psi",
+      "notes": "PSI thresholds are TO_BE_CALIBRATED and not universally valid.",
+      "reference_sample_size": 784,
+      "reference_value": 0.0,
+      "status": "HEALTHY"
+    },
+    {
+      "current_sample_size": 783,
+      "current_value": 0.0005473453749315818,
+      "data_type": "numeric",
+      "feature_name": "normalized_y",
+      "metric": "ks",
+      "notes": "KS statistic. Not a causal test.",
+      "reference_sample_size": 784,
+      "reference_value": 0.0,
+      "status": "HEALTHY"
+    },
+    {
+      "current_sample_size": 783,
+      "current_value": 0.0006662626736518573,
+      "data_type": "categorical",
+      "feature_name": "probe_card_id",
+      "metric": "category_frequency_l1",
+      "notes": "Half L1 frequency shift.",
+      "reference_sample_size": 784,
+      "reference_value": 0.0,
+      "status": "HEALTHY"
+    },
+    {
+      "current_sample_size": 783,
+      "current_value": 0.0,
+      "data_type": "categorical",
+      "feature_name": "probe_card_id",
+      "metric": "unseen_category_rate",
+      "notes": "Share of current rows with a category absent from the reference.",
+      "reference_sample_size": 784,
+      "reference_value": 0.0,
+      "status": "HEALTHY"
+    },
+    {
+      "current_sample_size": 783,
+      "current_value": 1.7790736169015106e-06,
+      "data_type": "numeric",
+      "feature_name": "probe_fail_rate",
+      "metric": "psi",
+      "notes": "PSI thresholds are TO_BE_CALIBRATED and not universally valid.",
+      "reference_sample_size": 784,
+      "reference_value": 0.0,
+      "status": "HEALTHY"
+    },
+    {
+      "current_sample_size": 783,
+      "current_value": 0.0006662626736518362,
+      "data_type": "numeric",
+      "feature_name": "probe_fail_rate",
+      "metric": "ks",
+      "notes": "KS statistic. Not a causal test.",
+      "reference_sample_size": 784,
+      "reference_value": 0.0,
+      "status": "HEALTHY"
+    },
+    {
+      "current_sample_size": 783,
+      "current_value": 0.0,
+      "data_type": "categorical",
+      "feature_name": "prober_id",
+      "metric": "category_frequency_l1",
+      "notes": "Half L1 frequency shift.",
+      "reference_sample_size": 784,
+      "reference_value": 0.0,
+      "status": "HEALTHY"
+    },
+    {
+      "current_sample_size": 783,
+      "current_value": 0.0,
+      "data_type": "categorical",
+      "feature_name": "prober_id",
+      "metric": "unseen_category_rate",
+      "notes": "Share of current rows with a category absent from the reference.",
+      "reference_sample_size": 784,
+      "reference_value": 0.0,
+      "status": "HEALTHY"
+    },
+    {
+      "current_sample_size": 783,
+      "current_value": 8.074253954188294e-05,
+      "data_type": "numeric",
+      "feature_name": "radial_distance",
+      "metric": "psi",
+      "notes": "PSI thresholds are TO_BE_CALIBRATED and not universally valid.",
+      "reference_sample_size": 784,
+      "reference_value": 0.0,
+      "status": "HEALTHY"
+    },
+    {
+      "current_sample_size": 783,
+      "current_value": 0.0012510751427007585,
+      "data_type": "numeric",
+      "feature_name": "radial_distance",
+      "metric": "ks",
+      "notes": "KS statistic. Not a causal test.",
+      "reference_sample_size": 784,
+      "reference_value": 0.0,
+      "status": "HEALTHY"
+    },
+    {
+      "current_sample_size": 783,
+      "current_value": 1.7341713675719008e-06,
+      "data_type": "numeric",
+      "feature_name": "site",
+      "metric": "psi",
+      "notes": "PSI thresholds are TO_BE_CALIBRATED and not universally valid.",
+      "reference_sample_size": 784,
+      "reference_value": 0.0,
+      "status": "HEALTHY"
+    },
+    {
+      "current_sample_size": 783,
+      "current_value": 0.0006581176531915449,
+      "data_type": "numeric",
+      "feature_name": "site",
+      "metric": "ks",
+      "notes": "KS statistic. Not a causal test.",
+      "reference_sample_size": 784,
+      "reference_value": 0.0,
+      "status": "HEALTHY"
+    },
+    {
+      "current_sample_size": 783,
+      "current_value": 0.0009383063570255618,
+      "data_type": "categorical",
+      "feature_name": "spatial_region",
+      "metric": "category_frequency_l1",
+      "notes": "Half L1 frequency shift.",
+      "reference_sample_size": 784,
+      "reference_value": 0.0,
+      "status": "HEALTHY"
+    },
+    {
+      "current_sample_size": 783,
+      "current_value": 0.0,
+      "data_type": "categorical",
+      "feature_name": "spatial_region",
+      "metric": "unseen_category_rate",
+      "notes": "Share of current rows with a category absent from the reference.",
+      "reference_sample_size": 784,
+      "reference_value": 0.0,
+      "status": "HEALTHY"
+    },
+    {
+      "current_sample_size": 0,
+      "current_value": null,
+      "data_type": "numeric",
+      "feature_name": "temperature_c",
+      "metric": "psi",
+      "notes": "PSI thresholds are TO_BE_CALIBRATED and not universally valid.",
+      "reference_sample_size": 784,
+      "reference_value": 0.0,
+      "status": "INSUFFICIENT_DATA"
+    },
+    {
+      "current_sample_size": 0,
+      "current_value": null,
+      "data_type": "numeric",
+      "feature_name": "temperature_c",
+      "metric": "ks",
+      "notes": "KS statistic. Not a causal test.",
+      "reference_sample_size": 784,
+      "reference_value": 0.0,
+      "status": "INSUFFICIENT_DATA"
+    },
+    {
+      "current_sample_size": 783,
+      "current_value": 0.00048800156337093915,
+      "data_type": "numeric",
+      "feature_name": "tester_fail_rate",
+      "metric": "psi",
+      "notes": "PSI thresholds are TO_BE_CALIBRATED and not universally valid.",
+      "reference_sample_size": 784,
+      "reference_value": 0.0,
+      "status": "HEALTHY"
+    },
+    {
+      "current_sample_size": 783,
+      "current_value": 0.0170980269502437,
+      "data_type": "numeric",
+      "feature_name": "tester_fail_rate",
+      "metric": "ks",
+      "notes": "KS statistic. Not a causal test.",
+      "reference_sample_size": 784,
+      "reference_value": 0.0,
+      "status": "HEALTHY"
+    },
+    {
+      "current_sample_size": 783,
+      "current_value": 0.02426564495530015,
+      "data_type": "categorical",
+      "feature_name": "tester_id",
+      "metric": "category_frequency_l1",
+      "notes": "Half L1 frequency shift.",
+      "reference_sample_size": 784,
+      "reference_value": 0.0,
+      "status": "HEALTHY"
+    },
+    {
+      "current_sample_size": 783,
+      "current_value": 0.024265644955300127,
+      "data_type": "categorical",
+      "feature_name": "tester_id",
+      "metric": "unseen_category_rate",
+      "notes": "Share of current rows with a category absent from the reference.",
+      "reference_sample_size": 784,
+      "reference_value": 0.0,
+      "status": "HEALTHY"
+    },
+    {
+      "current_sample_size": 783,
+      "current_value": 1.1461606189387423e-05,
+      "data_type": "numeric",
+      "feature_name": "timestamp_epoch",
+      "metric": "psi",
+      "notes": "PSI thresholds are TO_BE_CALIBRATED and not universally valid.",
+      "reference_sample_size": 784,
+      "reference_value": 0.0,
+      "status": "HEALTHY"
+    },
+    {
+      "current_sample_size": 783,
+      "current_value": 0.0012755102040816326,
+      "data_type": "numeric",
+      "feature_name": "timestamp_epoch",
+      "metric": "ks",
+      "notes": "KS statistic. Not a causal test.",
+      "reference_sample_size": 784,
+      "reference_value": 0.0,
+      "status": "HEALTHY"
+    },
+    {
+      "current_sample_size": 783,
+      "current_value": 0.0,
+      "data_type": "numeric",
+      "feature_name": "voltage_v",
+      "metric": "psi",
+      "notes": "PSI thresholds are TO_BE_CALIBRATED and not universally valid.",
+      "reference_sample_size": 784,
+      "reference_value": 0.0,
+      "status": "HEALTHY"
+    },
+    {
+      "current_sample_size": 783,
+      "current_value": 0.0,
+      "data_type": "numeric",
+      "feature_name": "voltage_v",
+      "metric": "ks",
+      "notes": "KS statistic. Not a causal test.",
+      "reference_sample_size": 784,
+      "reference_value": 0.0,
+      "status": "HEALTHY"
+    }
+  ],
+  "feature_version": "yi_ml_features_v1",
+  "invoked_agents": [],
+  "label_mode": "LABELED",
+  "limitations": [
+    "Thresholds are TO_BE_CALIBRATED and are not universally valid.",
+    "Prediction drift is not model failure and is not a root cause.",
+    "Feature importance remains predictive, not causal.",
+    "Monitoring never retrains, never replaces the model, and never authorizes production.",
+    "Label-dependent metrics are UNAVAILABLE when first-pass outcomes are missing.",
+    "Model health is advisory. It is not a production authorization, not a root cause, not a causal effect, and not an instruction to retrain or replace the model automatically."
+  ],
+  "lot_summaries": [
+    {
+      "fail_rate": 0.30927835051546393,
+      "lot_id": "L001",
+      "mean_prediction": 0.2657731233348337,
+      "n": 97,
+      "n_wafers": 2
+    },
+    {
+      "fail_rate": 0.23469387755102042,
+      "lot_id": "L002",
+      "mean_prediction": 0.2644551235566904,
+      "n": 98,
+      "n_wafers": 2
+    },
+    {
+      "fail_rate": 0.24489795918367346,
+      "lot_id": "L003",
+      "mean_prediction": 0.2664173848358542,
+      "n": 98,
+      "n_wafers": 2
+    },
+    {
+      "fail_rate": 0.2857142857142857,
+      "lot_id": "L004",
+      "mean_prediction": 0.2667713218634989,
+      "n": 98,
+      "n_wafers": 2
+    },
+    {
+      "fail_rate": 0.2755102040816326,
+      "lot_id": "L005",
+      "mean_prediction": 0.26340882974761987,
+      "n": 98,
+      "n_wafers": 2
+    },
+    {
+      "fail_rate": 0.22448979591836735,
+      "lot_id": "L006",
+      "mean_prediction": 0.26033350246306936,
+      "n": 98,
+      "n_wafers": 2
+    },
+    {
+      "fail_rate": 0.20408163265306123,
+      "lot_id": "L007",
+      "mean_prediction": 0.2638278241192687,
+      "n": 98,
+      "n_wafers": 2
+    },
+    {
+      "fail_rate": 0.336734693877551,
+      "lot_id": "L008",
+      "mean_prediction": 0.2611516153986336,
+      "n": 98,
+      "n_wafers": 2
+    }
+  ],
+  "model_replaced": false,
+  "model_version": "yi_ml_v1",
+  "n_dies": 783,
+  "n_lots": 8,
+  "n_wafers": 2,
+  "overall_status": "REVIEW",
+  "performance": {
+    "availability": "AVAILABLE",
+    "dimension": "performance",
+    "metrics": [
+      {
+        "current_value": 0.7661743491680086,
+        "delta": 0.0009929595046657136,
+        "dimension": "performance",
+        "metric_name": "roc_auc",
+        "notes": "Compared to the immutable reference snapshot, not a hidden holdout.",
+        "reference_value": 0.7651813896633429,
+        "sample_size": 783,
+        "status": "HEALTHY",
+        "threshold": 0.05
+      },
+      {
+        "current_value": 0.4747356051900412,
+        "delta": 0.0014010167842617993,
+        "dimension": "performance",
+        "metric_name": "pr_auc",
+        "notes": "Compared to the immutable reference snapshot, not a hidden holdout.",
+        "reference_value": 0.4733345884057794,
+        "sample_size": 783,
+        "status": "HEALTHY",
+        "threshold": 0.05
+      },
+      {
+        "current_value": 0.19806763285024154,
+        "delta": -0.009661835748792286,
+        "dimension": "performance",
+        "metric_name": "failure_capture_at_top_10_percent",
+        "notes": "Compared to the immutable reference snapshot, not a hidden holdout.",
+        "reference_value": 0.20772946859903382,
+        "sample_size": 783,
+        "status": "HEALTHY",
+        "threshold": 0.08
+      },
+      {
+        "current_value": 0.4106280193236715,
+        "delta": 0.014492753623188415,
+        "dimension": "performance",
+        "metric_name": "failure_capture_at_top_20_percent",
+        "notes": "Compared to the immutable reference snapshot, not a hidden holdout.",
+        "reference_value": 0.3961352657004831,
+        "sample_size": 783,
+        "status": "HEALTHY",
+        "threshold": 0.08
+      },
+      {
+        "current_value": 0.16048198522547327,
+        "delta": 9.160228989918417e-06,
+        "dimension": "performance",
+        "metric_name": "brier",
+        "notes": "Compared to the immutable reference snapshot, not a hidden holdout.",
+        "reference_value": 0.16047282499648335,
+        "sample_size": 783,
+        "status": "HEALTHY",
+        "threshold": 0.04
+      },
+      {
+        "current_value": 0.5112781954887218,
+        "delta": 0.0,
+        "dimension": "performance",
+        "metric_name": "f1",
+        "notes": "Compared to the immutable reference snapshot, not a hidden holdout.",
+        "reference_value": 0.5112781954887218,
+        "sample_size": 783,
+        "status": "HEALTHY",
+        "threshold": 0.08
+      },
+      {
+        "current_value": 0.53125,
+        "delta": 0.0,
+        "dimension": "performance",
+        "metric_name": "precision",
+        "notes": "Compared to the immutable reference snapshot, not a hidden holdout.",
+        "reference_value": 0.53125,
+        "sample_size": 783,
+        "status": "HEALTHY",
+        "threshold": 0.08
+      },
+      {
+        "current_value": 0.4927536231884058,
+        "delta": 0.0,
+        "dimension": "performance",
+        "metric_name": "recall",
+        "notes": "Compared to the immutable reference snapshot, not a hidden holdout.",
+        "reference_value": 0.4927536231884058,
+        "sample_size": 783,
+        "status": "HEALTHY",
+        "threshold": 0.08
+      }
+    ],
+    "notes": "Performance degradation is evaluated independently of feature drift.",
+    "status": "HEALTHY"
+  },
+  "performance_details": [
+    {
+      "current_value": 0.7661743491680086,
+      "delta": 0.0009929595046657136,
+      "metric": "roc_auc",
+      "notes": "Capture metrics are diagnostic concentration, not a yield-recovery claim.",
+      "reference_value": 0.7651813896633429,
+      "status": "HEALTHY"
+    },
+    {
+      "current_value": 0.4747356051900412,
+      "delta": 0.0014010167842617993,
+      "metric": "pr_auc",
+      "notes": "Capture metrics are diagnostic concentration, not a yield-recovery claim.",
+      "reference_value": 0.4733345884057794,
+      "status": "HEALTHY"
+    },
+    {
+      "current_value": 0.19806763285024154,
+      "delta": -0.009661835748792286,
+      "metric": "failure_capture_at_top_10_percent",
+      "notes": "Capture metrics are diagnostic concentration, not a yield-recovery claim.",
+      "reference_value": 0.20772946859903382,
+      "status": "HEALTHY"
+    },
+    {
+      "current_value": 0.4106280193236715,
+      "delta": 0.014492753623188415,
+      "metric": "failure_capture_at_top_20_percent",
+      "notes": "Capture metrics are diagnostic concentration, not a yield-recovery claim.",
+      "reference_value": 0.3961352657004831,
+      "status": "HEALTHY"
+    },
+    {
+      "current_value": 0.16048198522547327,
+      "delta": 9.160228989918417e-06,
+      "metric": "brier",
+      "notes": "Capture metrics are diagnostic concentration, not a yield-recovery claim.",
+      "reference_value": 0.16047282499648335,
+      "status": "HEALTHY"
+    },
+    {
+      "current_value": 0.5112781954887218,
+      "delta": 0.0,
+      "metric": "f1",
+      "notes": "Capture metrics are diagnostic concentration, not a yield-recovery claim.",
+      "reference_value": 0.5112781954887218,
+      "status": "HEALTHY"
+    },
+    {
+      "current_value": 0.53125,
+      "delta": 0.0,
+      "metric": "precision",
+      "notes": "Capture metrics are diagnostic concentration, not a yield-recovery claim.",
+      "reference_value": 0.53125,
+      "status": "HEALTHY"
+    },
+    {
+      "current_value": 0.4927536231884058,
+      "delta": 0.0,
+      "metric": "recall",
+      "notes": "Capture metrics are diagnostic concentration, not a yield-recovery claim.",
+      "reference_value": 0.4927536231884058,
+      "status": "HEALTHY"
+    }
+  ],
+  "prediction_drift": {
+    "availability": "AVAILABLE",
+    "dimension": "prediction_drift",
+    "metrics": [
+      {
+        "current_value": 0.2640150982860448,
+        "delta": 0.0030235398363206434,
+        "dimension": "prediction_drift",
+        "metric_name": "mean_probability_abs_delta",
+        "notes": "Prediction distribution change is not automatically model failure.",
+        "reference_value": 0.26703863812236545,
+        "sample_size": 783,
+        "status": "HEALTHY",
+        "threshold": 0.04
+      },
+      {
+        "current_value": 0.24521072796934865,
+        "delta": 0.0003127687856751826,
+        "dimension": "prediction_drift",
+        "metric_name": "positive_prediction_rate_abs_delta",
+        "notes": "Prediction distribution change is not automatically model failure.",
+        "reference_value": 0.24489795918367346,
+        "sample_size": 783,
+        "status": "HEALTHY",
+        "threshold": 0.05
+      },
+      {
+        "current_value": 0.04574180649010143,
+        "delta": 0.04574180649010143,
+        "dimension": "prediction_drift",
+        "metric_name": "prediction_psi",
+        "notes": "Prediction distribution change is not automatically model failure.",
+        "reference_value": 0.0,
+        "sample_size": 783,
+        "status": "HEALTHY",
+        "threshold": 0.1
+      },
+      {
+        "current_value": 0.019798915734876327,
+        "delta": 0.019798915734876327,
+        "dimension": "prediction_drift",
+        "metric_name": "prediction_ks",
+        "notes": "Prediction distribution change is not automatically model failure.",
+        "reference_value": 0.0,
+        "sample_size": 783,
+        "status": "HEALTHY",
+        "threshold": 0.15
+      }
+    ],
+    "notes": "Prediction distribution change is not automatically model failure.",
+    "status": "HEALTHY"
+  },
+  "production_action": "FORBIDDEN",
+  "production_authorized": false,
+  "recommendations": [
+    "REVIEW_MODEL"
+  ],
+  "reference_dataset_id": "ds_0b5542c71e1a13e0",
+  "reference_version": "yi_ml_ref_v1",
+  "retrained": false,
+  "safety_eligible_production_count": 0,
+  "safety_eligible_production_rate": 0.0,
+  "target_drift": {
+    "availability": "AVAILABLE",
+    "dimension": "target_drift",
+    "metrics": [
+      {
+        "current_value": 0.26436781609195403,
+        "delta": 0.00033720384705610007,
+        "dimension": "target_drift",
+        "metric_name": "first_pass_fail_rate_abs_delta",
+        "notes": "Process base-rate change is not the same as model drift.",
+        "reference_value": 0.26403061224489793,
+        "sample_size": 783,
+        "status": "HEALTHY",
+        "threshold": 0.05
+      },
+      {
+        "current_value": 0.26436781609195403,
+        "delta": 0.0012771392081738285,
+        "dimension": "target_drift",
+        "metric_name": "first_pass_fail_rate_relative_delta",
+        "notes": "Relative change vs the immutable reference fail rate.",
+        "reference_value": 0.26403061224489793,
+        "sample_size": 783,
+        "status": "HEALTHY",
+        "threshold": 0.25
+      }
+    ],
+    "notes": "Target drift can occur while the model remains well calibrated.",
+    "status": "HEALTHY"
+  },
+  "temporal": [
+    {
+      "fail_rate": 0.30927835051546393,
+      "lot_id": "L001",
+      "mean_prediction": 0.2657731233348337,
+      "min_ts": "2026-03-01 08:00:02+00:00",
+      "n": 97
+    },
+    {
+      "fail_rate": 0.23469387755102042,
+      "lot_id": "L002",
+      "mean_prediction": 0.2644551235566904,
+      "min_ts": "2026-03-02 08:00:00+00:00",
+      "n": 98
+    },
+    {
+      "fail_rate": 0.24489795918367346,
+      "lot_id": "L003",
+      "mean_prediction": 0.2664173848358542,
+      "min_ts": "2026-03-03 08:00:00+00:00",
+      "n": 98
+    },
+    {
+      "fail_rate": 0.2857142857142857,
+      "lot_id": "L004",
+      "mean_prediction": 0.2667713218634989,
+      "min_ts": "2026-03-04 08:00:00+00:00",
+      "n": 98
+    },
+    {
+      "fail_rate": 0.2755102040816326,
+      "lot_id": "L005",
+      "mean_prediction": 0.26340882974761987,
+      "min_ts": "2026-03-05 08:00:00+00:00",
+      "n": 98
+    },
+    {
+      "fail_rate": 0.22448979591836735,
+      "lot_id": "L006",
+      "mean_prediction": 0.26033350246306936,
+      "min_ts": "2026-03-06 08:00:00+00:00",
+      "n": 98
+    },
+    {
+      "fail_rate": 0.20408163265306123,
+      "lot_id": "L007",
+      "mean_prediction": 0.2638278241192687,
+      "min_ts": "2026-03-07 08:00:00+00:00",
+      "n": 98
+    },
+    {
+      "fail_rate": 0.336734693877551,
+      "lot_id": "L008",
+      "mean_prediction": 0.2611516153986336,
+      "min_ts": "2026-03-08 08:00:00+00:00",
+      "n": 98
+    }
+  ],
+  "temporal_available": true,
+  "triggers": [
+    "critical_data_quality"
+  ]
+}

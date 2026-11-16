@@ -1,0 +1,32 @@
+{
+  "categorical": {
+    "columns": [
+      "spatial_region",
+      "tester_id",
+      "probe_card_id",
+      "prober_id"
+    ],
+    "encoder": "OneHotEncoder(handle_unknown=ignore)",
+    "imputer": "SimpleImputer(strategy=most_frequent)",
+    "spatial_region": "BORDER if the die is on the training-grid boundary, otherwise INNER"
+  },
+  "numeric": {
+    "columns": [
+      "die_x",
+      "die_y",
+      "normalized_x",
+      "normalized_y",
+      "radial_distance",
+      "edge_distance",
+      "timestamp_epoch",
+      "temperature_c",
+      "voltage_v",
+      "site",
+      "tester_fail_rate",
+      "probe_fail_rate"
+    ],
+    "fit_on": "all V2 rows for the deployed artifact; each LOLO fold refit on its training lots only",
+    "imputer": "SimpleImputer(strategy=median)",
+    "scaler": "StandardScaler"
+  }
+}

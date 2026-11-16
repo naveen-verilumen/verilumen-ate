@@ -1,0 +1,13 @@
+{
+  "dataset_id": "ds_e8b6b664a6810381",
+  "generator_version": "yi_synth_v1",
+  "profile": "small",
+  "scenario_id": "S16",
+  "seed": 20260322,
+  "true_causes": [
+    {
+      "detail": "NO_CONFIDENT_ROOT_CAUSE",
+      "family": "NONE"
+    }
+  ]
+}

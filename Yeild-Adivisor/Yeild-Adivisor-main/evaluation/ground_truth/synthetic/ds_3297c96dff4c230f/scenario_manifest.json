@@ -1,0 +1,13 @@
+{
+  "dataset_id": "ds_3297c96dff4c230f",
+  "generator_version": "yi_synth_v1",
+  "profile": "small",
+  "scenario_id": "S08",
+  "seed": 20260322,
+  "true_causes": [
+    {
+      "detail": "SHIFT",
+      "family": "PARAMETRIC"
+    }
+  ]
+}

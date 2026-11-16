@@ -1,0 +1,113 @@
+{
+  "comparison": [
+    {
+      "brier": 0.27313293845889575,
+      "f1": 0.1670205237084218,
+      "failure_capture_at_top_10_percent": 0.0796812749003984,
+      "failure_capture_at_top_20_percent": 0.17131474103585656,
+      "model": "logistic",
+      "pr_auc": 0.10122375462442088,
+      "recall": 0.4701195219123506,
+      "roc_auc": 0.4963941477309969
+    },
+    {
+      "brier": 0.19930175878257808,
+      "f1": 0.11764705882352941,
+      "failure_capture_at_top_10_percent": 0.06374501992031872,
+      "failure_capture_at_top_20_percent": 0.1593625498007968,
+      "model": "random_forest",
+      "pr_auc": 0.09228534548623048,
+      "recall": 0.20318725099601595,
+      "roc_auc": 0.47498135514854767
+    },
+    {
+      "brier": 0.252358261664337,
+      "f1": 0.12682926829268293,
+      "failure_capture_at_top_10_percent": 0.05179282868525897,
+      "failure_capture_at_top_20_percent": 0.14342629482071714,
+      "model": "hist_gbm",
+      "pr_auc": 0.09101240945418648,
+      "recall": 0.2589641434262948,
+      "roc_auc": 0.4663754940221329
+    },
+    {
+      "brier": 0.2529514377012747,
+      "f1": 0.12650602409638553,
+      "failure_capture_at_top_10_percent": 0.05976095617529881,
+      "failure_capture_at_top_20_percent": 0.1394422310756972,
+      "model": "xgboost",
+      "pr_auc": 0.09123077958543412,
+      "recall": 0.250996015936255,
+      "roc_auc": 0.47290074915987446
+    },
+    {
+      "brier": 0.24726625585551437,
+      "f1": 0.11458333333333333,
+      "failure_capture_at_top_10_percent": 0.06772908366533864,
+      "failure_capture_at_top_20_percent": 0.13545816733067728,
+      "model": "lightgbm",
+      "pr_auc": 0.09085957655468198,
+      "recall": 0.21912350597609562,
+      "roc_auc": 0.4723170457343592
+    }
+  ],
+  "disclaimer": "ML output is a predictive association for first-pass failure. It is not a confirmed root cause, not a causal effect, not a predicted FPY gain, and not a production authorization.",
+  "fold_mean_std": {
+    "balanced_accuracy": {
+      "mean": 0.5067028528149458,
+      "std": 0.014988034537394437
+    },
+    "brier": {
+      "mean": 0.10059457906752498,
+      "std": 0.043505244316448304
+    },
+    "f1": {
+      "mean": 0.026373626373626374,
+      "std": 0.058973221384609836
+    },
+    "failure_capture_at_top_10_percent": {
+      "mean": 0.11463362240274197,
+      "std": 0.059747495947643066
+    },
+    "failure_capture_at_top_20_percent": {
+      "mean": 0.20524285479988866,
+      "std": 0.06973405107743838
+    },
+    "log_loss": {
+      "mean": 0.3744367467751025,
+      "std": 0.1481493328336787
+    },
+    "pr_auc": {
+      "mean": 0.11587912081827616,
+      "std": 0.053208876904295266
+    },
+    "precision": {
+      "mean": 0.021052631578947368,
+      "std": 0.047075115315785045
+    },
+    "recall": {
+      "mean": 0.03529411764705882,
+      "std": 0.07892004626469847
+    },
+    "roc_auc": {
+      "mean": 0.5277810835475298,
+      "std": 0.042639512087383105
+    }
+  },
+  "metrics": {
+    "balanced_accuracy": 0.5006138186250109,
+    "brier": 0.10059457906752498,
+    "f1": 0.03896103896103896,
+    "failure_capture_at_top_10_percent": 0.07569721115537849,
+    "failure_capture_at_top_20_percent": 0.14741035856573706,
+    "log_loss": 0.37443674677510264,
+    "n_positives": 251,
+    "n_samples": 2500,
+    "positive_rate": 0.1004,
+    "pr_auc": 0.09090471467507374,
+    "precision": 0.10526315789473684,
+    "recall": 0.02390438247011952,
+    "roc_auc": 0.4591956761659454
+  },
+  "model_name": "logistic"
+}

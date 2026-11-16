@@ -1,0 +1,304 @@
+{
+  "all_unauthorized": true,
+  "counts": {
+    "FN": 0,
+    "FP": 0,
+    "TN": 3,
+    "TP": 7
+  },
+  "n_scenarios": 10,
+  "none_retrained": true,
+  "rows": [
+    {
+      "binary": "TN",
+      "calibration": "HEALTHY",
+      "data_quality": "HEALTHY",
+      "dataset_id": "ds_mon_01",
+      "expected_state": [
+        "HEALTHY",
+        "MONITOR"
+      ],
+      "feature_drift": "HEALTHY",
+      "label_mode": "LABELED",
+      "n_dies": 784,
+      "no_limit_verbs": true,
+      "performance": "HEALTHY",
+      "predicted_state": "HEALTHY",
+      "prediction_drift": "HEALTHY",
+      "production_authorized": false,
+      "recommendations": [
+        "CONTINUE_MONITORING"
+      ],
+      "retrained": false,
+      "scenario": "M01_NO_DRIFT",
+      "status": "PASS",
+      "target_drift": "HEALTHY",
+      "triggers": [
+        "default_healthy"
+      ]
+    },
+    {
+      "binary": "TP",
+      "calibration": "HEALTHY",
+      "data_quality": "HEALTHY",
+      "dataset_id": "ds_mon_02",
+      "expected_state": [
+        "MONITOR",
+        "REVIEW",
+        "NEEDS_RETRAINING"
+      ],
+      "feature_drift": "REVIEW",
+      "label_mode": "LABELED",
+      "n_dies": 784,
+      "no_limit_verbs": true,
+      "performance": "HEALTHY",
+      "predicted_state": "REVIEW",
+      "prediction_drift": "HEALTHY",
+      "production_authorized": false,
+      "recommendations": [
+        "REVIEW_MODEL"
+      ],
+      "retrained": false,
+      "scenario": "M02_FEATURE_DRIFT",
+      "status": "PASS",
+      "target_drift": "HEALTHY",
+      "triggers": [
+        "any_review_dimension"
+      ]
+    },
+    {
+      "binary": "TP",
+      "calibration": "REVIEW",
+      "data_quality": "HEALTHY",
+      "dataset_id": "ds_mon_03",
+      "expected_state": [
+        "MONITOR",
+        "REVIEW",
+        "NEEDS_RETRAINING"
+      ],
+      "feature_drift": "REVIEW",
+      "label_mode": "LABELED",
+      "n_dies": 784,
+      "no_limit_verbs": true,
+      "performance": "DEGRADED",
+      "predicted_state": "NEEDS_RETRAINING",
+      "prediction_drift": "REVIEW",
+      "production_authorized": false,
+      "recommendations": [
+        "CONSIDER_RETRAINING"
+      ],
+      "retrained": false,
+      "scenario": "M03_PREDICTION_DRIFT",
+      "status": "PASS",
+      "target_drift": "HEALTHY",
+      "triggers": [
+        "severe_performance",
+        "multi_signal_with_performance"
+      ]
+    },
+    {
+      "binary": "TP",
+      "calibration": "REVIEW",
+      "data_quality": "HEALTHY",
+      "dataset_id": "ds_mon_04",
+      "expected_state": [
+        "MONITOR",
+        "REVIEW",
+        "DEGRADED",
+        "NEEDS_RETRAINING"
+      ],
+      "feature_drift": "HEALTHY",
+      "label_mode": "LABELED",
+      "n_dies": 784,
+      "no_limit_verbs": true,
+      "performance": "DEGRADED",
+      "predicted_state": "DEGRADED",
+      "prediction_drift": "HEALTHY",
+      "production_authorized": false,
+      "recommendations": [
+        "INVESTIGATE_DRIFT"
+      ],
+      "retrained": false,
+      "scenario": "M04_TARGET_DRIFT",
+      "status": "PASS",
+      "target_drift": "REVIEW",
+      "triggers": [
+        "severe_performance"
+      ]
+    },
+    {
+      "binary": "TP",
+      "calibration": "REVIEW",
+      "data_quality": "HEALTHY",
+      "dataset_id": "ds_mon_05",
+      "expected_state": [
+        "REVIEW",
+        "MONITOR",
+        "DEGRADED",
+        "NEEDS_RETRAINING"
+      ],
+      "feature_drift": "HEALTHY",
+      "label_mode": "LABELED",
+      "n_dies": 784,
+      "no_limit_verbs": true,
+      "performance": "DEGRADED",
+      "predicted_state": "DEGRADED",
+      "prediction_drift": "HEALTHY",
+      "production_authorized": false,
+      "recommendations": [
+        "INVESTIGATE_DRIFT"
+      ],
+      "retrained": false,
+      "scenario": "M05_CALIBRATION_DRIFT",
+      "status": "PASS",
+      "target_drift": "REVIEW",
+      "triggers": [
+        "severe_performance"
+      ]
+    },
+    {
+      "binary": "TP",
+      "calibration": "REVIEW",
+      "data_quality": "HEALTHY",
+      "dataset_id": "ds_mon_06",
+      "expected_state": [
+        "DEGRADED",
+        "NEEDS_RETRAINING",
+        "REVIEW"
+      ],
+      "feature_drift": "HEALTHY",
+      "label_mode": "LABELED",
+      "n_dies": 784,
+      "no_limit_verbs": true,
+      "performance": "DEGRADED",
+      "predicted_state": "DEGRADED",
+      "prediction_drift": "HEALTHY",
+      "production_authorized": false,
+      "recommendations": [
+        "INVESTIGATE_DRIFT"
+      ],
+      "retrained": false,
+      "scenario": "M06_PERFORMANCE_DEGRADATION",
+      "status": "PASS",
+      "target_drift": "HEALTHY",
+      "triggers": [
+        "severe_performance"
+      ]
+    },
+    {
+      "binary": "TP",
+      "calibration": "REVIEW",
+      "data_quality": "HEALTHY",
+      "dataset_id": "ds_mon_07",
+      "expected_state": [
+        "NEEDS_RETRAINING",
+        "REVIEW",
+        "DEGRADED",
+        "MONITOR"
+      ],
+      "feature_drift": "REVIEW",
+      "label_mode": "LABELED",
+      "n_dies": 784,
+      "no_limit_verbs": true,
+      "performance": "DEGRADED",
+      "predicted_state": "NEEDS_RETRAINING",
+      "prediction_drift": "REVIEW",
+      "production_authorized": false,
+      "recommendations": [
+        "CONSIDER_RETRAINING"
+      ],
+      "retrained": false,
+      "scenario": "M07_MULTIPLE_DRIFT",
+      "status": "PASS",
+      "target_drift": "REVIEW",
+      "triggers": [
+        "severe_performance",
+        "multi_signal_with_performance"
+      ]
+    },
+    {
+      "binary": "TP",
+      "calibration": "HEALTHY",
+      "data_quality": "REVIEW",
+      "dataset_id": "ds_mon_08",
+      "expected_state": [
+        "REVIEW"
+      ],
+      "feature_drift": "INSUFFICIENT_DATA",
+      "label_mode": "LABELED",
+      "n_dies": 783,
+      "no_limit_verbs": true,
+      "performance": "HEALTHY",
+      "predicted_state": "REVIEW",
+      "prediction_drift": "HEALTHY",
+      "production_authorized": false,
+      "recommendations": [
+        "REVIEW_MODEL"
+      ],
+      "retrained": false,
+      "scenario": "M08_SCHEMA_DEGRADATION",
+      "status": "PASS",
+      "target_drift": "HEALTHY",
+      "triggers": [
+        "critical_data_quality"
+      ]
+    },
+    {
+      "binary": "TN",
+      "calibration": "INSUFFICIENT_DATA",
+      "data_quality": "HEALTHY",
+      "dataset_id": "ds_mon_09",
+      "expected_state": [
+        "INSUFFICIENT_DATA"
+      ],
+      "feature_drift": "REVIEW",
+      "label_mode": "LABELED",
+      "n_dies": 24,
+      "no_limit_verbs": true,
+      "performance": "INSUFFICIENT_DATA",
+      "predicted_state": "INSUFFICIENT_DATA",
+      "prediction_drift": "INSUFFICIENT_DATA",
+      "production_authorized": false,
+      "recommendations": [
+        "COLLECT_MORE_DATA"
+      ],
+      "retrained": false,
+      "scenario": "M09_SMALL_SAMPLE",
+      "status": "PASS",
+      "target_drift": "INSUFFICIENT_DATA",
+      "triggers": [
+        "insufficient_sample"
+      ]
+    },
+    {
+      "binary": "TN",
+      "calibration": "UNAVAILABLE",
+      "data_quality": "HEALTHY",
+      "dataset_id": "ds_mon_10",
+      "expected_state": [
+        "HEALTHY",
+        "MONITOR",
+        "REVIEW",
+        "INSUFFICIENT_DATA"
+      ],
+      "feature_drift": "HEALTHY",
+      "label_mode": "UNLABELED",
+      "n_dies": 784,
+      "no_limit_verbs": true,
+      "performance": "UNAVAILABLE",
+      "predicted_state": "HEALTHY",
+      "prediction_drift": "HEALTHY",
+      "production_authorized": false,
+      "recommendations": [
+        "CONTINUE_MONITORING"
+      ],
+      "retrained": false,
+      "scenario": "M10_NO_LABELS",
+      "status": "PASS",
+      "target_drift": "UNAVAILABLE",
+      "triggers": [
+        "default_healthy"
+      ]
+    }
+  ]
+}

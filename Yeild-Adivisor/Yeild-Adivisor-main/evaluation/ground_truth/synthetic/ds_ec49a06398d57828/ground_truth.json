@@ -1,0 +1,35 @@
+{
+  "affected_population": {
+    "affected_lots": [
+      "L002",
+      "L004"
+    ],
+    "n_targeted": 196,
+    "n_total": 784,
+    "rule": "selected lots"
+  },
+  "confounders": [
+    "other_lots_keep_baseline_variation"
+  ],
+  "dataset_id": "ds_ec49a06398d57828",
+  "difficulty": "easy",
+  "expected_signal": "One or more lots have elevated failure rates.",
+  "generator_version": "yi_synth_v1",
+  "injected_parameters": {
+    "affected_lots": [
+      "L002",
+      "L004"
+    ],
+    "extra_p": 0.35
+  },
+  "notes": null,
+  "profile": "small",
+  "scenario_id": "S12",
+  "seed": 20260322,
+  "true_causes": [
+    {
+      "detail": "LOT_VARIATION",
+      "family": "PROCESS"
+    }
+  ]
+}

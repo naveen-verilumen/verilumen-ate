@@ -1,0 +1,93 @@
+# Columns the ML layer may consume from agent-visible tables.
+# Unknown columns fail closed. Deny list always wins.
+
+allowlist_version: yi_ml_features_v1
+
+allowed_input_columns:
+  - lot_id
+  - wafer_id
+  - die_id
+  - attempt_id
+  - product_id
+  - step_id
+  - part_class
+  - x
+  - y
+  - timestamp
+  - attempt_number
+  - is_first_attempt
+  - tester_id
+  - probe_card_id
+  - prober_id
+  - site
+  - temperature_c
+  - voltage_v
+  - record_status
+  - parameter_name
+  - measurement
+  - lower_limit
+  - upper_limit
+  - unit
+  - condition_id
+
+# Derived feature names emitted by FeatureBuilder (not source columns).
+allowed_derived_features:
+  - die_x
+  - die_y
+  - normalized_x
+  - normalized_y
+  - radial_distance
+  - edge_distance
+  - spatial_region
+  - timestamp_epoch
+  - temperature_c
+  - voltage_v
+  - site
+  - tester_id
+  - probe_card_id
+  - prober_id
+  - tester_fail_rate
+  - probe_fail_rate
+  - relative_position_within_lot
+  - IR_DROP_MV
+  - THERMAL_C
+  - SETUP_SLACK_PS
+  - HOLD_SLACK_PS
+  - TEST_TIME_MS
+
+denied_columns:
+  - true_root_cause
+  - true_cause
+  - true_causes
+  - planted_cause
+  - planted_causes
+  - latent_quality
+  - scenario_id
+  - expected_hypothesis
+  - expected_signal
+  - generator_seed
+  - injected_effect
+  - injected_parameters
+  - difficulty
+  - ground_truth
+  - recoverable_fraction
+  - pass_fail
+  - disposition
+  - sbin
+  - hbin
+  - failure_code
+  - abort_flag
+  - is_retest
+  - is_rework
+  - final_disposition
+  - first_pass_disposition
+  - first_pass_fail
+  - primary_failure_code
+  - primary_failure_key
+  - primary_failure_family
+  - primary_failure_detail
+  - parametric_pass_fail
+  - over_limit
+  - test_pass_fail
+  - is_first_fail
+  - sequence_index

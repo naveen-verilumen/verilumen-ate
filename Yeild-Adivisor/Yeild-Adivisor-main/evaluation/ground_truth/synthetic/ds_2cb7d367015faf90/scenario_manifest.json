@@ -1,0 +1,13 @@
+{
+  "dataset_id": "ds_2cb7d367015faf90",
+  "generator_version": "yi_synth_v1",
+  "profile": "small",
+  "scenario_id": "S14",
+  "seed": 20260322,
+  "true_causes": [
+    {
+      "detail": "FAILURES",
+      "family": "CORRELATED"
+    }
+  ]
+}

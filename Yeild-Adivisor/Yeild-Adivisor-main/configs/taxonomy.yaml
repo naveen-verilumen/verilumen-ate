@@ -1,0 +1,96 @@
+# Yield Improvement Agent — V1 taxonomy
+# Versioned controlled vocabulary. Do not silently expand at runtime.
+# Unmapped codes MUST remain UNKNOWN.<DETAIL>, never guessed.
+
+taxonomy_version: yi_taxonomy_v1
+status: FROZEN
+separator: "."
+format: FAMILY.DETAIL
+
+# Mapping is deterministic: failure_code / bin family / detector tag
+# → exactly one taxonomy_code string. Unknown → UNKNOWN.UNSPECIFIED
+# or UNKNOWN.UNMAPPED_CODE (see mapping_rules).
+
+families:
+  PROCESS:
+    details: [DEFECT, DRIFT, RECIPE, CHAMBER, UNKNOWN]
+    meaning: Fabrication / recipe / chamber associated loss.
+    requires: process fields or spatial+low-recovery without contact signature
+  TEST:
+    details: [LIMIT_SENSITIVITY, SEQUENCE, CONDITION, PROGRAM, COVERAGE, UNKNOWN]
+    meaning: Test program, limits, order, or V/T condition.
+  EQUIPMENT:
+    details: [TESTER, PROBER, PROBE_CARD, HANDLER, SITE, UNKNOWN]
+    meaning: Asset-stratified first-pass loss.
+  CONTACT:
+    details: [PROBE, CONTINUITY, NO_CONTACT, UNKNOWN]
+    meaning: Contact / continuity / no-contact signature.
+  PARAMETRIC:
+    details: [SHIFT, SPREAD, NEAR_LIMIT, CORRELATED, UNKNOWN]
+    meaning: Measurement distribution versus limits.
+  FUNCTIONAL:
+    details: [PATTERN, TIMING, SCAN, MEMORY, UNKNOWN]
+    meaning: Pattern/logic fail without parametric explanation.
+  ENVIRONMENT:
+    details: [TEMPERATURE, HUMIDITY, UNKNOWN]
+    meaning: Joinable environmental or test-temperature association.
+  SPATIAL:
+    details: [RANDOM, EDGE, CENTER, RING, CLUSTER, SCRATCH, UNKNOWN]
+    meaning: Wafer-map signature. RANDOM = no systematic spatial structure.
+  TEMPORAL:
+    details: [DRIFT, LOT_EXCURSION, WAFER_EXCURSION, SHIFT_CHANGE, NONE, UNKNOWN]
+    meaning: Time / lot / wafer structure. NONE = stable.
+  UNKNOWN:
+    details: [INSUFFICIENT_DATA, MIXED, UNSPECIFIED, UNMAPPED_CODE, PRIMARY_UNORDERED]
+    meaning: Weak evidence, unmapped code, or no safe primary-fail order.
+
+# Allowed codes = FAMILY.DETAIL cartesian product above.
+# Runtime must reject any other string.
+
+mapping_rules:
+  - id: MR1
+    rule: >
+      If failure_code is present and listed in configs/bin_map.yaml
+      failure_code_map, use that taxonomy_code.
+  - id: MR2
+    rule: >
+      Else if sbin/hbin is present and listed in bin_map, use that
+      taxonomy_code for PRIMARY attribution.
+  - id: MR3
+    rule: >
+      Else if test_type is CONTINUITY and test failed, CONTACT.CONTINUITY.
+  - id: MR4
+    rule: >
+      Else if abort_flag on first pass and no test_id, UNKNOWN.UNSPECIFIED
+      with failure_key ABORT.
+  - id: MR5
+    rule: >
+      Else if failure_code or bin is present but unmapped,
+      taxonomy_code = UNKNOWN.UNMAPPED_CODE. Do not guess FAMILY.
+  - id: MR6
+    rule: >
+      Else taxonomy_code = UNKNOWN.UNSPECIFIED.
+  - id: MR7
+    rule: >
+      Spatial and temporal detector tags are evidence tags. They are
+      NOT written as the die primary taxonomy unless the physical family
+      cannot be assigned (see V1 spec §7.3).
+  - id: MR8
+    rule: >
+      Never map an unknown code to PROCESS, EQUIPMENT, or TEST
+      "because it is common".
+
+primary_selection_order_for_die:  # from V1 spec §7.3; die-level PRIMARY only
+  - CONTACT if abort/no-contact/continuity-dominated AND high recovery (hypothesis layer; not FPY)
+  - PARAMETRIC.NEAR_LIMIT or TEST.LIMIT_SENSITIVITY when near-limit dominates and map is random
+  - FUNCTIONAL.* when first-fail test family is functional
+  - PARAMETRIC.* when parametric fail
+  - UNKNOWN.UNSPECIFIED
+# Note: FPY primary-fail Pareto uses the algorithm in the implementation
+# contract (sequence / is_first_fail), then this taxonomy map. Do not
+# use severity scores.
+
+forbidden:
+  - inventing new FAMILY values at runtime
+  - treating SPATIAL.EDGE as confirmed PROCESS.DEFECT
+  - confirmed root_cause fields

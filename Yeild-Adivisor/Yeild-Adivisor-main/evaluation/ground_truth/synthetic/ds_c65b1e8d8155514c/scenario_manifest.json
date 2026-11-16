@@ -1,0 +1,17 @@
+{
+  "dataset_id": "ds_c65b1e8d8155514c",
+  "generator_version": "yi_synth_v1",
+  "profile": "small",
+  "scenario_id": "S15",
+  "seed": 20260322,
+  "true_causes": [
+    {
+      "detail": "EDGE",
+      "family": "SPATIAL"
+    },
+    {
+      "detail": "DRIFT",
+      "family": "PROCESS"
+    }
+  ]
+}

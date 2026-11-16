@@ -1,0 +1,7 @@
+equipment_id,equipment_type,parent_equipment_id,vendor,model
+T01,TESTER,,SYN,T200
+T02,TESTER,,SYN,T200
+T03,TESTER,,SYN,T200
+PRB-1,PROBER,,SYN,P1
+PC-1,PROBE_CARD,PRB-1,SYN,PC
+PC-2,PROBE_CARD,PRB-1,SYN,PC

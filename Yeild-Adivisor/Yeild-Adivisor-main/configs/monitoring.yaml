@@ -1,0 +1,94 @@
+# ML monitoring. Advisory only. Thresholds are TO_BE_CALIBRATED — not universally valid.
+# Do not treat these PSI/KS cutoffs as industry standards.
+
+monitoring_version: yi_mon_v1
+reference_version: yi_ml_ref_v1
+status: TO_BE_CALIBRATED
+seed: 7
+
+min_current_samples: 40
+min_bin_count: 15
+min_lot_samples: 12
+psi_bins: 10
+calibration_bins: 10
+
+feature_drift:
+  psi_warning: 0.10
+  psi_review: 0.25
+  ks_warning: 0.15
+  ks_review: 0.30
+  unseen_category_warning: 0.05
+  unseen_category_review: 0.20
+  category_shift_warning: 0.10
+  category_shift_review: 0.25
+  n_features_review_for_multi: 3
+
+prediction_drift:
+  mean_abs_warning: 0.04
+  mean_abs_review: 0.10
+  psi_warning: 0.10
+  psi_review: 0.25
+  ks_warning: 0.15
+  ks_review: 0.30
+  positive_rate_abs_warning: 0.05
+  positive_rate_abs_review: 0.12
+
+target_drift:
+  abs_warning: 0.05
+  abs_review: 0.12
+  relative_warning: 0.25
+  relative_review: 0.50
+
+calibration:
+  brier_increase_warning: 0.04
+  brier_increase_review: 0.08
+  ece_warning: 0.08
+  ece_review: 0.15
+
+performance:
+  roc_auc_drop_warning: 0.05
+  roc_auc_drop_review: 0.10
+  pr_auc_drop_warning: 0.05
+  pr_auc_drop_review: 0.10
+  capture10_drop_warning: 0.08
+  capture10_drop_review: 0.15
+
+health_policy:
+  notes:
+    - Ordered, first match wins. Documented. Not a single magic score.
+    - Drift is not model failure. Performance is evaluated independently.
+    - NEEDS_RETRAINING is advisory. The system never retrains automatically.
+  rules:
+    - id: critical_data_quality
+      result: REVIEW
+    - id: insufficient_sample
+      result: INSUFFICIENT_DATA
+    - id: severe_performance
+      result: DEGRADED
+    - id: severe_calibration
+      result: REVIEW
+    - id: multi_signal_retrain
+      result: NEEDS_RETRAINING
+    - id: multi_feature_drift
+      result: MONITOR
+    - id: any_review_dimension
+      result: REVIEW
+    - id: any_warning_dimension
+      result: MONITOR
+    - id: default
+      result: HEALTHY
+
+recommendations:
+  HEALTHY: CONTINUE_MONITORING
+  MONITOR: CONTINUE_MONITORING
+  REVIEW: REVIEW_MODEL
+  DEGRADED: INVESTIGATE_DRIFT
+  NEEDS_RETRAINING: CONSIDER_RETRAINING
+  INSUFFICIENT_DATA: COLLECT_MORE_DATA
+
+limitations:
+  - Thresholds are TO_BE_CALIBRATED and are not universally valid.
+  - Prediction drift is not model failure and is not a root cause.
+  - Feature importance remains predictive, not causal.
+  - Monitoring never retrains, never replaces the model, and never authorizes production.
+  - Label-dependent metrics are UNAVAILABLE when first-pass outcomes are missing.

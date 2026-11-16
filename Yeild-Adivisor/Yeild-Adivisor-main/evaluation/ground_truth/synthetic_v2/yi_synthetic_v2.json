@@ -1,0 +1,110 @@
+{
+  "dataset_id": "yi_synthetic_v2",
+  "dataset_version": "yi_synth_v2",
+  "difficulty": "medium",
+  "lots": {
+    "L001": {
+      "expected_signal": "NONE",
+      "extra_p": 0.0,
+      "role": "BASELINE"
+    },
+    "L002": {
+      "expected_signal": "SPATIAL.EDGE",
+      "extra_p_edge": 0.11,
+      "role": "SPATIAL_EDGE"
+    },
+    "L003": {
+      "affected_tester": "T01",
+      "expected_signal": "EQUIPMENT.DEGRADATION",
+      "extra_p_tester": 0.09,
+      "role": "EQUIPMENT"
+    },
+    "L004": {
+      "expected_signal": "PROCESS.DRIFT",
+      "extra_p_per_wafer": 0.04,
+      "role": "PROCESS_DRIFT"
+    },
+    "L005": {
+      "expected_signal": "WEAK",
+      "extra_p": 0.018,
+      "extra_p_edge": 0.025,
+      "role": "WEAK_MIXED"
+    }
+  },
+  "seed": 20261101,
+  "summary": {
+    "center_fail_rate": 0.0875,
+    "dataset_id": "yi_synthetic_v2",
+    "dataset_version": "yi_synth_v2",
+    "dies_per_lot": 500,
+    "dies_per_wafer": 100,
+    "edge_fail_rate": 0.13111111111111112,
+    "first_pass_attempts": 2500,
+    "lot_fpy": {
+      "L001": 0.934,
+      "L002": 0.902,
+      "L003": 0.924,
+      "L004": 0.806,
+      "L005": 0.932
+    },
+    "n_dies": 2500,
+    "n_lots": 5,
+    "n_unique_dies": 2500,
+    "n_wafers": 25,
+    "overall_fpy": 0.8996,
+    "parametric_rows": 20480,
+    "quality_checks": {
+      "dies_per_lot": "PASS",
+      "dies_per_wafer": "PASS",
+      "equipment_not_trivial": "PASS",
+      "first_pass_per_die": "PASS",
+      "fpy_range": "PASS",
+      "grid_10x10": "PASS",
+      "hierarchy": "PASS",
+      "l002_edge_higher_fail": "PASS",
+      "n_dies": "PASS",
+      "n_lots": "PASS",
+      "n_wafers": "PASS",
+      "no_hidden_labels_agent_visible": "PASS",
+      "no_orphan_parametric": "PASS",
+      "no_orphan_tests": "PASS",
+      "retest_does_not_overwrite_first_pass": "PASS",
+      "timestamps_sorted": "PASS"
+    },
+    "retest_attempts": 60,
+    "seed": 20261101,
+    "test_result_rows": 25600,
+    "tester_fail_rate": {
+      "T01": 0.1150190114068441,
+      "T02": 0.0885478158205431,
+      "T03": 0.09151414309484193
+    },
+    "wafer_fpy": {
+      "L001/W01": 0.94,
+      "L001/W02": 0.94,
+      "L001/W03": 0.94,
+      "L001/W04": 0.89,
+      "L001/W05": 0.96,
+      "L002/W01": 0.9,
+      "L002/W02": 0.88,
+      "L002/W03": 0.88,
+      "L002/W04": 0.93,
+      "L002/W05": 0.92,
+      "L003/W01": 0.94,
+      "L003/W02": 0.91,
+      "L003/W03": 0.91,
+      "L003/W04": 0.93,
+      "L003/W05": 0.93,
+      "L004/W01": 0.94,
+      "L004/W02": 0.91,
+      "L004/W03": 0.89,
+      "L004/W04": 0.74,
+      "L004/W05": 0.55,
+      "L005/W01": 0.94,
+      "L005/W02": 0.92,
+      "L005/W03": 0.93,
+      "L005/W04": 0.92,
+      "L005/W05": 0.95
+    }
+  }
+}

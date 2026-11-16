@@ -1,0 +1,12 @@
+{
+  "case_id": "CASE_07",
+  "n_eligible": 1,
+  "n_first_pass_pass": 1,
+  "n_first_pass_fail": 0,
+  "n_excluded": 2,
+  "fpy": 1.0,
+  "exclusions": [
+    { "die_id": "D01", "reason": "REWORK" },
+    { "die_id": "D03", "reason": "REWORK", "notes": "rework_flag true even if part_class PRODUCTION" }
+  ]
+}

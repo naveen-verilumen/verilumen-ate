@@ -1,0 +1,19 @@
+[
+  "die_x",
+  "die_y",
+  "normalized_x",
+  "normalized_y",
+  "radial_distance",
+  "edge_distance",
+  "spatial_region",
+  "timestamp_epoch",
+  "temperature_c",
+  "voltage_v",
+  "site",
+  "tester_id",
+  "probe_card_id",
+  "prober_id",
+  "tester_fail_rate",
+  "probe_fail_rate",
+  "relative_position_within_lot"
+]

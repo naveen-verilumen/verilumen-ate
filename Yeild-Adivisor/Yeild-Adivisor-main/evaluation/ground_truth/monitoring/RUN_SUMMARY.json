@@ -1,0 +1,66 @@
+{
+  "scenarios": [
+    {
+      "agent_dir": "C:\\Users\\Keerthan\\OneDrive\\Desktop\\yeild agent\\tests\\fixtures\\synthetic_v1\\monitoring\\agent_visible\\ds_mon_01",
+      "dataset_id": "ds_mon_01",
+      "n": 784,
+      "scenario_id": "M01_NO_DRIFT"
+    },
+    {
+      "agent_dir": "C:\\Users\\Keerthan\\OneDrive\\Desktop\\yeild agent\\tests\\fixtures\\synthetic_v1\\monitoring\\agent_visible\\ds_mon_02",
+      "dataset_id": "ds_mon_02",
+      "n": 784,
+      "scenario_id": "M02_FEATURE_DRIFT"
+    },
+    {
+      "agent_dir": "C:\\Users\\Keerthan\\OneDrive\\Desktop\\yeild agent\\tests\\fixtures\\synthetic_v1\\monitoring\\agent_visible\\ds_mon_03",
+      "dataset_id": "ds_mon_03",
+      "n": 784,
+      "scenario_id": "M03_PREDICTION_DRIFT"
+    },
+    {
+      "agent_dir": "C:\\Users\\Keerthan\\OneDrive\\Desktop\\yeild agent\\tests\\fixtures\\synthetic_v1\\monitoring\\agent_visible\\ds_mon_04",
+      "dataset_id": "ds_mon_04",
+      "n": 784,
+      "scenario_id": "M04_TARGET_DRIFT"
+    },
+    {
+      "agent_dir": "C:\\Users\\Keerthan\\OneDrive\\Desktop\\yeild agent\\tests\\fixtures\\synthetic_v1\\monitoring\\agent_visible\\ds_mon_05",
+      "dataset_id": "ds_mon_05",
+      "n": 784,
+      "scenario_id": "M05_CALIBRATION_DRIFT"
+    },
+    {
+      "agent_dir": "C:\\Users\\Keerthan\\OneDrive\\Desktop\\yeild agent\\tests\\fixtures\\synthetic_v1\\monitoring\\agent_visible\\ds_mon_06",
+      "dataset_id": "ds_mon_06",
+      "n": 784,
+      "scenario_id": "M06_PERFORMANCE_DEGRADATION"
+    },
+    {
+      "agent_dir": "C:\\Users\\Keerthan\\OneDrive\\Desktop\\yeild agent\\tests\\fixtures\\synthetic_v1\\monitoring\\agent_visible\\ds_mon_07",
+      "dataset_id": "ds_mon_07",
+      "n": 784,
+      "scenario_id": "M07_MULTIPLE_DRIFT"
+    },
+    {
+      "agent_dir": "C:\\Users\\Keerthan\\OneDrive\\Desktop\\yeild agent\\tests\\fixtures\\synthetic_v1\\monitoring\\agent_visible\\ds_mon_08",
+      "dataset_id": "ds_mon_08",
+      "n": 785,
+      "scenario_id": "M08_SCHEMA_DEGRADATION"
+    },
+    {
+      "agent_dir": "C:\\Users\\Keerthan\\OneDrive\\Desktop\\yeild agent\\tests\\fixtures\\synthetic_v1\\monitoring\\agent_visible\\ds_mon_09",
+      "dataset_id": "ds_mon_09",
+      "n": 24,
+      "scenario_id": "M09_SMALL_SAMPLE"
+    },
+    {
+      "agent_dir": "C:\\Users\\Keerthan\\OneDrive\\Desktop\\yeild agent\\tests\\fixtures\\synthetic_v1\\monitoring\\agent_visible\\ds_mon_10",
+      "dataset_id": "ds_mon_10",
+      "n": 784,
+      "scenario_id": "M10_NO_LABELS"
+    }
+  ],
+  "seed": 7,
+  "source": "ds_0b5542c71e1a13e0"
+}

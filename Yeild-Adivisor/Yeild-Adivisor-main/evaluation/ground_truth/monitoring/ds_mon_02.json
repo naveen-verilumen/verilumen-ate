@@ -1,0 +1,20 @@
+{
+  "dataset_id": "ds_mon_02",
+  "expected": {
+    "alarm": true,
+    "dimension": "feature_drift",
+    "feature_drift": [
+      "MONITOR",
+      "REVIEW"
+    ],
+    "overall": [
+      "MONITOR",
+      "REVIEW",
+      "NEEDS_RETRAINING"
+    ],
+    "performance_not_required_degraded": true
+  },
+  "hidden": true,
+  "notes": "Shifted temperature and voltage. Labels unchanged.",
+  "scenario_id": "M02_FEATURE_DRIFT"
+}

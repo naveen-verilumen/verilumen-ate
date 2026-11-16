@@ -1,0 +1,21 @@
+{
+  "dataset_id": "ds_mon_05",
+  "expected": {
+    "alarm": true,
+    "calibration": [
+      "REVIEW",
+      "MONITOR"
+    ],
+    "dimension": "calibration",
+    "not_no_predictive_value": true,
+    "overall": [
+      "REVIEW",
+      "MONITOR",
+      "DEGRADED",
+      "NEEDS_RETRAINING"
+    ]
+  },
+  "hidden": true,
+  "notes": "Uniform extra fails on top of the original spatial pattern. Ranking should remain useful.",
+  "scenario_id": "M05_CALIBRATION_DRIFT"
+}

@@ -1,0 +1,29 @@
+{
+  "affected_population": {
+    "n_targeted": 336,
+    "n_total": 784,
+    "rule": "r <= 2.2361"
+  },
+  "confounders": [
+    "baseline_spatial_noise"
+  ],
+  "dataset_id": "ds_71431619d83249e1",
+  "difficulty": "medium",
+  "expected_signal": "Central concentration of failures.",
+  "generator_version": "yi_synth_v1",
+  "injected_parameters": {
+    "center_radius_quantile": 0.3,
+    "extra_p": 0.4,
+    "radius_threshold": 2.23606797749979
+  },
+  "notes": null,
+  "profile": "small",
+  "scenario_id": "S03",
+  "seed": 20260322,
+  "true_causes": [
+    {
+      "detail": "CENTER",
+      "family": "SPATIAL"
+    }
+  ]
+}

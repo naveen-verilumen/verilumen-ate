@@ -1,0 +1,118 @@
+# Yield Improvement Agent — V1 software/hardware bin map
+# Deterministic. Unmapped bins → UNKNOWN.UNMAPPED_CODE
+# This map is synthetic-fixture vocabulary, not a factory program.
+
+bin_map_version: yi_bin_map_v1
+status: FROZEN
+taxonomy_version: yi_taxonomy_v1
+
+# disposition: PASS | FAIL | RETEST | OTHER
+# RETEST bins are not first-pass PASS. They do not enter FPY numerator.
+
+sbin:
+  - bin_number: 1
+    bin_kind: SBIN
+    bin_name: GOOD
+    disposition: PASS
+    failure_code: null
+    taxonomy_code: null
+    notes: Pass bin. Must not appear in fail Pareto.
+
+  - bin_number: 2
+    bin_kind: SBIN
+    bin_name: GOOD_RETEST
+    disposition: PASS
+    failure_code: null
+    taxonomy_code: null
+    notes: Final pass after retest. First-pass FPY still uses first attempt.
+
+  - bin_number: 8
+    bin_kind: SBIN
+    bin_name: IDDQ_FAIL
+    disposition: FAIL
+    failure_code: IDDQ
+    taxonomy_code: PARAMETRIC.UNKNOWN
+
+  - bin_number: 9
+    bin_kind: SBIN
+    bin_name: CONTINUITY_FAIL
+    disposition: FAIL
+    failure_code: CONTINUITY
+    taxonomy_code: CONTACT.CONTINUITY
+
+  - bin_number: 10
+    bin_kind: SBIN
+    bin_name: NO_CONTACT
+    disposition: FAIL
+    failure_code: NO_CONTACT
+    taxonomy_code: CONTACT.NO_CONTACT
+
+  - bin_number: 11
+    bin_kind: SBIN
+    bin_name: FUNCTIONAL_FAIL
+    disposition: FAIL
+    failure_code: FUNCTIONAL
+    taxonomy_code: FUNCTIONAL.UNKNOWN
+
+  - bin_number: 12
+    bin_kind: SBIN
+    bin_name: IR_DROP_FAIL
+    disposition: FAIL
+    failure_code: IR_DROP
+    taxonomy_code: PARAMETRIC.UNKNOWN
+
+  - bin_number: 13
+    bin_kind: SBIN
+    bin_name: VMIN_FAIL
+    disposition: FAIL
+    failure_code: VMIN
+    taxonomy_code: PARAMETRIC.UNKNOWN
+
+  - bin_number: 14
+    bin_kind: SBIN
+    bin_name: ABORT
+    disposition: FAIL
+    failure_code: ABORT
+    taxonomy_code: UNKNOWN.UNSPECIFIED
+
+  - bin_number: 15
+    bin_kind: SBIN
+    bin_name: PARAMETRIC_FAIL
+    disposition: FAIL
+    failure_code: PARAMETRIC
+    taxonomy_code: PARAMETRIC.UNKNOWN
+
+hbin:
+  - bin_number: 1
+    bin_kind: HBIN
+    bin_name: PASS
+    disposition: PASS
+    taxonomy_code: null
+  - bin_number: 5
+    bin_kind: HBIN
+    bin_name: FAIL
+    disposition: FAIL
+    taxonomy_code: UNKNOWN.UNSPECIFIED
+
+failure_code_map:
+  IDDQ: PARAMETRIC.UNKNOWN
+  CONTINUITY: CONTACT.CONTINUITY
+  NO_CONTACT: CONTACT.NO_CONTACT
+  FUNCTIONAL: FUNCTIONAL.UNKNOWN
+  IR_DROP: PARAMETRIC.UNKNOWN
+  VMIN: PARAMETRIC.UNKNOWN
+  ABORT: UNKNOWN.UNSPECIFIED
+  PARAMETRIC: PARAMETRIC.UNKNOWN
+  TIMING: FUNCTIONAL.TIMING
+  SCAN: FUNCTIONAL.SCAN
+
+unmapped_behavior:
+  unknown_sbin: UNKNOWN.UNMAPPED_CODE
+  unknown_failure_code: UNKNOWN.UNMAPPED_CODE
+  do_not_guess: true
+
+resolution_order:
+  - failure_code_map if failure_code present
+  - sbin row if sbin present
+  - hbin row if hbin present and sbin missing
+  - unmapped_behavior

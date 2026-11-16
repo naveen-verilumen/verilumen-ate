@@ -1,0 +1,95 @@
+# V2 synthetic test catalog — display overlay only.
+# Source of truth for each test is configs/synthetic_v2.yaml (test_id, sequence_index, failure_code).
+# That generator file has no test_name field. These display names copy the generator
+# program-slot failure_code so every T001–T010 has a distinct, non-invented label.
+# They are not a real ATE program and are not a new physical test type.
+
+catalog_id: yi_v2_test_catalog
+catalog_version: yi_v2_test_catalog_v2
+dataset_id: yi_synthetic_v2
+source: SYNTHETIC_V2_GENERATOR_PROGRAM_SLOTS
+note: >
+  Display names copy tests[].failure_code from configs/synthetic_v2.yaml.
+  The generator does not define a separate semantic test_name. Overlay names
+  such as Functional Test or Unclassified V2 Test are not used.
+
+tests:
+  - test_id: T001
+    test_name: CONTINUITY
+    test_type: CONTINUITY
+    description: V2 generator program slot T001 (sequence 1). FAIL rows store failure_code CONTINUITY.
+    sequence_index: 1
+    classified: false
+    relevant_measurements: []
+
+  - test_id: T002
+    test_name: OPENS
+    test_type: OPENS
+    description: V2 generator program slot T002 (sequence 2). FAIL rows store failure_code OPENS.
+    sequence_index: 2
+    classified: false
+    relevant_measurements: []
+
+  - test_id: T003
+    test_name: SHORTS
+    test_type: SHORTS
+    description: V2 generator program slot T003 (sequence 3). FAIL rows store failure_code SHORTS.
+    sequence_index: 3
+    classified: false
+    relevant_measurements: []
+
+  - test_id: T004
+    test_name: CONTACT
+    test_type: CONTACT
+    description: V2 generator program slot T004 (sequence 4). FAIL rows store failure_code CONTACT.
+    sequence_index: 4
+    classified: false
+    relevant_measurements: []
+
+  - test_id: T005
+    test_name: IDDQ
+    test_type: IDDQ
+    description: V2 generator program slot T005 (sequence 5). FAIL rows store failure_code IDDQ.
+    sequence_index: 5
+    classified: false
+    relevant_measurements: []
+
+  - test_id: T006
+    test_name: VMIN
+    test_type: VMIN
+    description: V2 generator program slot T006 (sequence 6). FAIL rows store failure_code VMIN.
+    sequence_index: 6
+    classified: false
+    relevant_measurements: []
+
+  - test_id: T007
+    test_name: VMAX
+    test_type: VMAX
+    description: V2 generator program slot T007 (sequence 7). FAIL rows store failure_code VMAX.
+    sequence_index: 7
+    classified: false
+    relevant_measurements: []
+
+  - test_id: T008
+    test_name: LEAKAGE
+    test_type: LEAKAGE
+    description: V2 generator program slot T008 (sequence 8). FAIL rows store failure_code LEAKAGE.
+    sequence_index: 8
+    classified: false
+    relevant_measurements: []
+
+  - test_id: T009
+    test_name: FUNCTIONAL
+    test_type: FUNCTIONAL
+    description: V2 generator program slot T009 (sequence 9). FAIL rows store failure_code FUNCTIONAL.
+    sequence_index: 9
+    classified: false
+    relevant_measurements: []
+
+  - test_id: T010
+    test_name: SCAN
+    test_type: SCAN
+    description: V2 generator program slot T010 (sequence 10). FAIL rows store failure_code SCAN.
+    sequence_index: 10
+    classified: false
+    relevant_measurements: []

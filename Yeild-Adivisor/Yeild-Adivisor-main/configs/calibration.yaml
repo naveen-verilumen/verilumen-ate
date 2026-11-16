@@ -1,0 +1,256 @@
+# Numeric thresholds for V1 detectors, FPY reporting, and safety.
+# Methods are FROZEN in the V1 spec. Values are NOT production defaults.
+# Status TO_BE_CALIBRATED means do not treat the candidate as a factory SLA.
+
+calibration_version: yi_calibration_v1
+status: TO_BE_CALIBRATED
+
+# Each parameter: candidate is a starting point for synthetic experiments only.
+
+parameters:
+  n_min_lot:
+    candidate: 30
+    unit: eligible_dies
+    used_by: [lot_outlier, lot_fpy_evidence]
+    status: TO_BE_CALIBRATED
+    todo: Calibrate on S1/S13 false-alarm rate.
+
+  n_min_wafer:
+    candidate: 50
+    unit: eligible_dies
+    used_by: [wafer_fpy, spatial]
+    status: TO_BE_CALIBRATED
+
+  n_min_equipment_slice:
+    candidate: 100
+    unit: eligible_dies
+    used_by: [equipment_detector]
+    status: TO_BE_CALIBRATED
+
+  n_min_group_compare:
+    candidate: 30
+    unit: eligible_dies_per_group
+    used_by: [proportion_tests]
+    status: TO_BE_CALIBRATED
+
+  near_limit_delta:
+    candidate: 0.05
+    unit: fraction_of_abs_limit
+    formula: abs(x - L) <= delta * abs(L)
+    used_by: [near_limit_detector]
+    status: TO_BE_CALIBRATED
+
+  significance_level_alpha:
+    candidate: 0.05
+    unit: probability
+    used_by: [proportion_tests, ks]
+    status: TO_BE_CALIBRATED
+    note: Report effect size; large n makes tiny shifts significant.
+
+  fdr_q:
+    candidate: 0.10
+    method: Benjamini-Hochberg
+    used_by: [multi_detector_pvalues]
+    status: TO_BE_CALIBRATED
+
+  hypothesis_top_k:
+    candidate: 5
+    used_by: [hypothesis_engine]
+    status: TO_BE_CALIBRATED
+
+  exclusion_rate_max:
+    candidate: 0.20
+    unit: fraction
+    used_by: [safety S6]
+    status: TO_BE_CALIBRATED
+
+  spatial_edge_radius_quantile:
+    candidate: 0.80
+    unit: radius_quantile
+    used_by: [spatial_detector]
+    status: TO_BE_CALIBRATED
+    note: OPEN whether to use WCR geometry instead.
+
+  spatial_nn_count:
+    candidate: 8
+    used_by: [spatial_detector]
+    status: TO_BE_CALIBRATED
+
+  spatial_fail_density_threshold:
+    candidate: 0.35
+    unit: neighbor_fail_fraction
+    status: TO_BE_CALIBRATED
+
+  min_effect_size_fpy_delta:
+    candidate: 0.02
+    unit: absolute_fpy
+    used_by: [equipment, zone, drift]
+    status: TO_BE_CALIBRATED
+    note: Require |ΔFPY| >= this besides p-value.
+
+  psi_shift_flag:
+    candidate: 0.25
+    used_by: [parametric_detector]
+    status: TO_BE_CALIBRATED
+
+  ewma_lambda:
+    candidate: 0.2
+    used_by: [drift_detector]
+    status: TO_BE_CALIBRATED
+
+  change_point_max_delay_lots:
+    candidate: 2
+    used_by: [evaluation S4]
+    status: TO_BE_CALIBRATED
+
+  confidence_high_min_independent_views:
+    candidate: 2
+    used_by: [hypothesis_confidence]
+    status: FROZEN_RULE_WITH_CALIBRATED_N
+    note: HIGH still remains HYPOTHESIS / UNCONFIRMED.
+
+  isolation_forest_enabled:
+    candidate: false
+    used_by: [anomaly]
+    status: TO_BE_CALIBRATED
+    note: Off until shown to add value over robust z.
+
+  # Phase 3 detector candidates. Not factory SLAs.
+  spatial_center_radius_quantile:
+    candidate: 0.30
+    unit: radius_quantile
+    used_by: [spatial_detector]
+    status: TO_BE_CALIBRATED
+
+  spatial_ring_inner_quantile:
+    candidate: 0.45
+    unit: radius_quantile
+    used_by: [spatial_detector]
+    status: TO_BE_CALIBRATED
+
+  spatial_ring_outer_quantile:
+    candidate: 0.75
+    unit: radius_quantile
+    used_by: [spatial_detector]
+    status: TO_BE_CALIBRATED
+
+  n_min_temporal_lots:
+    candidate: 4
+    unit: lots
+    used_by: [drift_detector]
+    status: TO_BE_CALIBRATED
+    note: Spec mentioned 8 as a discussion candidate; still TO_BE_CALIBRATED.
+
+  n_min_parametric:
+    candidate: 30
+    unit: measurements_per_group
+    used_by: [parametric_detector]
+    status: TO_BE_CALIBRATED
+
+  n_min_near_limit:
+    candidate: 20
+    unit: measurements
+    used_by: [near_limit_detector]
+    status: TO_BE_CALIBRATED
+
+  n_min_sequence_pairs:
+    candidate: 30
+    unit: attempts_both_tests_executed
+    used_by: [sequence_detector]
+    status: TO_BE_CALIBRATED
+
+  n_min_correlation:
+    candidate: 30
+    unit: attempts_both_executed
+    used_by: [correlation_detector]
+    status: TO_BE_CALIBRATED
+
+  ks_d_min:
+    candidate: 0.20
+    unit: ks_statistic
+    used_by: [parametric_detector]
+    status: TO_BE_CALIBRATED
+    note: Guard against large-n tiny shifts.
+
+  near_limit_fail_share_min:
+    candidate: 0.40
+    unit: fraction
+    used_by: [near_limit_detector]
+    status: TO_BE_CALIBRATED
+
+  near_limit_median_proximity_max:
+    candidate: 0.15
+    unit: abs_x_minus_L_over_abs_L
+    used_by: [near_limit_detector]
+    status: TO_BE_CALIBRATED
+
+  near_limit_mass_min:
+    candidate: 0.20
+    unit: fraction_of_measurements_in_delta_band
+    used_by: [near_limit_detector]
+    status: TO_BE_CALIBRATED
+
+  # Phase 4 hypothesis composer. Explicitly PRELIMINARY — not causal probability.
+  hypothesis_score_strong:
+    candidate: 0.75
+    unit: evidence_score
+    used_by: [hypothesis_engine]
+    status: TO_BE_CALIBRATED
+  hypothesis_score_moderate:
+    candidate: 0.50
+    unit: evidence_score
+    used_by: [hypothesis_engine]
+    status: TO_BE_CALIBRATED
+  hypothesis_score_weak:
+    candidate: 0.30
+    unit: evidence_score
+    used_by: [hypothesis_engine]
+    status: TO_BE_CALIBRATED
+  hypothesis_n_ref:
+    candidate: 200
+    unit: eligible_dies
+    used_by: [hypothesis_engine]
+    status: TO_BE_CALIBRATED
+  hypothesis_effect_ref_rate_diff:
+    candidate: 0.10
+    unit: absolute_fail_rate
+    used_by: [hypothesis_engine]
+    status: TO_BE_CALIBRATED
+    note: Effect component saturates at this |Δ fail rate|.
+
+  # Phase 5 opportunity. PRELIMINARY — not a recoverable-yield probability.
+  opportunity_plausible_weak_scale:
+    candidate: 0.50
+    unit: fraction_of_excess_fail_rate
+    used_by: [opportunity_engine]
+    status: TO_BE_CALIBRATED
+    note: Scales excess-rate plausible for WEAK_ASSOCIATION only. Not P(recoverable).
+  opportunity_include_secondary_in_union:
+    candidate: 0
+    unit: boolean_as_0_1
+    used_by: [opportunity_engine]
+    status: TO_BE_CALIBRATED
+    note: 0 keeps SECONDARY_ASSOCIATION out of the non-double-counted union.
+
+evaluation_bars:
+  # Candidate bars from V1 spec §17. Not release SLAs until measured.
+  hypothesis_recall_at_3_single_cause:
+    candidate: 0.80
+    status: TO_BE_CALIBRATED
+  false_recommendation_rate_no_signal:
+    candidate: 0.10
+    status: TO_BE_CALIBRATED
+  dual_cause_both_in_top_5:
+    candidate: 0.80
+    status: TO_BE_CALIBRATED
+  spatial_class_recall:
+    candidate: 0.80
+    status: TO_BE_CALIBRATED
+
+hard_bars_not_calibrated:
+  fpy_golden_exact_match: 1.0
+  primary_fail_sum_equals_n_fail: 1.0
+  safety_violations: 0
+  escape_always_unavailable: 1.0
+  other_agent_invoked: 0
+  safety_eligible_production: 0.0

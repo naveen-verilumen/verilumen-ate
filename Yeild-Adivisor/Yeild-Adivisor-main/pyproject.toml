@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "yield-improvement"
+version = "0.1.0"
+description = "Standalone semiconductor wafer-sort First Pass Yield diagnosis agent (Phase 1)."
+readme = "docs/PHASE_1_IMPLEMENTATION.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pandas>=2.1",
+    "pydantic>=2.5",
+    "PyYAML>=6.0",
+    "pyarrow>=14.0",
+    "scikit-learn>=1.3",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "fastapi>=0.110", "httpx>=0.27", "uvicorn>=0.27"]
+dashboard = ["streamlit>=1.28"]
+api = ["fastapi>=0.110", "uvicorn[standard]>=0.27"]
+
+[project.scripts]
+yield-improvement = "yield_improvement.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-q --strict-markers"

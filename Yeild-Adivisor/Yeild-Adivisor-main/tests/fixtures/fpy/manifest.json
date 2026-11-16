@@ -1,0 +1,26 @@
+{
+  "fixture_set": "yi_fpy_golden_v1",
+  "fpy_policy_version": "yi_fpy_v1",
+  "bin_map_version": "yi_bin_map_v1",
+  "taxonomy_version": "yi_taxonomy_v1",
+  "product_id": "DEV_A",
+  "step_id": "WS_SORT",
+  "insertion": "WAFER_SORT",
+  "notes": "Tiny deterministic cases. Not a factory dataset. expected.json is test-only.",
+  "cases": [
+    { "id": "CASE_01", "dir": "case_01", "title": "10 production dies, 9 pass 1 fail", "expected_fpy": 0.9 },
+    { "id": "CASE_02", "dir": "case_02", "title": "Fail first pass, pass retest", "die_fpy": "FAIL" },
+    { "id": "CASE_03", "dir": "case_03", "title": "Pass first pass, later retest", "die_fpy": "PASS" },
+    { "id": "CASE_04", "dir": "case_04", "title": "First attempt abort = FAIL", "die_fpy": "FAIL" },
+    { "id": "CASE_05", "dir": "case_05", "title": "Engineering excluded", "excluded_reason": "ENGINEERING" },
+    { "id": "CASE_06", "dir": "case_06", "title": "Calibration excluded", "excluded_reason": "CALIBRATION" },
+    { "id": "CASE_07", "dir": "case_07", "title": "Rework excluded", "excluded_reason": "REWORK" },
+    { "id": "CASE_08", "dir": "case_08", "title": "Retest-only excluded", "excluded_reason": "RETEST_ONLY" },
+    { "id": "CASE_09", "dir": "case_09", "title": "Missing disposition excluded", "excluded_reason": "MISSING_DISPOSITION" },
+    { "id": "CASE_10", "dir": "case_10", "title": "Missing part_class assumed PRODUCTION", "flag": "part_class_assumed_production" },
+    { "id": "CASE_11", "dir": "case_11", "title": "Duplicate die/attempt excluded as ambiguous", "excluded_reason": "AMBIGUOUS_DUPLICATE" },
+    { "id": "CASE_12", "dir": "case_12", "title": "Multiple failure codes, die loss counted once" },
+    { "id": "CASE_13", "dir": "case_13", "title": "Two dies same primary failure, additive" },
+    { "id": "CASE_14", "dir": "case_14", "title": "Any-fail overlap; primary does not double count" }
+  ]
+}

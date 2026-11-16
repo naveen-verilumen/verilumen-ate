@@ -1,0 +1,55 @@
+# Frozen FPY policy encoded for implementation. Do not change without spec review.
+
+fpy_policy_version: yi_fpy_v1
+status: FROZEN
+insertion: WAFER_SORT
+
+formula:
+  numerator: n_first_pass_pass
+  denominator: n_fpy_eligible
+  invariant: n_fpy_eligible == n_first_pass_pass + n_first_pass_fail
+
+abort_policy: FIRST_PASS_ABORT_IS_FAIL
+abort_is_first_pass_fail: true
+
+part_class_missing:
+  treat_as: PRODUCTION
+  flag: part_class_assumed_production
+  status: FROZEN_OPEN_TO_REVERSE
+  # OPEN to reverse if real data is mostly unlabeled engineering.
+
+excluded_part_classes:
+  - ENGINEERING
+  - CALIBRATION
+  - QA_SAMPLE
+  - REWORK
+  - UNKNOWN_NON_PRODUCTION
+
+excluded_if:
+  - rework_flag == true
+  - retest_only_no_first_pass
+  - missing_disposition
+  - missing_identity
+  - ambiguous_duplicate
+  - record_status == REJECT after validation
+
+duplicate_rule:
+  same_die_distinct_attempts: keep_earliest_valid_as_first_pass
+  same_die_same_attempt_id_same_timestamp: exclude_die_ambiguous_duplicate
+  same_die_same_attempt_id_different_payload: exclude_die_ambiguous_duplicate
+
+identity:
+  primary: [lot_id, wafer_id, die_id]
+  fallback_xy: only_if_die_id_missing_and_x_y_unique_on_wafer
+
+pass_fail_from_bin:
+  if_pass_fail_present: use_pass_fail
+  elif_sbin_mappable: use_bin_map.disposition
+  else: exclude_missing_disposition
+
+parametric_equality:
+  UPPER_fail_iff: measurement > upper_limit
+  LOWER_fail_iff: measurement < lower_limit
+  equality: PASS
+
+escape_rate: unavailable

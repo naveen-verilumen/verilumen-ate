@@ -1,0 +1,31 @@
+{
+  "affected_population": {
+    "n_targeted": 256,
+    "n_total": 784,
+    "rule": "2.8284 <= r <= 3.1623"
+  },
+  "confounders": [
+    "baseline_spatial_noise"
+  ],
+  "dataset_id": "ds_8c313fe0d71ed0a5",
+  "difficulty": "medium",
+  "expected_signal": "Ring-shaped spatial failure pattern.",
+  "generator_version": "yi_synth_v1",
+  "injected_parameters": {
+    "extra_p": 0.45,
+    "inner": 2.8284271247461903,
+    "outer": 3.1622776601683795,
+    "ring_inner_quantile": 0.45,
+    "ring_outer_quantile": 0.75
+  },
+  "notes": null,
+  "profile": "small",
+  "scenario_id": "S04",
+  "seed": 20260322,
+  "true_causes": [
+    {
+      "detail": "RING",
+      "family": "SPATIAL"
+    }
+  ]
+}

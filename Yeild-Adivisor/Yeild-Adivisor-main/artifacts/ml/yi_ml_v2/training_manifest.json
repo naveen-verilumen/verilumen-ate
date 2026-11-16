@@ -1,0 +1,195 @@
+{
+  "dataset_id": "yi_synthetic_v2",
+  "dataset_path": "data/synthetic/agent_visible/yi_synthetic_v2/",
+  "evaluation_configuration": {
+    "calibration": "isotonic",
+    "split": "leave_one_lot_out",
+    "threshold": 0.5
+  },
+  "feature_list": [
+    "die_x",
+    "die_y",
+    "normalized_x",
+    "normalized_y",
+    "radial_distance",
+    "edge_distance",
+    "spatial_region",
+    "timestamp_epoch",
+    "temperature_c",
+    "voltage_v",
+    "site",
+    "tester_id",
+    "probe_card_id",
+    "prober_id",
+    "tester_fail_rate",
+    "probe_fail_rate"
+  ],
+  "files_read_but_not_joined": [
+    "parametric_measurements.csv",
+    "test_results.csv"
+  ],
+  "files_used": [
+    "die_attempts.csv"
+  ],
+  "parametric_join_note": "The existing loader reads parametric_measurements.csv and keeps only the historical V1 parameter names. Those names are absent from Yield Improvement V2, so no parametric column enters the feature matrix.",
+  "folds": [
+    {
+      "fold": 1,
+      "test_lot": "L001",
+      "test_negatives": 467,
+      "test_positives": 33,
+      "test_samples": 500,
+      "train_negatives": 1782,
+      "train_positives": 218,
+      "train_samples": 2000,
+      "training_lots": [
+        "L002",
+        "L003",
+        "L004",
+        "L005"
+      ]
+    },
+    {
+      "fold": 2,
+      "test_lot": "L002",
+      "test_negatives": 451,
+      "test_positives": 49,
+      "test_samples": 500,
+      "train_negatives": 1798,
+      "train_positives": 202,
+      "train_samples": 2000,
+      "training_lots": [
+        "L001",
+        "L003",
+        "L004",
+        "L005"
+      ]
+    },
+    {
+      "fold": 3,
+      "test_lot": "L003",
+      "test_negatives": 462,
+      "test_positives": 38,
+      "test_samples": 500,
+      "train_negatives": 1787,
+      "train_positives": 213,
+      "train_samples": 2000,
+      "training_lots": [
+        "L001",
+        "L002",
+        "L004",
+        "L005"
+      ]
+    },
+    {
+      "fold": 4,
+      "test_lot": "L004",
+      "test_negatives": 403,
+      "test_positives": 97,
+      "test_samples": 500,
+      "train_negatives": 1846,
+      "train_positives": 154,
+      "train_samples": 2000,
+      "training_lots": [
+        "L001",
+        "L002",
+        "L003",
+        "L005"
+      ]
+    },
+    {
+      "fold": 5,
+      "test_lot": "L005",
+      "test_negatives": 466,
+      "test_positives": 34,
+      "test_samples": 500,
+      "train_negatives": 1783,
+      "train_positives": 217,
+      "train_samples": 2000,
+      "training_lots": [
+        "L001",
+        "L002",
+        "L003",
+        "L004"
+      ]
+    }
+  ],
+  "fpy": 0.8996,
+  "fpy_loss": 0.1004,
+  "hidden_ground_truth_stored": false,
+  "lot_ids": [
+    "L001",
+    "L002",
+    "L003",
+    "L004",
+    "L005"
+  ],
+  "model_configuration": {
+    "candidates": [
+      "logistic",
+      "random_forest",
+      "hist_gbm",
+      "xgboost",
+      "lightgbm"
+    ],
+    "ml_yaml": "configs/ml.yaml",
+    "seed": 7,
+    "selected": "logistic"
+  },
+  "parametric_join": false,
+  "preprocessing": {
+    "categorical": {
+      "columns": [
+        "spatial_region",
+        "tester_id",
+        "probe_card_id",
+        "prober_id"
+      ],
+      "encoder": "OneHotEncoder(handle_unknown=ignore)",
+      "imputer": "SimpleImputer(strategy=most_frequent)"
+    },
+    "missing_in_v2_matrix": {
+      "die_x": 0,
+      "die_y": 0,
+      "edge_distance": 0,
+      "normalized_x": 0,
+      "normalized_y": 0,
+      "probe_card_id": 0,
+      "probe_fail_rate": 0,
+      "prober_id": 0,
+      "radial_distance": 0,
+      "site": 0,
+      "spatial_region": 0,
+      "temperature_c": 0,
+      "tester_fail_rate": 0,
+      "tester_id": 0,
+      "timestamp_epoch": 0,
+      "voltage_v": 0
+    },
+    "numeric": {
+      "columns": [
+        "die_x",
+        "die_y",
+        "normalized_x",
+        "normalized_y",
+        "radial_distance",
+        "edge_distance",
+        "timestamp_epoch",
+        "temperature_c",
+        "voltage_v",
+        "site",
+        "tester_fail_rate",
+        "probe_fail_rate"
+      ],
+      "fit_on": "all V2 rows for the deployed artifact; each LOLO fold refit on its training lots only",
+      "imputer": "SimpleImputer(strategy=median)",
+      "scaler": "StandardScaler"
+    }
+  },
+  "row_counts": {
+    "ml_rows": 2500,
+    "negative": 2249,
+    "positive": 251
+  },
+  "target": "first_pass_fail = 1 if DieOutcome.first_pass_disposition == FAIL else 0"
+}

@@ -1,0 +1,31 @@
+{
+  "case_id": "CASE_01",
+  "fpy_policy_version": "yi_fpy_v1",
+  "n_eligible": 10,
+  "n_first_pass_pass": 9,
+  "n_first_pass_fail": 1,
+  "n_excluded": 0,
+  "fpy": 0.9,
+  "fpy_loss": 0.1,
+  "final_yield": 0.9,
+  "retest_rate_of_eligible": 0.0,
+  "retest_recovery": 0.0,
+  "escape_rate": null,
+  "escape_status": "unavailable",
+  "abort_policy": "FIRST_PASS_ABORT_IS_FAIL",
+  "part_class_assumed_production": false,
+  "exclusions": [],
+  "invariant_ok": true,
+  "primary_fail_pareto": [
+    {
+      "failure_key": "IDDQ",
+      "taxonomy_code": "PARAMETRIC.UNKNOWN",
+      "n_dies": 1,
+      "contribution": 0.1,
+      "share_of_fails": 1.0,
+      "overlap_allowed": false
+    }
+  ],
+  "any_fail_pareto_sum_may_exceed_n_fail": false,
+  "notes": "9/10 first-pass PASS. Expected FPY = 90%."
+}

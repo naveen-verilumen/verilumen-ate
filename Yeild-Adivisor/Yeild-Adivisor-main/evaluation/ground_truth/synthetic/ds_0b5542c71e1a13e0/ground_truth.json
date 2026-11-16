@@ -1,0 +1,29 @@
+{
+  "affected_population": {
+    "n_targeted": 320,
+    "n_total": 784,
+    "rule": "r >= 3.1623"
+  },
+  "confounders": [
+    "baseline_spatial_noise"
+  ],
+  "dataset_id": "ds_0b5542c71e1a13e0",
+  "difficulty": "medium",
+  "expected_signal": "Higher failure concentration near wafer edge.",
+  "generator_version": "yi_synth_v1",
+  "injected_parameters": {
+    "edge_radius_quantile": 0.72,
+    "extra_p": 0.4,
+    "radius_threshold": 3.1622776601683795
+  },
+  "notes": null,
+  "profile": "small",
+  "scenario_id": "S02",
+  "seed": 20260322,
+  "true_causes": [
+    {
+      "detail": "EDGE",
+      "family": "SPATIAL"
+    }
+  ]
+}

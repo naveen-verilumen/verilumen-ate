@@ -1,0 +1,12 @@
+{
+  "case_id": "CASE_09",
+  "n_eligible": 1,
+  "n_first_pass_pass": 1,
+  "n_first_pass_fail": 0,
+  "n_excluded": 1,
+  "fpy": 1.0,
+  "exclusions": [
+    { "die_id": "D01", "reason": "MISSING_DISPOSITION" }
+  ],
+  "notes": "Do not impute PASS or FAIL when pass_fail and bin are both missing."
+}

@@ -1,0 +1,33 @@
+{
+  "affected_population": {
+    "n_edge_targeted": 320,
+    "n_total": 784,
+    "rule": "edge dies + temporal drift"
+  },
+  "confounders": [
+    "baseline_noise"
+  ],
+  "dataset_id": "ds_c65b1e8d8155514c",
+  "difficulty": "hard",
+  "expected_signal": "Competing explanations: spatial edge plus process drift.",
+  "generator_version": "yi_synth_v1",
+  "injected_parameters": {
+    "extra_p_edge": 0.32,
+    "extra_p_per_lot": 0.03,
+    "radius_threshold": 3.1622776601683795
+  },
+  "notes": null,
+  "profile": "small",
+  "scenario_id": "S15",
+  "seed": 20260322,
+  "true_causes": [
+    {
+      "detail": "EDGE",
+      "family": "SPATIAL"
+    },
+    {
+      "detail": "DRIFT",
+      "family": "PROCESS"
+    }
+  ]
+}

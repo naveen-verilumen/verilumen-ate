@@ -1,0 +1,20 @@
+{
+  "dataset_id": "ds_mon_04",
+  "expected": {
+    "alarm": true,
+    "dimension": "target_drift",
+    "overall": [
+      "MONITOR",
+      "REVIEW",
+      "DEGRADED",
+      "NEEDS_RETRAINING"
+    ],
+    "target_drift": [
+      "MONITOR",
+      "REVIEW"
+    ]
+  },
+  "hidden": true,
+  "notes": "Uniform extra fails. Features unchanged so prediction distribution should stay similar.",
+  "scenario_id": "M04_TARGET_DRIFT"
+}

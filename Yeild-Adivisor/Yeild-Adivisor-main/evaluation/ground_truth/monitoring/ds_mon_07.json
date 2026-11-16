@@ -1,0 +1,16 @@
+{
+  "dataset_id": "ds_mon_07",
+  "expected": {
+    "alarm": true,
+    "dimension": "multi",
+    "overall": [
+      "NEEDS_RETRAINING",
+      "REVIEW",
+      "DEGRADED",
+      "MONITOR"
+    ]
+  },
+  "hidden": true,
+  "notes": "Feature, prediction, and target shifts combined.",
+  "scenario_id": "M07_MULTIPLE_DRIFT"
+}

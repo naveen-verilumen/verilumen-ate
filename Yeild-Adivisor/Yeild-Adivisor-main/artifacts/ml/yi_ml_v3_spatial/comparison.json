@@ -1,0 +1,193 @@
+{
+  "baseline_model": "yi_ml_v2",
+  "constant_brier": 0.09031984,
+  "constant_positive_rate": 0.1004,
+  "experiment_model": "yi_ml_v3_spatial",
+  "feature_change": "spatial_region values EDGE/CENTER/OTHER replaced by BORDER/INNER",
+  "feature_count": {
+    "yi_ml_v2": 16,
+    "yi_ml_v3_spatial": 16
+  },
+  "interpretation_rule": "Do not promote from a single metric or a single held-out lot.",
+  "per_lot": {
+    "yi_ml_v2": [
+      {
+        "balanced_accuracy": 0.5,
+        "brier": 0.06290654549053705,
+        "ece": 0.033402949796140134,
+        "f1": 0.0,
+        "failure_capture_at_top_10_percent": 0.06060606060606061,
+        "failure_capture_at_top_20_percent": 0.12121212121212122,
+        "log_loss": 0.24972537485282809,
+        "lot": "L001",
+        "pr_auc": 0.07109356954136123,
+        "precision": 0.0,
+        "recall": 0.0,
+        "roc_auc": 0.4718058529621698
+      },
+      {
+        "balanced_accuracy": 0.5,
+        "brier": 0.08853827791997262,
+        "ece": 0.014472252814118949,
+        "f1": 0.0,
+        "failure_capture_at_top_10_percent": 0.20408163265306123,
+        "failure_capture_at_top_20_percent": 0.30612244897959184,
+        "log_loss": 0.3461810705257913,
+        "lot": "L002",
+        "pr_auc": 0.12556608964371144,
+        "precision": 0.0,
+        "recall": 0.0,
+        "roc_auc": 0.5566088963301508
+      },
+      {
+        "balanced_accuracy": 0.5,
+        "brier": 0.07031853799922147,
+        "ece": 0.030699775682291836,
+        "f1": 0.0,
+        "failure_capture_at_top_10_percent": 0.07894736842105263,
+        "failure_capture_at_top_20_percent": 0.23684210526315788,
+        "log_loss": 0.26964382782194446,
+        "lot": "L003",
+        "pr_auc": 0.10549888308983085,
+        "precision": 0.0,
+        "recall": 0.0,
+        "roc_auc": 0.5819662793347004
+      },
+      {
+        "balanced_accuracy": 0.5,
+        "brier": 0.1713196975848291,
+        "ece": 0.11985051804126062,
+        "f1": 0.0,
+        "failure_capture_at_top_10_percent": 0.08247422680412371,
+        "failure_capture_at_top_20_percent": 0.18556701030927836,
+        "log_loss": 0.6200213437004796,
+        "lot": "L004",
+        "pr_auc": 0.20219228524006036,
+        "precision": 0.0,
+        "recall": 0.0,
+        "roc_auc": 0.5160906602542785
+      },
+      {
+        "balanced_accuracy": 0.5335142640747286,
+        "brier": 0.10988983634306465,
+        "ece": 0.19024817202346803,
+        "f1": 0.13186813186813187,
+        "failure_capture_at_top_10_percent": 0.14705882352941177,
+        "failure_capture_at_top_20_percent": 0.17647058823529413,
+        "log_loss": 0.38661211697446946,
+        "lot": "L005",
+        "pr_auc": 0.07504477657641695,
+        "precision": 0.10526315789473684,
+        "recall": 0.17647058823529413,
+        "roc_auc": 0.5124337288563494
+      }
+    ],
+    "yi_ml_v3_spatial": [
+      {
+        "balanced_accuracy": 0.5,
+        "brier": 0.06404020771668176,
+        "ece": 0.022988670209409083,
+        "f1": 0.0,
+        "failure_capture_at_top_10_percent": 0.06060606060606061,
+        "failure_capture_at_top_20_percent": 0.12121212121212122,
+        "log_loss": 0.28182903409944865,
+        "lot": "L001",
+        "pr_auc": 0.0735349187691641,
+        "precision": 0.0,
+        "recall": 0.0,
+        "roc_auc": 0.5176497307118292
+      },
+      {
+        "balanced_accuracy": 0.5,
+        "brier": 0.08741793950029958,
+        "ece": 0.015110495803229405,
+        "f1": 0.0,
+        "failure_capture_at_top_10_percent": 0.24489795918367346,
+        "failure_capture_at_top_20_percent": 0.3469387755102041,
+        "log_loss": 0.3189203808171747,
+        "lot": "L002",
+        "pr_auc": 0.15873578811690184,
+        "precision": 0.0,
+        "recall": 0.0,
+        "roc_auc": 0.5951626770442101
+      },
+      {
+        "balanced_accuracy": 0.5,
+        "brier": 0.07117825725818995,
+        "ece": 0.03402478212373954,
+        "f1": 0.0,
+        "failure_capture_at_top_10_percent": 0.10526315789473684,
+        "failure_capture_at_top_20_percent": 0.2631578947368421,
+        "log_loss": 0.2722636358899631,
+        "lot": "L003",
+        "pr_auc": 0.09262994148180723,
+        "precision": 0.0,
+        "recall": 0.0,
+        "roc_auc": 0.575786056049214
+      },
+      {
+        "balanced_accuracy": 0.5,
+        "brier": 0.17169574454518252,
+        "ece": 0.1192424500312658,
+        "f1": 0.0,
+        "failure_capture_at_top_10_percent": 0.061855670103092786,
+        "failure_capture_at_top_20_percent": 0.18556701030927836,
+        "log_loss": 0.5835875368591367,
+        "lot": "L004",
+        "pr_auc": 0.20015262437734732,
+        "precision": 0.0,
+        "recall": 0.0,
+        "roc_auc": 0.5237906423473434
+      },
+      {
+        "balanced_accuracy": 0.5,
+        "brier": 0.09080328197432004,
+        "ece": 0.16478088253345802,
+        "f1": 0.0,
+        "failure_capture_at_top_10_percent": 0.23529411764705882,
+        "failure_capture_at_top_20_percent": 0.29411764705882354,
+        "log_loss": 0.3443939624506976,
+        "lot": "L005",
+        "pr_auc": 0.09191766969709847,
+        "precision": 0.0,
+        "recall": 0.0,
+        "roc_auc": 0.5995645039131532
+      }
+    ]
+  },
+  "pooled": {
+    "yi_ml_v2": {
+      "balanced_accuracy": 0.5006138186250109,
+      "brier": 0.10059457906752498,
+      "ece": 0.06729184814324131,
+      "f1": 0.03896103896103896,
+      "failure_capture_at_top_10_percent": 0.07569721115537849,
+      "failure_capture_at_top_20_percent": 0.14741035856573706,
+      "log_loss": 0.37443674677510264,
+      "n_positives": 251,
+      "n_samples": 2500,
+      "positive_rate": 0.1004,
+      "pr_auc": 0.09090471467507374,
+      "precision": 0.10526315789473684,
+      "recall": 0.02390438247011952,
+      "roc_auc": 0.4591956761659454
+    },
+    "yi_ml_v3_spatial": {
+      "balanced_accuracy": 0.5,
+      "brier": 0.09702708619893478,
+      "ece": 0.0638229512772044,
+      "f1": 0.0,
+      "failure_capture_at_top_10_percent": 0.0796812749003984,
+      "failure_capture_at_top_20_percent": 0.14342629482071714,
+      "log_loss": 0.36019891002328414,
+      "n_positives": 251,
+      "n_samples": 2500,
+      "positive_rate": 0.1004,
+      "pr_auc": 0.09393482371366525,
+      "precision": 0.0,
+      "recall": 0.0,
+      "roc_auc": 0.4665561852191058
+    }
+  },
+  "promoted": false
+}

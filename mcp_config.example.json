@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "verilumen-ate": {
+      "command": "python",
+      "args": ["mcp_server.py"],
+      "env": {
+        "SHMOO_API_KEY": "<run-python-verilumen_secrets.py---init-to-populate-from-windows-credential-manager>"
+      }
+    }
+  }
+}

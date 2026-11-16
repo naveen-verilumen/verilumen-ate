@@ -1,0 +1,30 @@
+{
+  "affected_population": {
+    "n_targeted": 375,
+    "n_total": 784,
+    "rule": "probe_card_id == PC-1"
+  },
+  "confounders": [
+    "other_probe_cards_remain_populated"
+  ],
+  "dataset_id": "ds_6366b29ef95de1e5",
+  "difficulty": "medium",
+  "expected_signal": "Failures associated with contact/probe conditions; some recover on retest.",
+  "generator_version": "yi_synth_v1",
+  "injected_parameters": {
+    "affected_probe_card": "PC-1",
+    "extra_p": 0.35,
+    "failure_code": "CONTINUITY",
+    "retest_pass_rate": 0.7
+  },
+  "notes": null,
+  "profile": "small",
+  "scenario_id": "S10",
+  "seed": 20260322,
+  "true_causes": [
+    {
+      "detail": "PROBE",
+      "family": "CONTACT"
+    }
+  ]
+}

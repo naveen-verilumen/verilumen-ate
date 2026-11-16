@@ -1,0 +1,19 @@
+{
+  "case_id": "CASE_03",
+  "n_eligible": 2,
+  "n_first_pass_pass": 2,
+  "n_first_pass_fail": 0,
+  "n_excluded": 0,
+  "fpy": 1.0,
+  "fpy_loss": 0.0,
+  "final_yield": 0.5,
+  "notes": "Later retest fail does not change FPY. D01 FPY = PASS.",
+  "per_die": [
+    {
+      "die_id": "D01",
+      "first_pass_disposition": "PASS",
+      "final_disposition": "FAIL",
+      "fpy_counts_as": "PASS"
+    }
+  ]
+}

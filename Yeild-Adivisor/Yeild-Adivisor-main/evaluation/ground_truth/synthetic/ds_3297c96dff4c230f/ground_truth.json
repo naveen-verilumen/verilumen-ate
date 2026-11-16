@@ -1,0 +1,42 @@
+{
+  "affected_population": {
+    "affected_lots": [
+      "L002",
+      "L003",
+      "L004",
+      "L008"
+    ],
+    "n_targeted": 392,
+    "n_total": 784,
+    "rule": "selected lots"
+  },
+  "confounders": [
+    "unaffected_lots_keep_baseline_distribution"
+  ],
+  "dataset_id": "ds_3297c96dff4c230f",
+  "difficulty": "medium",
+  "expected_signal": "Parameter distribution shift on affected lots.",
+  "generator_version": "yi_synth_v1",
+  "injected_parameters": {
+    "affected_lots": [
+      "L002",
+      "L003",
+      "L004",
+      "L008"
+    ],
+    "extra_mean": 18.0,
+    "limits_unchanged": true,
+    "parameter": "IDDQ",
+    "upper_limit": 50.0
+  },
+  "notes": null,
+  "profile": "small",
+  "scenario_id": "S08",
+  "seed": 20260322,
+  "true_causes": [
+    {
+      "detail": "SHIFT",
+      "family": "PARAMETRIC"
+    }
+  ]
+}

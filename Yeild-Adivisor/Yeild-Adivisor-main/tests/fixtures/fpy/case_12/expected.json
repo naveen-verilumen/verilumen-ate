@@ -1,0 +1,34 @@
+{
+  "case_id": "CASE_12",
+  "n_eligible": 2,
+  "n_first_pass_pass": 1,
+  "n_first_pass_fail": 1,
+  "n_excluded": 0,
+  "fpy": 0.5,
+  "fpy_loss": 0.5,
+  "notes": "D01 has two failing tests. Die-level FPY loss counted ONCE (n_fail=1 not 2).",
+  "primary_fail_pareto": [
+    {
+      "failure_key": "T_CONTINUITY",
+      "failure_code": "CONTINUITY",
+      "taxonomy_code": "CONTACT.CONTINUITY",
+      "n_dies": 1,
+      "contribution": 0.5,
+      "share_of_fails": 1.0,
+      "selection_rule": "is_first_fail=true"
+    }
+  ],
+  "cofail": [
+    {
+      "die_id": "D01",
+      "failure_key": "T_IDDQ",
+      "attribution_role": "COFAIL"
+    }
+  ],
+  "any_fail_pareto": [
+    { "failure_key": "T_CONTINUITY", "n_dies": 1, "contribution": 0.5, "overlap_allowed": true },
+    { "failure_key": "T_IDDQ", "n_dies": 1, "contribution": 0.5, "overlap_allowed": true }
+  ],
+  "sum_primary_n_dies": 1,
+  "sum_primary_equals_n_fail": true
+}

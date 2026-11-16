@@ -1,0 +1,13 @@
+{
+  "dataset_id": "ds_mon_09",
+  "expected": {
+    "alarm": false,
+    "dimension": "sample",
+    "overall": [
+      "INSUFFICIENT_DATA"
+    ]
+  },
+  "hidden": true,
+  "notes": "Fewer rows than min_current_samples.",
+  "scenario_id": "M09_SMALL_SAMPLE"
+}

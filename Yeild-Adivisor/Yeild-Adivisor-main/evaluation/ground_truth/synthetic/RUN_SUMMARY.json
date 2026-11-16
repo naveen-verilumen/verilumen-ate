@@ -1,0 +1,167 @@
+{
+  "generator_version": "yi_synth_v1",
+  "profile": "small",
+  "scenarios": [
+    {
+      "attempt_count": 784,
+      "dataset_id": "ds_223a4dcbba4d4202",
+      "die_count": 784,
+      "first_pass_fpy": 0.8635204081632653,
+      "pipeline_fpy": 0.8635204081632653,
+      "sanity": "PASSED",
+      "scenario_id": "S01",
+      "validation": "PASSED"
+    },
+    {
+      "attempt_count": 784,
+      "dataset_id": "ds_0b5542c71e1a13e0",
+      "die_count": 784,
+      "first_pass_fpy": 0.735969387755102,
+      "pipeline_fpy": 0.735969387755102,
+      "sanity": "PASSED",
+      "scenario_id": "S02",
+      "validation": "PASSED"
+    },
+    {
+      "attempt_count": 784,
+      "dataset_id": "ds_71431619d83249e1",
+      "die_count": 784,
+      "first_pass_fpy": 0.7334183673469388,
+      "pipeline_fpy": 0.7334183673469388,
+      "sanity": "PASSED",
+      "scenario_id": "S03",
+      "validation": "PASSED"
+    },
+    {
+      "attempt_count": 784,
+      "dataset_id": "ds_8c313fe0d71ed0a5",
+      "die_count": 784,
+      "first_pass_fpy": 0.7806122448979592,
+      "pipeline_fpy": 0.7806122448979592,
+      "sanity": "PASSED",
+      "scenario_id": "S04",
+      "validation": "PASSED"
+    },
+    {
+      "attempt_count": 784,
+      "dataset_id": "ds_5f72a462b78fa7df",
+      "die_count": 784,
+      "first_pass_fpy": 0.8341836734693877,
+      "pipeline_fpy": 0.8341836734693877,
+      "sanity": "PASSED",
+      "scenario_id": "S05",
+      "validation": "PASSED"
+    },
+    {
+      "attempt_count": 784,
+      "dataset_id": "ds_a8d012faaf42bfa8",
+      "die_count": 784,
+      "first_pass_fpy": 0.7551020408163265,
+      "pipeline_fpy": 0.7551020408163265,
+      "sanity": "PASSED",
+      "scenario_id": "S06",
+      "validation": "PASSED"
+    },
+    {
+      "attempt_count": 784,
+      "dataset_id": "ds_893c6caf3bdf5f6b",
+      "die_count": 784,
+      "first_pass_fpy": 0.7704081632653061,
+      "pipeline_fpy": 0.7704081632653061,
+      "sanity": "PASSED",
+      "scenario_id": "S07",
+      "validation": "PASSED"
+    },
+    {
+      "attempt_count": 784,
+      "dataset_id": "ds_3297c96dff4c230f",
+      "die_count": 784,
+      "first_pass_fpy": 0.7487244897959183,
+      "pipeline_fpy": 0.7487244897959183,
+      "sanity": "PASSED",
+      "scenario_id": "S08",
+      "validation": "PASSED"
+    },
+    {
+      "attempt_count": 784,
+      "dataset_id": "ds_171e171c7cbd70cc",
+      "die_count": 784,
+      "first_pass_fpy": 0.47066326530612246,
+      "pipeline_fpy": 0.47066326530612246,
+      "sanity": "PASSED",
+      "scenario_id": "S09",
+      "validation": "PASSED"
+    },
+    {
+      "attempt_count": 911,
+      "dataset_id": "ds_6366b29ef95de1e5",
+      "die_count": 784,
+      "first_pass_fpy": 0.7589285714285714,
+      "pipeline_fpy": 0.7589285714285714,
+      "sanity": "PASSED",
+      "scenario_id": "S10",
+      "validation": "PASSED"
+    },
+    {
+      "attempt_count": 784,
+      "dataset_id": "ds_dc715730527a3232",
+      "die_count": 784,
+      "first_pass_fpy": 0.9145408163265306,
+      "pipeline_fpy": 0.9145408163265306,
+      "sanity": "PASSED",
+      "scenario_id": "S11",
+      "validation": "PASSED"
+    },
+    {
+      "attempt_count": 784,
+      "dataset_id": "ds_ec49a06398d57828",
+      "die_count": 784,
+      "first_pass_fpy": 0.8443877551020408,
+      "pipeline_fpy": 0.8443877551020408,
+      "sanity": "PASSED",
+      "scenario_id": "S12",
+      "validation": "PASSED"
+    },
+    {
+      "attempt_count": 784,
+      "dataset_id": "ds_a3edd37e85b16e81",
+      "die_count": 784,
+      "first_pass_fpy": 0.8698979591836735,
+      "pipeline_fpy": 0.8698979591836735,
+      "sanity": "PASSED",
+      "scenario_id": "S13",
+      "validation": "PASSED"
+    },
+    {
+      "attempt_count": 784,
+      "dataset_id": "ds_2cb7d367015faf90",
+      "die_count": 784,
+      "first_pass_fpy": 0.6772959183673469,
+      "pipeline_fpy": 0.6772959183673469,
+      "sanity": "PASSED",
+      "scenario_id": "S14",
+      "validation": "PASSED"
+    },
+    {
+      "attempt_count": 784,
+      "dataset_id": "ds_c65b1e8d8155514c",
+      "die_count": 784,
+      "first_pass_fpy": 0.6747448979591837,
+      "pipeline_fpy": 0.6747448979591837,
+      "sanity": "PASSED",
+      "scenario_id": "S15",
+      "validation": "PASSED"
+    },
+    {
+      "attempt_count": 784,
+      "dataset_id": "ds_e8b6b664a6810381",
+      "die_count": 784,
+      "first_pass_fpy": 0.9094387755102041,
+      "pipeline_fpy": 0.9094387755102041,
+      "sanity": "PASSED",
+      "scenario_id": "S16",
+      "validation": "PASSED"
+    }
+  ],
+  "seed": 20260322
+}

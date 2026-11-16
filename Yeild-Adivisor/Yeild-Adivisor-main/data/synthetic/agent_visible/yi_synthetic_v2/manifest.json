@@ -1,0 +1,13 @@
+{
+  "created_at": "2026-11-01T08:00:00Z",
+  "dataset_id": "yi_synthetic_v2",
+  "dataset_type": "SYNTHETIC",
+  "dataset_version": "yi_synth_v2",
+  "dies_per_wafer": 100,
+  "display_name": "Yield Improvement V2",
+  "n_dies": 2500,
+  "n_lots": 5,
+  "n_wafers": 25,
+  "product_id": "DEV_A",
+  "wafers_per_lot": 5
+}

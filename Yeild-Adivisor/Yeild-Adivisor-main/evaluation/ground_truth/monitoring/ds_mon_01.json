@@ -1,0 +1,21 @@
+{
+  "dataset_id": "ds_mon_01",
+  "expected": {
+    "alarm": false,
+    "feature_drift": [
+      "HEALTHY",
+      "MONITOR"
+    ],
+    "overall": [
+      "HEALTHY",
+      "MONITOR"
+    ],
+    "prediction_drift": [
+      "HEALTHY",
+      "MONITOR"
+    ]
+  },
+  "hidden": true,
+  "notes": "Unmodified copy of the spatial-edge reference-like population.",
+  "scenario_id": "M01_NO_DRIFT"
+}

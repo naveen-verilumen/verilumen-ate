@@ -1,0 +1,25 @@
+{
+  "affected_population": {
+    "n_targeted": 0,
+    "n_total": 784,
+    "rule": "none"
+  },
+  "confounders": [
+    "baseline_lot_wafer_die_tester_noise"
+  ],
+  "dataset_id": "ds_e8b6b664a6810381",
+  "difficulty": "easy",
+  "expected_signal": "Only normal process variation and random noise. No planted systematic cause.",
+  "generator_version": "yi_synth_v1",
+  "injected_parameters": {},
+  "notes": "Future agent should return NO_CONFIDENT_ROOT_CAUSE.",
+  "profile": "small",
+  "scenario_id": "S16",
+  "seed": 20260322,
+  "true_causes": [
+    {
+      "detail": "NO_CONFIDENT_ROOT_CAUSE",
+      "family": "NONE"
+    }
+  ]
+}

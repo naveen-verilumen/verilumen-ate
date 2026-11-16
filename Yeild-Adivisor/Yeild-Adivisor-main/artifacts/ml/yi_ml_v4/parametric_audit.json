@@ -1,0 +1,82 @@
+[
+  {
+    "accepted_into_matrix": false,
+    "decision": "REJECTED",
+    "first_pass_rows": 2500,
+    "limit_fail_and_first_pass_fail": 28,
+    "limit_fail_rows": 28,
+    "parameter": "VMIN",
+    "reason": "The numeric measurement is recorded on the first-pass attempt and the generator sets that attempt to FAIL when the value is outside its limit. It is an in-test result, not an input available before the first-pass outcome. The parametric pass_fail column is the limit result and is rejected. Retest rows are excluded. A generator shift that correlates a measurement with failure is not the reason for this rejection.",
+    "retest_rows_excluded": 60
+  },
+  {
+    "accepted_into_matrix": false,
+    "decision": "REJECTED",
+    "first_pass_rows": 2500,
+    "limit_fail_and_first_pass_fail": 1,
+    "limit_fail_rows": 1,
+    "parameter": "VMAX",
+    "reason": "The numeric measurement is recorded on the first-pass attempt and the generator sets that attempt to FAIL when the value is outside its limit. It is an in-test result, not an input available before the first-pass outcome. The parametric pass_fail column is the limit result and is rejected. Retest rows are excluded. A generator shift that correlates a measurement with failure is not the reason for this rejection.",
+    "retest_rows_excluded": 60
+  },
+  {
+    "accepted_into_matrix": false,
+    "decision": "REJECTED",
+    "first_pass_rows": 2500,
+    "limit_fail_and_first_pass_fail": 29,
+    "limit_fail_rows": 29,
+    "parameter": "IDDQ",
+    "reason": "The numeric measurement is recorded on the first-pass attempt and the generator sets that attempt to FAIL when the value is outside its limit. It is an in-test result, not an input available before the first-pass outcome. The parametric pass_fail column is the limit result and is rejected. Retest rows are excluded. A generator shift that correlates a measurement with failure is not the reason for this rejection.",
+    "retest_rows_excluded": 60
+  },
+  {
+    "accepted_into_matrix": false,
+    "decision": "REJECTED",
+    "first_pass_rows": 2500,
+    "limit_fail_and_first_pass_fail": 0,
+    "limit_fail_rows": 0,
+    "parameter": "SUPPLY_CURRENT",
+    "reason": "The numeric measurement is recorded on the first-pass attempt and the generator sets that attempt to FAIL when the value is outside its limit. It is an in-test result, not an input available before the first-pass outcome. The parametric pass_fail column is the limit result and is rejected. Retest rows are excluded. A generator shift that correlates a measurement with failure is not the reason for this rejection.",
+    "retest_rows_excluded": 60
+  },
+  {
+    "accepted_into_matrix": false,
+    "decision": "REJECTED",
+    "first_pass_rows": 2500,
+    "limit_fail_and_first_pass_fail": 0,
+    "limit_fail_rows": 0,
+    "parameter": "CONTACT_RESISTANCE",
+    "reason": "The numeric measurement is recorded on the first-pass attempt and the generator sets that attempt to FAIL when the value is outside its limit. It is an in-test result, not an input available before the first-pass outcome. The parametric pass_fail column is the limit result and is rejected. Retest rows are excluded. A generator shift that correlates a measurement with failure is not the reason for this rejection.",
+    "retest_rows_excluded": 60
+  },
+  {
+    "accepted_into_matrix": false,
+    "decision": "REJECTED",
+    "first_pass_rows": 2500,
+    "limit_fail_and_first_pass_fail": 0,
+    "limit_fail_rows": 0,
+    "parameter": "INTERCONNECT_RESISTANCE",
+    "reason": "The numeric measurement is recorded on the first-pass attempt and the generator sets that attempt to FAIL when the value is outside its limit. It is an in-test result, not an input available before the first-pass outcome. The parametric pass_fail column is the limit result and is rejected. Retest rows are excluded. A generator shift that correlates a measurement with failure is not the reason for this rejection.",
+    "retest_rows_excluded": 60
+  },
+  {
+    "accepted_into_matrix": false,
+    "decision": "REJECTED",
+    "first_pass_rows": 2500,
+    "limit_fail_and_first_pass_fail": 0,
+    "limit_fail_rows": 0,
+    "parameter": "ON_RESISTANCE",
+    "reason": "The numeric measurement is recorded on the first-pass attempt and the generator sets that attempt to FAIL when the value is outside its limit. It is an in-test result, not an input available before the first-pass outcome. The parametric pass_fail column is the limit result and is rejected. Retest rows are excluded. A generator shift that correlates a measurement with failure is not the reason for this rejection.",
+    "retest_rows_excluded": 60
+  },
+  {
+    "accepted_into_matrix": false,
+    "decision": "REJECTED",
+    "first_pass_rows": 2500,
+    "limit_fail_and_first_pass_fail": 0,
+    "limit_fail_rows": 0,
+    "parameter": "VDD",
+    "reason": "The numeric measurement is recorded on the first-pass attempt and the generator sets that attempt to FAIL when the value is outside its limit. It is an in-test result, not an input available before the first-pass outcome. The parametric pass_fail column is the limit result and is rejected. Retest rows are excluded. A generator shift that correlates a measurement with failure is not the reason for this rejection.",
+    "retest_rows_excluded": 60
+  }
+]

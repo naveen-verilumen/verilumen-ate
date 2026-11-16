@@ -1,0 +1,19 @@
+{
+  "dataset_id": "ds_mon_03",
+  "expected": {
+    "alarm": true,
+    "dimension": "prediction_drift",
+    "overall": [
+      "MONITOR",
+      "REVIEW",
+      "NEEDS_RETRAINING"
+    ],
+    "prediction_drift": [
+      "MONITOR",
+      "REVIEW"
+    ]
+  },
+  "hidden": true,
+  "notes": "Expanded wafer coordinates toward the edge so predicted risk shifts. Labels unchanged.",
+  "scenario_id": "M03_PREDICTION_DRIFT"
+}

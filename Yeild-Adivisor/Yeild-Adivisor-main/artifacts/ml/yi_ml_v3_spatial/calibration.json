@@ -1,0 +1,7 @@
+{
+  "deployed": "isotonic fit on pooled out-of-fold raw probabilities, not on in-sample fitted probabilities",
+  "fitted": true,
+  "fold_local": "isotonic fit on each fold's training-lot raw probabilities only",
+  "method": "isotonic",
+  "test_fold_used_to_fit": false
+}

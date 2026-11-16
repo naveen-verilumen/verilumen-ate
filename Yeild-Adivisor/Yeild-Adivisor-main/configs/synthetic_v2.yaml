@@ -1,0 +1,99 @@
+# Yield Improvement synthetic dataset V2.
+# Hierarchy: dataset → lot → wafer → die. Seed is not copied to agent-visible tables.
+
+dataset_id: yi_synthetic_v2
+dataset_version: yi_synth_v2
+display_name: Yield Improvement V2
+dataset_type: SYNTHETIC
+seed: 20261101
+product_id: DEV_A
+step_id: WS_SORT
+
+n_lots: 5
+wafers_per_lot: 5
+dies_per_wafer: 100
+wafer_grid_x: 10
+wafer_grid_y: 10
+
+tests_per_die: 10
+retest_rate: 0.22
+second_retest_rate: 0.28
+retest_pass_rate: 0.72
+
+testers: [T01, T02, T03]
+tester_weights: [0.40, 0.35, 0.25]
+probe_cards: [PC01, PC02, PC03]
+probers: [PR01, PR02]
+
+baseline:
+  p_fail: 0.055
+  lot_effect_sd: 0.008
+  wafer_effect_sd: 0.006
+  die_noise_sd: 0.012
+  tester_effect_sd: 0.004
+  temperature_c: 25.0
+  temperature_sd: 1.8
+  hot_fraction: 0.12
+  hot_temperature_c: 85.0
+  voltage_v: 0.80
+  voltage_sd: 0.01
+
+time:
+  start: "2026-11-01T08:00:00Z"
+  days_per_lot: 2
+  hours_per_wafer: 3
+  seconds_per_die: 45
+
+# Hidden generator characteristics. Not written to agent-visible files.
+lots:
+  L001:
+    role: BASELINE
+    extra_p: 0.0
+    expected_signal: NONE
+  L002:
+    role: SPATIAL_EDGE
+    extra_p_edge: 0.11
+    expected_signal: SPATIAL.EDGE
+  L003:
+    role: EQUIPMENT
+    extra_p_tester: 0.09
+    affected_tester: T01
+    expected_signal: EQUIPMENT.DEGRADATION
+  L004:
+    role: PROCESS_DRIFT
+    extra_p_per_wafer: 0.040
+    expected_signal: PROCESS.DRIFT
+  L005:
+    role: WEAK_MIXED
+    extra_p: 0.018
+    extra_p_edge: 0.025
+    expected_signal: WEAK
+
+# This file has no test_name field. Display overlay configs/v2_test_catalog.yaml
+# copies tests[].failure_code as the program-slot label. Generator fields below
+# are unchanged.
+tests:
+  - {test_id: T001, sequence_index: 1, failure_code: CONTINUITY, sbin: 9}
+  - {test_id: T002, sequence_index: 2, failure_code: OPENS, sbin: 9}
+  - {test_id: T003, sequence_index: 3, failure_code: SHORTS, sbin: 10}
+  - {test_id: T004, sequence_index: 4, failure_code: CONTACT, sbin: 12}
+  - {test_id: T005, sequence_index: 5, failure_code: IDDQ, sbin: 8}
+  - {test_id: T006, sequence_index: 6, failure_code: VMIN, sbin: 13}
+  - {test_id: T007, sequence_index: 7, failure_code: VMAX, sbin: 13}
+  - {test_id: T008, sequence_index: 8, failure_code: LEAKAGE, sbin: 8}
+  - {test_id: T009, sequence_index: 9, failure_code: FUNCTIONAL, sbin: 11}
+  - {test_id: T010, sequence_index: 10, failure_code: SCAN, sbin: 11}
+
+parametric:
+  IDDQ: {unit: uA, lower_limit: null, upper_limit: 50.0, pass_mean: 32.0, pass_sd: 6.0}
+  VMIN: {unit: V, lower_limit: null, upper_limit: 0.85, pass_mean: 0.62, pass_sd: 0.08}
+  VMAX: {unit: V, lower_limit: 1.05, upper_limit: null, pass_mean: 1.18, pass_sd: 0.04}
+  VDD: {unit: V, lower_limit: 0.72, upper_limit: 0.88, pass_mean: 0.80, pass_sd: 0.02}
+  SUPPLY_CURRENT: {unit: mA, lower_limit: null, upper_limit: 120.0, pass_mean: 78.0, pass_sd: 10.0}
+  CONTACT_RESISTANCE: {unit: ohm, lower_limit: null, upper_limit: 2.5, pass_mean: 1.1, pass_sd: 0.25}
+  INTERCONNECT_RESISTANCE: {unit: ohm, lower_limit: null, upper_limit: 8.0, pass_mean: 4.2, pass_sd: 0.7}
+  ON_RESISTANCE: {unit: ohm, lower_limit: null, upper_limit: 15.0, pass_mean: 8.5, pass_sd: 1.4}
+
+hbin_pass: 1
+hbin_fail: 5
+sbin_pass: 1

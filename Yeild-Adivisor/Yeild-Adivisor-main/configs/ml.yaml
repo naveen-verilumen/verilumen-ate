@@ -1,0 +1,56 @@
+# ML first-pass-failure prediction. Predictive only. Not causal. Not production.
+
+ml_version: yi_ml_v1
+feature_set_version: yi_ml_features_v1
+calibration_version: yi_ml_cal_v1
+status: PRELIMINARY
+
+seed: 7
+split:
+  strategy: leave_one_lot_out
+  group_column: lot_id
+  max_lolo_lots: 12
+  fallback_group_kfold_splits: 5
+
+models:
+  logistic:
+    class_weight: balanced
+    max_iter: 400
+  random_forest:
+    n_estimators: 40
+    min_samples_leaf: 8
+    class_weight: balanced
+    max_depth: 8
+  hist_gbm:
+    max_depth: 4
+    learning_rate: 0.08
+    max_iter: 50
+    min_samples_leaf: 12
+
+selection:
+  primary_metric: pr_auc
+  tie_break_metric: brier
+  prefer_simpler_if_close: true
+  close_tolerance: 0.02
+
+imbalance:
+  method: class_or_sample_weight
+  oversample: false
+
+calibration:
+  method: isotonic
+  min_train_lots: 4
+
+evidence:
+  role: SECONDARY_SUPPORT
+  independent_of_matching_detector: false
+  min_importance_rank: 8
+  min_rate_delta: 0.03
+  top_risk_fraction: 0.20
+  do_not_create_hypothesis_without_statistical_signal: true
+
+limitations:
+  - Predictive association is not a confirmed root cause.
+  - Feature importance is not a causal effect.
+  - Predicted probability is not recoverable yield.
+  - Production action remains forbidden.

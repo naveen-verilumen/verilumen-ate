@@ -1,0 +1,20 @@
+{
+  "dataset_id": "ds_mon_06",
+  "expected": {
+    "alarm": true,
+    "dimension": "performance",
+    "overall": [
+      "DEGRADED",
+      "NEEDS_RETRAINING",
+      "REVIEW"
+    ],
+    "performance": [
+      "DEGRADED",
+      "REVIEW",
+      "MONITOR"
+    ]
+  },
+  "hidden": true,
+  "notes": "Shuffled labels destroy ranking. Features unchanged.",
+  "scenario_id": "M06_PERFORMANCE_DEGRADATION"
+}

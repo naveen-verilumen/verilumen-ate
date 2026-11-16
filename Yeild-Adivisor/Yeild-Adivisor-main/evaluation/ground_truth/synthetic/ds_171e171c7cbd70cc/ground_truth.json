@@ -1,0 +1,31 @@
+{
+  "affected_population": {
+    "n_targeted": 784,
+    "n_total": 784,
+    "rule": "all_dies_near_limit_measurements"
+  },
+  "confounders": [
+    "production_limits_are_unchanged"
+  ],
+  "dataset_id": "ds_171e171c7cbd70cc",
+  "difficulty": "hard",
+  "expected_signal": "Measurements concentrated near the production limit; some pass, some fail.",
+  "generator_version": "yi_synth_v1",
+  "injected_parameters": {
+    "limits_modified": false,
+    "near_limit_hi": 1.12,
+    "near_limit_lo": 0.9,
+    "parameter": "IDDQ",
+    "production_upper_limit": 50.0
+  },
+  "notes": "tight_limit is hidden; never written to agent-visible tables. Limits are not modified.",
+  "profile": "small",
+  "scenario_id": "S09",
+  "seed": 20260322,
+  "true_causes": [
+    {
+      "detail": "LIMIT_SENSITIVITY",
+      "family": "TEST"
+    }
+  ]
+}

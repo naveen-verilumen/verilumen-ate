@@ -1,0 +1,9 @@
+attempt_id,test_id,test_pass_fail,sequence_index,is_first_fail,failure_code
+E-L014-W01-D01-1,T_IDDQ,FAIL,5,true,IDDQ
+E-L014-W01-D01-1,T_FUNC,FAIL,8,false,FUNCTIONAL
+E-L014-W01-D02-1,T_IDDQ,FAIL,5,true,IDDQ
+E-L014-W01-D02-1,T_FUNC,PASS,8,false,
+E-L014-W01-D03-1,T_IDDQ,PASS,5,false,
+E-L014-W01-D03-1,T_FUNC,PASS,8,false,
+E-L014-W01-D04-1,T_IDDQ,PASS,5,false,
+E-L014-W01-D04-1,T_FUNC,PASS,8,false,

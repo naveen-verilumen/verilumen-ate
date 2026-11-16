@@ -1,0 +1,6 @@
+# Pinned MCP Server & Client Dependencies (verified on PyPI 2026-11-11)
+fastmcp==4.1.8
+mcp==2.3.0
+keyring==25.7.0
+httpx==0.28.1
+pydantic==2.13.5

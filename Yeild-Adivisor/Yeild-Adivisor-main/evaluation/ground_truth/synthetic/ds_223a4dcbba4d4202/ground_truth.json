@@ -1,0 +1,27 @@
+{
+  "affected_population": {
+    "n_targeted": 784,
+    "n_total": 784,
+    "rule": "all_dies_iid"
+  },
+  "confounders": [
+    "baseline_lot_wafer_die_noise"
+  ],
+  "dataset_id": "ds_223a4dcbba4d4202",
+  "difficulty": "easy",
+  "expected_signal": "No strong systematic association with wafer position, equipment, lot, time, or temperature.",
+  "generator_version": "yi_synth_v1",
+  "injected_parameters": {
+    "extra_p": 0.05
+  },
+  "notes": "Random extra fails independent of covariates.",
+  "profile": "small",
+  "scenario_id": "S01",
+  "seed": 20260322,
+  "true_causes": [
+    {
+      "detail": "FAILURE",
+      "family": "RANDOM"
+    }
+  ]
+}

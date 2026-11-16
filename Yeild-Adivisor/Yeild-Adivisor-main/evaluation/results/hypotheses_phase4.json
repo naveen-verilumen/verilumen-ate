@@ -1,0 +1,789 @@
+{
+  "all_not_a_root_cause": true,
+  "n_expected_recovered": 16,
+  "n_scenarios": 16,
+  "rows": [
+    {
+      "all_not_a_root_cause": true,
+      "analysis_id": "ds_223a4dcbba4d4202",
+      "dataset_id": "ds_223a4dcbba4d4202",
+      "dual_cause_ok": true,
+      "expected_present": [],
+      "expected_recovered": true,
+      "extra_hypothesis": [],
+      "false_hypothesis_count": 0,
+      "limitations": [
+        "HypothesisBundle contains UNCONFIRMED associations only. No confirmed root cause.",
+        "evidence_score is PRELIMINARY, not a probability of root cause, and is not calibrated for production.",
+        "Competing hypotheses are preserved; dual-cause scenarios are not collapsed.",
+        "Correlated detectors (lot/wafer nested in drift/spatial; contact nested in equipment) are not independent confirmation.",
+        "Later-test observations are censored by stop-on-fail behavior. TEST.SEQUENCE is not composed from invented order or imputed later-test outcomes.",
+        "No systematic detector produced a SIGNAL. NO_CONFIDENT_HYPOTHESIS."
+      ],
+      "missing_hypothesis": [],
+      "n_hypotheses": 0,
+      "no_confident_hypothesis": true,
+      "no_signal_ok": true,
+      "ranking": [],
+      "scenario": "S01",
+      "sequence_insufficient": true
+    },
+    {
+      "all_not_a_root_cause": true,
+      "analysis_id": "ds_0b5542c71e1a13e0",
+      "dataset_id": "ds_0b5542c71e1a13e0",
+      "dual_cause_ok": true,
+      "expected_present": [
+        "SPATIAL.EDGE"
+      ],
+      "expected_recovered": true,
+      "extra_hypothesis": [],
+      "false_hypothesis_count": 0,
+      "limitations": [
+        "HypothesisBundle contains UNCONFIRMED associations only. No confirmed root cause.",
+        "evidence_score is PRELIMINARY, not a probability of root cause, and is not calibrated for production.",
+        "Competing hypotheses are preserved; dual-cause scenarios are not collapsed.",
+        "Correlated detectors (lot/wafer nested in drift/spatial; contact nested in equipment) are not independent confirmation.",
+        "Later-test observations are censored by stop-on-fail behavior. TEST.SEQUENCE is not composed from invented order or imputed later-test outcomes."
+      ],
+      "missing_hypothesis": [],
+      "n_hypotheses": 1,
+      "no_confident_hypothesis": false,
+      "no_signal_ok": true,
+      "ranking": [
+        {
+          "association_class": "PRIMARY_EVIDENCE",
+          "detail": "EDGE",
+          "evidence_score": 0.9,
+          "evidence_tier": "MODERATE_EVIDENCE",
+          "family": "SPATIAL",
+          "hypothesis_id": "H-SPATIAL.EDGE",
+          "not_a_root_cause": true,
+          "rank": 1,
+          "status": "UNCONFIRMED"
+        }
+      ],
+      "scenario": "S02",
+      "sequence_insufficient": true
+    },
+    {
+      "all_not_a_root_cause": true,
+      "analysis_id": "ds_71431619d83249e1",
+      "dataset_id": "ds_71431619d83249e1",
+      "dual_cause_ok": true,
+      "expected_present": [
+        "SPATIAL.CENTER"
+      ],
+      "expected_recovered": true,
+      "extra_hypothesis": [],
+      "false_hypothesis_count": 0,
+      "limitations": [
+        "HypothesisBundle contains UNCONFIRMED associations only. No confirmed root cause.",
+        "evidence_score is PRELIMINARY, not a probability of root cause, and is not calibrated for production.",
+        "Competing hypotheses are preserved; dual-cause scenarios are not collapsed.",
+        "Correlated detectors (lot/wafer nested in drift/spatial; contact nested in equipment) are not independent confirmation.",
+        "Later-test observations are censored by stop-on-fail behavior. TEST.SEQUENCE is not composed from invented order or imputed later-test outcomes."
+      ],
+      "missing_hypothesis": [],
+      "n_hypotheses": 1,
+      "no_confident_hypothesis": false,
+      "no_signal_ok": true,
+      "ranking": [
+        {
+          "association_class": "PRIMARY_EVIDENCE",
+          "detail": "CENTER",
+          "evidence_score": 0.9,
+          "evidence_tier": "MODERATE_EVIDENCE",
+          "family": "SPATIAL",
+          "hypothesis_id": "H-SPATIAL.CENTER",
+          "not_a_root_cause": true,
+          "rank": 1,
+          "status": "UNCONFIRMED"
+        }
+      ],
+      "scenario": "S03",
+      "sequence_insufficient": true
+    },
+    {
+      "all_not_a_root_cause": true,
+      "analysis_id": "ds_8c313fe0d71ed0a5",
+      "dataset_id": "ds_8c313fe0d71ed0a5",
+      "dual_cause_ok": true,
+      "expected_present": [
+        "SPATIAL.RING"
+      ],
+      "expected_recovered": true,
+      "extra_hypothesis": [],
+      "false_hypothesis_count": 0,
+      "limitations": [
+        "HypothesisBundle contains UNCONFIRMED associations only. No confirmed root cause.",
+        "evidence_score is PRELIMINARY, not a probability of root cause, and is not calibrated for production.",
+        "Competing hypotheses are preserved; dual-cause scenarios are not collapsed.",
+        "Correlated detectors (lot/wafer nested in drift/spatial; contact nested in equipment) are not independent confirmation.",
+        "Later-test observations are censored by stop-on-fail behavior. TEST.SEQUENCE is not composed from invented order or imputed later-test outcomes."
+      ],
+      "missing_hypothesis": [],
+      "n_hypotheses": 1,
+      "no_confident_hypothesis": false,
+      "no_signal_ok": true,
+      "ranking": [
+        {
+          "association_class": "PRIMARY_EVIDENCE",
+          "detail": "RING",
+          "evidence_score": 0.9,
+          "evidence_tier": "MODERATE_EVIDENCE",
+          "family": "SPATIAL",
+          "hypothesis_id": "H-SPATIAL.RING",
+          "not_a_root_cause": true,
+          "rank": 1,
+          "status": "UNCONFIRMED"
+        }
+      ],
+      "scenario": "S04",
+      "sequence_insufficient": true
+    },
+    {
+      "all_not_a_root_cause": true,
+      "analysis_id": "ds_5f72a462b78fa7df",
+      "dataset_id": "ds_5f72a462b78fa7df",
+      "dual_cause_ok": true,
+      "expected_present": [
+        "EQUIPMENT.DEGRADATION"
+      ],
+      "expected_recovered": true,
+      "extra_hypothesis": [],
+      "false_hypothesis_count": 0,
+      "limitations": [
+        "HypothesisBundle contains UNCONFIRMED associations only. No confirmed root cause.",
+        "evidence_score is PRELIMINARY, not a probability of root cause, and is not calibrated for production.",
+        "Competing hypotheses are preserved; dual-cause scenarios are not collapsed.",
+        "Correlated detectors (lot/wafer nested in drift/spatial; contact nested in equipment) are not independent confirmation.",
+        "Later-test observations are censored by stop-on-fail behavior. TEST.SEQUENCE is not composed from invented order or imputed later-test outcomes."
+      ],
+      "missing_hypothesis": [],
+      "n_hypotheses": 1,
+      "no_confident_hypothesis": false,
+      "no_signal_ok": true,
+      "ranking": [
+        {
+          "association_class": "PRIMARY_EVIDENCE",
+          "detail": "DEGRADATION",
+          "evidence_score": 0.9,
+          "evidence_tier": "MODERATE_EVIDENCE",
+          "family": "EQUIPMENT",
+          "hypothesis_id": "H-EQUIPMENT.DEGRADATION",
+          "not_a_root_cause": true,
+          "rank": 1,
+          "status": "UNCONFIRMED"
+        }
+      ],
+      "scenario": "S05",
+      "sequence_insufficient": true
+    },
+    {
+      "all_not_a_root_cause": true,
+      "analysis_id": "ds_a8d012faaf42bfa8",
+      "dataset_id": "ds_a8d012faaf42bfa8",
+      "dual_cause_ok": true,
+      "expected_present": [
+        "PROCESS.DRIFT"
+      ],
+      "expected_recovered": true,
+      "extra_hypothesis": [
+        "PROCESS.LOT_VARIATION",
+        "PROCESS.WAFER_VARIATION"
+      ],
+      "false_hypothesis_count": 2,
+      "limitations": [
+        "HypothesisBundle contains UNCONFIRMED associations only. No confirmed root cause.",
+        "evidence_score is PRELIMINARY, not a probability of root cause, and is not calibrated for production.",
+        "Competing hypotheses are preserved; dual-cause scenarios are not collapsed.",
+        "Correlated detectors (lot/wafer nested in drift/spatial; contact nested in equipment) are not independent confirmation.",
+        "Later-test observations are censored by stop-on-fail behavior. TEST.SEQUENCE is not composed from invented order or imputed later-test outcomes."
+      ],
+      "missing_hypothesis": [],
+      "n_hypotheses": 3,
+      "no_confident_hypothesis": false,
+      "no_signal_ok": true,
+      "ranking": [
+        {
+          "association_class": "PRIMARY_EVIDENCE",
+          "detail": "DRIFT",
+          "evidence_score": 0.8625,
+          "evidence_tier": "MODERATE_EVIDENCE",
+          "family": "PROCESS",
+          "hypothesis_id": "H-PROCESS.DRIFT",
+          "not_a_root_cause": true,
+          "rank": 1,
+          "status": "UNCONFIRMED"
+        },
+        {
+          "association_class": "SECONDARY_ASSOCIATION",
+          "detail": "LOT_VARIATION",
+          "evidence_score": 0.5606,
+          "evidence_tier": "MODERATE_EVIDENCE",
+          "family": "PROCESS",
+          "hypothesis_id": "H-PROCESS.LOT_VARIATION",
+          "not_a_root_cause": true,
+          "rank": 2,
+          "status": "UNCONFIRMED"
+        },
+        {
+          "association_class": "SECONDARY_ASSOCIATION",
+          "detail": "WAFER_VARIATION",
+          "evidence_score": 0.5606,
+          "evidence_tier": "MODERATE_EVIDENCE",
+          "family": "PROCESS",
+          "hypothesis_id": "H-PROCESS.WAFER_VARIATION",
+          "not_a_root_cause": true,
+          "rank": 3,
+          "status": "UNCONFIRMED"
+        }
+      ],
+      "scenario": "S06",
+      "sequence_insufficient": true
+    },
+    {
+      "all_not_a_root_cause": true,
+      "analysis_id": "ds_893c6caf3bdf5f6b",
+      "dataset_id": "ds_893c6caf3bdf5f6b",
+      "dual_cause_ok": true,
+      "expected_present": [
+        "ENVIRONMENT.TEMPERATURE"
+      ],
+      "expected_recovered": true,
+      "extra_hypothesis": [],
+      "false_hypothesis_count": 0,
+      "limitations": [
+        "HypothesisBundle contains UNCONFIRMED associations only. No confirmed root cause.",
+        "evidence_score is PRELIMINARY, not a probability of root cause, and is not calibrated for production.",
+        "Competing hypotheses are preserved; dual-cause scenarios are not collapsed.",
+        "Correlated detectors (lot/wafer nested in drift/spatial; contact nested in equipment) are not independent confirmation.",
+        "Later-test observations are censored by stop-on-fail behavior. TEST.SEQUENCE is not composed from invented order or imputed later-test outcomes."
+      ],
+      "missing_hypothesis": [],
+      "n_hypotheses": 1,
+      "no_confident_hypothesis": false,
+      "no_signal_ok": true,
+      "ranking": [
+        {
+          "association_class": "PRIMARY_EVIDENCE",
+          "detail": "TEMPERATURE",
+          "evidence_score": 0.9,
+          "evidence_tier": "MODERATE_EVIDENCE",
+          "family": "ENVIRONMENT",
+          "hypothesis_id": "H-ENVIRONMENT.TEMPERATURE",
+          "not_a_root_cause": true,
+          "rank": 1,
+          "status": "UNCONFIRMED"
+        }
+      ],
+      "scenario": "S07",
+      "sequence_insufficient": true
+    },
+    {
+      "all_not_a_root_cause": true,
+      "analysis_id": "ds_3297c96dff4c230f",
+      "dataset_id": "ds_3297c96dff4c230f",
+      "dual_cause_ok": true,
+      "expected_present": [
+        "PARAMETRIC.SHIFT"
+      ],
+      "expected_recovered": true,
+      "extra_hypothesis": [
+        "PROCESS.LOT_VARIATION",
+        "PROCESS.WAFER_VARIATION",
+        "TEST.LIMIT_SENSITIVITY"
+      ],
+      "false_hypothesis_count": 3,
+      "limitations": [
+        "HypothesisBundle contains UNCONFIRMED associations only. No confirmed root cause.",
+        "evidence_score is PRELIMINARY, not a probability of root cause, and is not calibrated for production.",
+        "Competing hypotheses are preserved; dual-cause scenarios are not collapsed.",
+        "Correlated detectors (lot/wafer nested in drift/spatial; contact nested in equipment) are not independent confirmation.",
+        "Later-test observations are censored by stop-on-fail behavior. TEST.SEQUENCE is not composed from invented order or imputed later-test outcomes."
+      ],
+      "missing_hypothesis": [],
+      "n_hypotheses": 4,
+      "no_confident_hypothesis": false,
+      "no_signal_ok": true,
+      "ranking": [
+        {
+          "association_class": "PRIMARY_EVIDENCE",
+          "detail": "LOT_VARIATION",
+          "evidence_score": 0.9,
+          "evidence_tier": "MODERATE_EVIDENCE",
+          "family": "PROCESS",
+          "hypothesis_id": "H-PROCESS.LOT_VARIATION",
+          "not_a_root_cause": true,
+          "rank": 1,
+          "status": "UNCONFIRMED"
+        },
+        {
+          "association_class": "PRIMARY_EVIDENCE",
+          "detail": "SHIFT",
+          "evidence_score": 0.8625,
+          "evidence_tier": "MODERATE_EVIDENCE",
+          "family": "PARAMETRIC",
+          "hypothesis_id": "H-PARAMETRIC.SHIFT",
+          "not_a_root_cause": true,
+          "rank": 2,
+          "status": "UNCONFIRMED"
+        },
+        {
+          "association_class": "SECONDARY_ASSOCIATION",
+          "detail": "WAFER_VARIATION",
+          "evidence_score": 0.5606,
+          "evidence_tier": "MODERATE_EVIDENCE",
+          "family": "PROCESS",
+          "hypothesis_id": "H-PROCESS.WAFER_VARIATION",
+          "not_a_root_cause": true,
+          "rank": 3,
+          "status": "UNCONFIRMED"
+        },
+        {
+          "association_class": "SECONDARY_ASSOCIATION",
+          "detail": "LIMIT_SENSITIVITY",
+          "evidence_score": 0.5363,
+          "evidence_tier": "MODERATE_EVIDENCE",
+          "family": "TEST",
+          "hypothesis_id": "H-TEST.LIMIT_SENSITIVITY",
+          "not_a_root_cause": true,
+          "rank": 4,
+          "status": "UNCONFIRMED"
+        }
+      ],
+      "scenario": "S08",
+      "sequence_insufficient": true
+    },
+    {
+      "all_not_a_root_cause": true,
+      "analysis_id": "ds_171e171c7cbd70cc",
+      "dataset_id": "ds_171e171c7cbd70cc",
+      "dual_cause_ok": true,
+      "expected_present": [
+        "TEST.LIMIT_SENSITIVITY"
+      ],
+      "expected_recovered": true,
+      "extra_hypothesis": [],
+      "false_hypothesis_count": 0,
+      "limitations": [
+        "HypothesisBundle contains UNCONFIRMED associations only. No confirmed root cause.",
+        "evidence_score is PRELIMINARY, not a probability of root cause, and is not calibrated for production.",
+        "Competing hypotheses are preserved; dual-cause scenarios are not collapsed.",
+        "Correlated detectors (lot/wafer nested in drift/spatial; contact nested in equipment) are not independent confirmation.",
+        "Later-test observations are censored by stop-on-fail behavior. TEST.SEQUENCE is not composed from invented order or imputed later-test outcomes."
+      ],
+      "missing_hypothesis": [],
+      "n_hypotheses": 1,
+      "no_confident_hypothesis": false,
+      "no_signal_ok": true,
+      "ranking": [
+        {
+          "association_class": "PRIMARY_EVIDENCE",
+          "detail": "LIMIT_SENSITIVITY",
+          "evidence_score": 0.5537,
+          "evidence_tier": "MODERATE_EVIDENCE",
+          "family": "TEST",
+          "hypothesis_id": "H-TEST.LIMIT_SENSITIVITY",
+          "not_a_root_cause": true,
+          "rank": 1,
+          "status": "UNCONFIRMED"
+        }
+      ],
+      "scenario": "S09",
+      "sequence_insufficient": true
+    },
+    {
+      "all_not_a_root_cause": true,
+      "analysis_id": "ds_6366b29ef95de1e5",
+      "dataset_id": "ds_6366b29ef95de1e5",
+      "dual_cause_ok": true,
+      "expected_present": [
+        "CONTACT.PROBE"
+      ],
+      "expected_recovered": true,
+      "extra_hypothesis": [],
+      "false_hypothesis_count": 0,
+      "limitations": [
+        "HypothesisBundle contains UNCONFIRMED associations only. No confirmed root cause.",
+        "evidence_score is PRELIMINARY, not a probability of root cause, and is not calibrated for production.",
+        "Competing hypotheses are preserved; dual-cause scenarios are not collapsed.",
+        "Correlated detectors (lot/wafer nested in drift/spatial; contact nested in equipment) are not independent confirmation.",
+        "Later-test observations are censored by stop-on-fail behavior. TEST.SEQUENCE is not composed from invented order or imputed later-test outcomes."
+      ],
+      "missing_hypothesis": [],
+      "n_hypotheses": 1,
+      "no_confident_hypothesis": false,
+      "no_signal_ok": true,
+      "ranking": [
+        {
+          "association_class": "PRIMARY_EVIDENCE",
+          "detail": "PROBE",
+          "evidence_score": 0.9,
+          "evidence_tier": "MODERATE_EVIDENCE",
+          "family": "CONTACT",
+          "hypothesis_id": "H-CONTACT.PROBE",
+          "not_a_root_cause": true,
+          "rank": 1,
+          "status": "UNCONFIRMED"
+        }
+      ],
+      "scenario": "S10",
+      "sequence_insufficient": true
+    },
+    {
+      "all_not_a_root_cause": true,
+      "analysis_id": "ds_dc715730527a3232",
+      "dataset_id": "ds_dc715730527a3232",
+      "dual_cause_ok": true,
+      "expected_present": [],
+      "expected_recovered": true,
+      "extra_hypothesis": [
+        "EQUIPMENT.DEGRADATION"
+      ],
+      "false_hypothesis_count": 1,
+      "limitations": [
+        "HypothesisBundle contains UNCONFIRMED associations only. No confirmed root cause.",
+        "evidence_score is PRELIMINARY, not a probability of root cause, and is not calibrated for production.",
+        "Competing hypotheses are preserved; dual-cause scenarios are not collapsed.",
+        "Correlated detectors (lot/wafer nested in drift/spatial; contact nested in equipment) are not independent confirmation.",
+        "Later-test observations are censored by stop-on-fail behavior. TEST.SEQUENCE is not composed from invented order or imputed later-test outcomes."
+      ],
+      "missing_hypothesis": [],
+      "n_hypotheses": 1,
+      "no_confident_hypothesis": false,
+      "no_signal_ok": true,
+      "ranking": [
+        {
+          "association_class": "PRIMARY_EVIDENCE",
+          "detail": "DEGRADATION",
+          "evidence_score": 0.7792,
+          "evidence_tier": "MODERATE_EVIDENCE",
+          "family": "EQUIPMENT",
+          "hypothesis_id": "H-EQUIPMENT.DEGRADATION",
+          "not_a_root_cause": true,
+          "rank": 1,
+          "status": "UNCONFIRMED"
+        }
+      ],
+      "scenario": "S11",
+      "sequence_insufficient": true
+    },
+    {
+      "all_not_a_root_cause": true,
+      "analysis_id": "ds_ec49a06398d57828",
+      "dataset_id": "ds_ec49a06398d57828",
+      "dual_cause_ok": true,
+      "expected_present": [
+        "PROCESS.LOT_VARIATION"
+      ],
+      "expected_recovered": true,
+      "extra_hypothesis": [
+        "PROCESS.DRIFT",
+        "PROCESS.WAFER_VARIATION"
+      ],
+      "false_hypothesis_count": 2,
+      "limitations": [
+        "HypothesisBundle contains UNCONFIRMED associations only. No confirmed root cause.",
+        "evidence_score is PRELIMINARY, not a probability of root cause, and is not calibrated for production.",
+        "Competing hypotheses are preserved; dual-cause scenarios are not collapsed.",
+        "Correlated detectors (lot/wafer nested in drift/spatial; contact nested in equipment) are not independent confirmation.",
+        "Later-test observations are censored by stop-on-fail behavior. TEST.SEQUENCE is not composed from invented order or imputed later-test outcomes."
+      ],
+      "missing_hypothesis": [],
+      "n_hypotheses": 3,
+      "no_confident_hypothesis": false,
+      "no_signal_ok": true,
+      "ranking": [
+        {
+          "association_class": "PRIMARY_EVIDENCE",
+          "detail": "DRIFT",
+          "evidence_score": 0.8625,
+          "evidence_tier": "MODERATE_EVIDENCE",
+          "family": "PROCESS",
+          "hypothesis_id": "H-PROCESS.DRIFT",
+          "not_a_root_cause": true,
+          "rank": 1,
+          "status": "UNCONFIRMED"
+        },
+        {
+          "association_class": "SECONDARY_ASSOCIATION",
+          "detail": "LOT_VARIATION",
+          "evidence_score": 0.5606,
+          "evidence_tier": "MODERATE_EVIDENCE",
+          "family": "PROCESS",
+          "hypothesis_id": "H-PROCESS.LOT_VARIATION",
+          "not_a_root_cause": true,
+          "rank": 2,
+          "status": "UNCONFIRMED"
+        },
+        {
+          "association_class": "SECONDARY_ASSOCIATION",
+          "detail": "WAFER_VARIATION",
+          "evidence_score": 0.5606,
+          "evidence_tier": "MODERATE_EVIDENCE",
+          "family": "PROCESS",
+          "hypothesis_id": "H-PROCESS.WAFER_VARIATION",
+          "not_a_root_cause": true,
+          "rank": 3,
+          "status": "UNCONFIRMED"
+        }
+      ],
+      "scenario": "S12",
+      "sequence_insufficient": true
+    },
+    {
+      "all_not_a_root_cause": true,
+      "analysis_id": "ds_a3edd37e85b16e81",
+      "dataset_id": "ds_a3edd37e85b16e81",
+      "dual_cause_ok": true,
+      "expected_present": [
+        "PROCESS.WAFER_VARIATION"
+      ],
+      "expected_recovered": true,
+      "extra_hypothesis": [
+        "PROCESS.DRIFT",
+        "PROCESS.LOT_VARIATION"
+      ],
+      "false_hypothesis_count": 2,
+      "limitations": [
+        "HypothesisBundle contains UNCONFIRMED associations only. No confirmed root cause.",
+        "evidence_score is PRELIMINARY, not a probability of root cause, and is not calibrated for production.",
+        "Competing hypotheses are preserved; dual-cause scenarios are not collapsed.",
+        "Correlated detectors (lot/wafer nested in drift/spatial; contact nested in equipment) are not independent confirmation.",
+        "Later-test observations are censored by stop-on-fail behavior. TEST.SEQUENCE is not composed from invented order or imputed later-test outcomes."
+      ],
+      "missing_hypothesis": [],
+      "n_hypotheses": 3,
+      "no_confident_hypothesis": false,
+      "no_signal_ok": true,
+      "ranking": [
+        {
+          "association_class": "PRIMARY_EVIDENCE",
+          "detail": "DRIFT",
+          "evidence_score": 0.8533,
+          "evidence_tier": "MODERATE_EVIDENCE",
+          "family": "PROCESS",
+          "hypothesis_id": "H-PROCESS.DRIFT",
+          "not_a_root_cause": true,
+          "rank": 1,
+          "status": "UNCONFIRMED"
+        },
+        {
+          "association_class": "SECONDARY_ASSOCIATION",
+          "detail": "LOT_VARIATION",
+          "evidence_score": 0.5606,
+          "evidence_tier": "MODERATE_EVIDENCE",
+          "family": "PROCESS",
+          "hypothesis_id": "H-PROCESS.LOT_VARIATION",
+          "not_a_root_cause": true,
+          "rank": 2,
+          "status": "UNCONFIRMED"
+        },
+        {
+          "association_class": "SECONDARY_ASSOCIATION",
+          "detail": "WAFER_VARIATION",
+          "evidence_score": 0.5606,
+          "evidence_tier": "MODERATE_EVIDENCE",
+          "family": "PROCESS",
+          "hypothesis_id": "H-PROCESS.WAFER_VARIATION",
+          "not_a_root_cause": true,
+          "rank": 3,
+          "status": "UNCONFIRMED"
+        }
+      ],
+      "scenario": "S13",
+      "sequence_insufficient": true
+    },
+    {
+      "all_not_a_root_cause": true,
+      "analysis_id": "ds_2cb7d367015faf90",
+      "dataset_id": "ds_2cb7d367015faf90",
+      "dual_cause_ok": true,
+      "expected_present": [
+        "CORRELATED.FAILURES"
+      ],
+      "expected_recovered": true,
+      "extra_hypothesis": [
+        "PROCESS.LOT_VARIATION",
+        "PROCESS.WAFER_VARIATION",
+        "TEST.SEQUENCE"
+      ],
+      "false_hypothesis_count": 3,
+      "limitations": [
+        "HypothesisBundle contains UNCONFIRMED associations only. No confirmed root cause.",
+        "evidence_score is PRELIMINARY, not a probability of root cause, and is not calibrated for production.",
+        "Competing hypotheses are preserved; dual-cause scenarios are not collapsed.",
+        "Correlated detectors (lot/wafer nested in drift/spatial; contact nested in equipment) are not independent confirmation."
+      ],
+      "missing_hypothesis": [],
+      "n_hypotheses": 4,
+      "no_confident_hypothesis": false,
+      "no_signal_ok": true,
+      "ranking": [
+        {
+          "association_class": "PRIMARY_EVIDENCE",
+          "detail": "LOT_VARIATION",
+          "evidence_score": 0.9,
+          "evidence_tier": "MODERATE_EVIDENCE",
+          "family": "PROCESS",
+          "hypothesis_id": "H-PROCESS.LOT_VARIATION",
+          "not_a_root_cause": true,
+          "rank": 1,
+          "status": "UNCONFIRMED"
+        },
+        {
+          "association_class": "PRIMARY_EVIDENCE",
+          "detail": "FAILURES",
+          "evidence_score": 0.8775,
+          "evidence_tier": "MODERATE_EVIDENCE",
+          "family": "CORRELATED",
+          "hypothesis_id": "H-CORRELATED.FAILURES",
+          "not_a_root_cause": true,
+          "rank": 2,
+          "status": "UNCONFIRMED"
+        },
+        {
+          "association_class": "PRIMARY_EVIDENCE",
+          "detail": "SEQUENCE",
+          "evidence_score": 0.84,
+          "evidence_tier": "MODERATE_EVIDENCE",
+          "family": "TEST",
+          "hypothesis_id": "H-TEST.SEQUENCE",
+          "not_a_root_cause": true,
+          "rank": 3,
+          "status": "UNCONFIRMED"
+        },
+        {
+          "association_class": "SECONDARY_ASSOCIATION",
+          "detail": "WAFER_VARIATION",
+          "evidence_score": 0.5606,
+          "evidence_tier": "MODERATE_EVIDENCE",
+          "family": "PROCESS",
+          "hypothesis_id": "H-PROCESS.WAFER_VARIATION",
+          "not_a_root_cause": true,
+          "rank": 4,
+          "status": "UNCONFIRMED"
+        }
+      ],
+      "scenario": "S14",
+      "sequence_insufficient": false
+    },
+    {
+      "all_not_a_root_cause": true,
+      "analysis_id": "ds_c65b1e8d8155514c",
+      "dataset_id": "ds_c65b1e8d8155514c",
+      "dual_cause_ok": true,
+      "expected_present": [
+        "PROCESS.DRIFT",
+        "SPATIAL.EDGE"
+      ],
+      "expected_recovered": true,
+      "extra_hypothesis": [
+        "CONTACT.PROBE",
+        "PROCESS.LOT_VARIATION",
+        "PROCESS.WAFER_VARIATION"
+      ],
+      "false_hypothesis_count": 3,
+      "limitations": [
+        "HypothesisBundle contains UNCONFIRMED associations only. No confirmed root cause.",
+        "evidence_score is PRELIMINARY, not a probability of root cause, and is not calibrated for production.",
+        "Competing hypotheses are preserved; dual-cause scenarios are not collapsed.",
+        "Correlated detectors (lot/wafer nested in drift/spatial; contact nested in equipment) are not independent confirmation.",
+        "Later-test observations are censored by stop-on-fail behavior. TEST.SEQUENCE is not composed from invented order or imputed later-test outcomes."
+      ],
+      "missing_hypothesis": [],
+      "n_hypotheses": 5,
+      "no_confident_hypothesis": false,
+      "no_signal_ok": true,
+      "ranking": [
+        {
+          "association_class": "PRIMARY_EVIDENCE",
+          "detail": "EDGE",
+          "evidence_score": 0.9,
+          "evidence_tier": "MODERATE_EVIDENCE",
+          "family": "SPATIAL",
+          "hypothesis_id": "H-SPATIAL.EDGE",
+          "not_a_root_cause": true,
+          "rank": 1,
+          "status": "UNCONFIRMED"
+        },
+        {
+          "association_class": "PRIMARY_EVIDENCE",
+          "detail": "DRIFT",
+          "evidence_score": 0.8625,
+          "evidence_tier": "MODERATE_EVIDENCE",
+          "family": "PROCESS",
+          "hypothesis_id": "H-PROCESS.DRIFT",
+          "not_a_root_cause": true,
+          "rank": 2,
+          "status": "UNCONFIRMED"
+        },
+        {
+          "association_class": "PRIMARY_EVIDENCE",
+          "detail": "PROBE",
+          "evidence_score": 0.8449,
+          "evidence_tier": "MODERATE_EVIDENCE",
+          "family": "CONTACT",
+          "hypothesis_id": "H-CONTACT.PROBE",
+          "not_a_root_cause": true,
+          "rank": 3,
+          "status": "UNCONFIRMED"
+        },
+        {
+          "association_class": "SECONDARY_ASSOCIATION",
+          "detail": "LOT_VARIATION",
+          "evidence_score": 0.5606,
+          "evidence_tier": "MODERATE_EVIDENCE",
+          "family": "PROCESS",
+          "hypothesis_id": "H-PROCESS.LOT_VARIATION",
+          "not_a_root_cause": true,
+          "rank": 4,
+          "status": "UNCONFIRMED"
+        },
+        {
+          "association_class": "SECONDARY_ASSOCIATION",
+          "detail": "WAFER_VARIATION",
+          "evidence_score": 0.5606,
+          "evidence_tier": "MODERATE_EVIDENCE",
+          "family": "PROCESS",
+          "hypothesis_id": "H-PROCESS.WAFER_VARIATION",
+          "not_a_root_cause": true,
+          "rank": 5,
+          "status": "UNCONFIRMED"
+        }
+      ],
+      "scenario": "S15",
+      "sequence_insufficient": true
+    },
+    {
+      "all_not_a_root_cause": true,
+      "analysis_id": "ds_e8b6b664a6810381",
+      "dataset_id": "ds_e8b6b664a6810381",
+      "dual_cause_ok": true,
+      "expected_present": [],
+      "expected_recovered": true,
+      "extra_hypothesis": [],
+      "false_hypothesis_count": 0,
+      "limitations": [
+        "HypothesisBundle contains UNCONFIRMED associations only. No confirmed root cause.",
+        "evidence_score is PRELIMINARY, not a probability of root cause, and is not calibrated for production.",
+        "Competing hypotheses are preserved; dual-cause scenarios are not collapsed.",
+        "Correlated detectors (lot/wafer nested in drift/spatial; contact nested in equipment) are not independent confirmation.",
+        "Later-test observations are censored by stop-on-fail behavior. TEST.SEQUENCE is not composed from invented order or imputed later-test outcomes.",
+        "No systematic detector produced a SIGNAL. NO_CONFIDENT_HYPOTHESIS."
+      ],
+      "missing_hypothesis": [],
+      "n_hypotheses": 0,
+      "no_confident_hypothesis": true,
+      "no_signal_ok": true,
+      "ranking": [],
+      "scenario": "S16",
+      "sequence_insufficient": true
+    }
+  ],
+  "s01_no_confident": true,
+  "s15_dual_cause_ok": true,
+  "s16_no_confident": true
+}

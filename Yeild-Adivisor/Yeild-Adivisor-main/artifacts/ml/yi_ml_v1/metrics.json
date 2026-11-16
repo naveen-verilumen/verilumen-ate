@@ -1,0 +1,51 @@
+{
+  "model_name": "logistic",
+  "metrics": {
+    "roc_auc": 0.7153149306340475,
+    "pr_auc": 0.437734246302268,
+    "precision": 0.49019607843137253,
+    "recall": 0.36231884057971014,
+    "f1": 0.4166666666666667,
+    "balanced_accuracy": 0.6135684324215709,
+    "brier": 0.1700426866782327,
+    "log_loss": 0.5282360064444536,
+    "failure_capture_at_top_10_percent": 0.19806763285024154,
+    "failure_capture_at_top_20_percent": 0.3719806763285024,
+    "positive_rate": 0.26403061224489793,
+    "n_samples": 784,
+    "n_positives": 207
+  },
+  "comparison": [
+    {
+      "model": "logistic",
+      "roc_auc": 0.7329096861159253,
+      "pr_auc": 0.45640844011288556,
+      "f1": 0.525691699604743,
+      "recall": 0.642512077294686,
+      "brier": 0.20491177371656913,
+      "failure_capture_at_top_10_percent": 0.1932367149758454,
+      "failure_capture_at_top_20_percent": 0.38164251207729466
+    },
+    {
+      "model": "random_forest",
+      "roc_auc": 0.7635571295807901,
+      "pr_auc": 0.44622329372862973,
+      "f1": 0.6297709923664122,
+      "recall": 0.7971014492753623,
+      "brier": 0.1761581087055247,
+      "failure_capture_at_top_10_percent": 0.17391304347826086,
+      "failure_capture_at_top_20_percent": 0.3333333333333333
+    },
+    {
+      "model": "hist_gbm",
+      "roc_auc": 0.7507011947521329,
+      "pr_auc": 0.4619914207388949,
+      "f1": 0.603415559772296,
+      "recall": 0.7681159420289855,
+      "brier": 0.19406450256370497,
+      "failure_capture_at_top_10_percent": 0.18357487922705315,
+      "failure_capture_at_top_20_percent": 0.357487922705314
+    }
+  ],
+  "disclaimer": "ML output is a predictive association for first-pass failure. It is not a confirmed root cause, not a causal effect, not a predicted FPY gain, and not a production authorization."
+}

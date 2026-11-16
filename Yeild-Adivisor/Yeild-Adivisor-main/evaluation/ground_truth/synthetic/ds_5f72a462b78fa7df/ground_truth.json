@@ -1,0 +1,28 @@
+{
+  "affected_population": {
+    "n_targeted": 187,
+    "n_total": 784,
+    "rule": "tester_id == T03"
+  },
+  "confounders": [
+    "baseline_tester_offsets_are_small_and_not_the_planted_cause"
+  ],
+  "dataset_id": "ds_5f72a462b78fa7df",
+  "difficulty": "medium",
+  "expected_signal": "Failure rate differs by equipment/tester.",
+  "generator_version": "yi_synth_v1",
+  "injected_parameters": {
+    "affected_tester": "T03",
+    "extra_p": 0.28
+  },
+  "notes": null,
+  "profile": "small",
+  "scenario_id": "S05",
+  "seed": 20260322,
+  "true_causes": [
+    {
+      "detail": "DEGRADATION",
+      "family": "EQUIPMENT"
+    }
+  ]
+}

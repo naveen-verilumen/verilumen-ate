@@ -1,0 +1,7 @@
+attempt_id,test_id,test_pass_fail,sequence_index,is_first_fail,failure_code
+E-L012-W01-D01-1,T_CONTINUITY,FAIL,1,true,CONTINUITY
+E-L012-W01-D01-1,T_IDDQ,FAIL,5,false,IDDQ
+E-L012-W01-D01-1,T_FUNC,PASS,8,false,
+E-L012-W01-D02-1,T_CONTINUITY,PASS,1,false,
+E-L012-W01-D02-1,T_IDDQ,PASS,5,false,
+E-L012-W01-D02-1,T_FUNC,PASS,8,false,

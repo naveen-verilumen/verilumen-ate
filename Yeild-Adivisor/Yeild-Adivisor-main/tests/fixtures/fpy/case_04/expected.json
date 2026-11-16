@@ -1,0 +1,21 @@
+{
+  "case_id": "CASE_04",
+  "n_eligible": 2,
+  "n_first_pass_pass": 1,
+  "n_first_pass_fail": 1,
+  "n_excluded": 0,
+  "fpy": 0.5,
+  "fpy_loss": 0.5,
+  "abort_policy": "FIRST_PASS_ABORT_IS_FAIL",
+  "per_die": [
+    {
+      "die_id": "D01",
+      "abort_flag": true,
+      "first_pass_disposition": "FAIL",
+      "fpy_counts_as": "FAIL",
+      "primary_failure_key": "ABORT",
+      "taxonomy_code": "UNKNOWN.UNSPECIFIED"
+    }
+  ],
+  "notes": "Missing pass_fail on abort still counts FAIL via abort policy + sbin 14."
+}
