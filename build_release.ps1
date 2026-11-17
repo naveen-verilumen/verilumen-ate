@@ -18,14 +18,16 @@ Write-Host "============================================================" -Foreg
 Write-Host "  BUILDING RELEASE: $productName v$version" -ForegroundColor Cyan
 Write-Host "============================================================" -ForegroundColor Cyan
 
-# 1. Sync version.json if needed
+# 1. Sync version.json and frontend src/version.json
 $VersionJsonPath = Join-Path $Root "version.json"
+$FrontendVerPath = Join-Path $Root "tools\ate_frontend\src\version.json"
 $verData = [ordered]@{
     version = $version
     appName = $productName
     releaseName = "Verilumen-ATE-Setup-$version.exe"
 }
 $verData | ConvertTo-Json -Depth 4 | Set-Content $VersionJsonPath -Encoding utf8
+$verData | ConvertTo-Json -Depth 4 | Set-Content $FrontendVerPath -Encoding utf8
 
 # 2. Check for signing certificates in environment
 if (-not $env:VL_REUSE_PYTHON) {

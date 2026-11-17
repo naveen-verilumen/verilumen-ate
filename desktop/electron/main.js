@@ -255,6 +255,20 @@ function setupAutoUpdater() {
     return;
   }
 
+  // Ensure explicit feed target for differential updates
+  try {
+    autoUpdater.setFeedURL({
+      provider: "github",
+      owner: "naveen-verilumen",
+      repo: "verilumen-ate",
+    });
+  } catch (err) {
+    const logPath = path.join(app.getPath("userData"), "supervisor.log");
+    try {
+      fs.appendFileSync(logPath, `[AutoUpdater] setFeedURL error: ${err.message || err}\n`);
+    } catch {}
+  }
+
   // Differential delta updating via GitHub Releases
   autoUpdater.autoDownload = true;
   autoUpdater.autoInstallOnAppQuit = false;

@@ -38,6 +38,7 @@ import { useDashboardData } from "@/hooks/useDashboardData";
 import { useWaferRealtime } from "@/hooks/useWaferRealtime";
 import { fetchWafer } from "@/services/api";
 import { useOpsStore } from "@/stores/opsStore";
+import versionData from "@/version.json";
 
 type TabType =
   | "overview"
@@ -101,6 +102,16 @@ export function DashboardShell() {
   const [activeTab, setActiveTab] = useState<TabType>("overview");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isCockpitOpen, setIsCockpitOpen] = useState(false);
+  const [displayVersion, setDisplayVersion] = useState(versionData.version);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const desktopVer = (window as unknown as { verilumenDesktop?: { appVersion?: string } }).verilumenDesktop?.appVersion;
+      if (desktopVer) {
+        setDisplayVersion(desktopVer);
+      }
+    }
+  }, []);
 
   useEffect(() => {
     const handler = (e: Event) => {
@@ -297,7 +308,7 @@ export function DashboardShell() {
 
           <VerilumenBrand size="header" />
           <span className="rounded bg-sky-950/70 px-2 py-0.5 font-mono text-[11px] font-semibold text-sky-400 border border-sky-800/40">
-            v1.1.1
+            v{displayVersion}
           </span>
         </div>
 
@@ -605,7 +616,7 @@ export function DashboardShell() {
 
       <footer className="mt-8 flex flex-wrap justify-between gap-2 border-t border-[rgba(107,193,242,0.18)] pt-4 text-xs text-[#7f96b0] vl-section-enter vl-section-enter-delay-5">
         <span>
-          Verilumen - ATE v1.1.1 · Connected via FastMCP
+          Verilumen - ATE v{displayVersion} · Connected via FastMCP
         </span>
         <span className="font-mono text-xs tracking-wide text-[#9ec9ef]">
           {summary?.connection_hint ?? "Live telemetry synchronized across autonomous agents"}

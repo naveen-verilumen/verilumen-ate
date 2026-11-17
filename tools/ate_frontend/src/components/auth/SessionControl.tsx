@@ -8,7 +8,7 @@ export function SessionControl() {
     <div className="flex items-center gap-2 border-l border-[var(--line)] pl-3">
       <div className="text-right leading-tight">
         <div className="font-mono text-[11px] font-semibold text-[var(--text)]">
-          viewer
+          Viewer
         </div>
         <div className="text-[9px] uppercase tracking-[0.08em] text-[var(--muted-2)]">
           Local offline
